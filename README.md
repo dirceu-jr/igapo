@@ -6,3 +6,7 @@ This repository compiles codes and libraries for automation in reading hydromete
 Set Software Serial
 
 <img src="https://lastminuteengineers.com/wp-content/uploads/arduino/UART-Selection-Jumper-Settings-on-SIM900-GSM-Shield.png" />
+
+Actual code:
+
+[Testing SMS](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/testing_sms.ino)
