@@ -1,12 +1,18 @@
 # remote_hydrometeorological-_monitoring_system
 This repository compiles codes and libraries for automation in reading hydrometeorological data.
 
-<img src="https://lastminuteengineers.com/wp-content/uploads/arduino/Wiring-SIM900-GSM-GPRS-Shield-with-Arduino-UNO.png" />
+Download and install [GSM/GPRS & GPS Shield Library for modules using SIM900](https://github.com/MarcoMartines/GSM-GPRS-GPS-Shield).
 
-Set Software Serial
+Connect Arduino as in above image:
 
-<img src="https://lastminuteengineers.com/wp-content/uploads/arduino/UART-Selection-Jumper-Settings-on-SIM900-GSM-Shield.png" />
+<img src="https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/Wiring-SIM900-GSM-GPRS-Shield-with-Arduino-UNO.png" />
 
-Actual code:
+Set Shield to Software Serial:
 
-[Testing SMS](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/testing_sms.ino)
+<img src="https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/serial.png" />
+
+==Actual code
+
+[Testing SMS without library](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/testing_sms.ino)
+
+[Testing with library](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/GSM_GPRSLibrary_SMS.ino)
