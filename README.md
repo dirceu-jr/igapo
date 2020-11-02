@@ -16,3 +16,5 @@ Set Shield to Software Serial:
 [Testing SMS without library](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/testing_sms.ino)
 
 [Testing with library](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/GSM_GPRSLibrary_SMS.ino)
+
+[More options](https://github.com/Seeed-Studio/GPRS_SIM900)
