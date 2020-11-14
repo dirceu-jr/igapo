@@ -1,0 +1,610 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "EPSG:4618"
+    }
+  },
+  "features": [{
+    "type": "Feature",
+    "id": 1,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.269347810999932, -25.531926898999927]
+    },
+    "properties": {
+      "OBJECTID": 1,
+      "AREA": 31779537.504799999,
+      "PERIMETER": 29705.275409999998,
+      "SUB_AREA": 31.780000000000001,
+      "SUBNOME": "RIO PADILHA",
+      "SUBBAC_POP": 189309,
+      "SUBBAC_P_1": 188729,
+      "SUBBAC_DEN": 5938.5900000000001,
+      "SUBBAC_D_1": 5956.8599999999997,
+      "ORIG_FID": 0,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 2,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.242266254999947, -25.523588299999972]
+    },
+    "properties": {
+      "OBJECTID": 2,
+      "AREA": 4779908.3115299996,
+      "PERIMETER": 10211.752130000001,
+      "SUB_AREA": 4.7800000000000002,
+      "SUBNOME": "RIO ALTO BOQUEIRAO",
+      "SUBBAC_POP": 33086,
+      "SUBBAC_P_1": 36176,
+      "SUBBAC_DEN": 7568.2399999999998,
+      "SUBBAC_D_1": 6921.8299999999999,
+      "ORIG_FID": 1,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 3,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.185877643999959, -25.540440611999941]
+    },
+    "properties": {
+      "OBJECTID": 3,
+      "AREA": 12556933.59028,
+      "PERIMETER": 17614.429980000001,
+      "SUB_AREA": 12.56,
+      "SUBNOME": "RIO DA RESSACA",
+      "SUBBAC_POP": 28614,
+      "SUBBAC_P_1": 30937,
+      "SUBBAC_DEN": 2463.73,
+      "SUBBAC_D_1": 2278.7199999999998,
+      "ORIG_FID": 2,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 4,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.203566812999952, -25.557405323999944]
+    },
+    "properties": {
+      "OBJECTID": 4,
+      "AREA": 6722861.8663900001,
+      "PERIMETER": 11737.06452,
+      "SUB_AREA": 6.7199999999999998,
+      "SUBNOME": "RIO AVARIU",
+      "SUBBAC_POP": 11605,
+      "SUBBAC_P_1": 17505,
+      "SUBBAC_DEN": 2603.6799999999998,
+      "SUBBAC_D_1": 1726.1900000000001,
+      "ORIG_FID": 3,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 5,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.311376731999985, -25.679800195999974]
+    },
+    "properties": {
+      "OBJECTID": 5,
+      "AREA": 24067206.083149999,
+      "PERIMETER": 32706.90263,
+      "SUB_AREA": 24.07,
+      "SUBNOME": "ARROIO MASCATE",
+      "SUBBAC_POP": 18472,
+      "SUBBAC_P_1": 22032,
+      "SUBBAC_DEN": 915.42999999999995,
+      "SUBBAC_D_1": 767.52999999999997,
+      "ORIG_FID": 4,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 6,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.292285930999981, -25.664628019999952]
+    },
+    "properties": {
+      "OBJECTID": 6,
+      "AREA": 19150453.77124,
+      "PERIMETER": 23305.59878,
+      "SUB_AREA": 19.149999999999999,
+      "SUBNOME": "RIBEIRAO DA DIVISA",
+      "SUBBAC_POP": 20105,
+      "SUBBAC_P_1": 26485,
+      "SUBBAC_DEN": 1383.05,
+      "SUBBAC_D_1": 1049.8900000000001,
+      "ORIG_FID": 5,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 7,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.318446192999943, -25.420756522999966]
+    },
+    "properties": {
+      "OBJECTID": 7,
+      "AREA": 264879037.14377999,
+      "PERIMETER": 147818.59059000001,
+      "SUB_AREA": 264.88,
+      "SUBNOME": "RIO BARIGUI",
+      "SUBBAC_POP": 503794,
+      "SUBBAC_P_1": 518964,
+      "SUBBAC_DEN": 1959.25,
+      "SUBBAC_D_1": 1903.03,
+      "ORIG_FID": 6,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 8,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.17535042999998, -25.344898186999956]
+    },
+    "properties": {
+      "OBJECTID": 8,
+      "AREA": 89759493.979300007,
+      "PERIMETER": 67918.426160000003,
+      "SUB_AREA": 89.760000000000005,
+      "SUBNOME": "RIO PALMITAL",
+      "SUBBAC_POP": 91175,
+      "SUBBAC_P_1": 117692,
+      "SUBBAC_DEN": 1311.1900000000001,
+      "SUBBAC_D_1": 1015.78,
+      "ORIG_FID": 7,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 9,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.225314773999969, -25.373849297999982]
+    },
+    "properties": {
+      "OBJECTID": 9,
+      "AREA": 125989236.71381,
+      "PERIMETER": 71021.477129999999,
+      "SUB_AREA": 125.98999999999999,
+      "SUBNOME": "RIO ATUBA",
+      "SUBBAC_POP": 387391,
+      "SUBBAC_P_1": 400376,
+      "SUBBAC_DEN": 3177.8699999999999,
+      "SUBBAC_D_1": 3074.8000000000002,
+      "ORIG_FID": 8,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 10,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.391020835999939, -25.452138579999939]
+    },
+    "properties": {
+      "OBJECTID": 10,
+      "AREA": 216683292.29947999,
+      "PERIMETER": 109979.23983999999,
+      "SUB_AREA": 216.68000000000001,
+      "SUBNOME": "RIO PASSAUNA",
+      "SUBBAC_POP": 71171,
+      "SUBBAC_P_1": 68294,
+      "SUBBAC_DEN": 315.18000000000001,
+      "SUBBAC_D_1": 328.45999999999998,
+      "ORIG_FID": 9,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 11,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.080230768999968, -25.388099588999978]
+    },
+    "properties": {
+      "OBJECTID": 11,
+      "AREA": 111779270.82412,
+      "PERIMETER": 63572.736900000004,
+      "SUB_AREA": 111.78,
+      "SUBNOME": "RIO IRAI",
+      "SUBBAC_POP": 37678,
+      "SUBBAC_P_1": 26533,
+      "SUBBAC_DEN": 237.37,
+      "SUBBAC_D_1": 337.10000000000002,
+      "ORIG_FID": 10,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 12,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.257667566999942, -25.45123751999995]
+    },
+    "properties": {
+      "OBJECTID": 12,
+      "AREA": 89533629.172419995,
+      "PERIMETER": 57227.181980000001,
+      "SUB_AREA": 89.530000000000001,
+      "SUBNOME": "RIO BELEM",
+      "SUBBAC_POP": 457176,
+      "SUBBAC_P_1": 515436,
+      "SUBBAC_DEN": 5756.8800000000001,
+      "SUBBAC_D_1": 5106.1700000000001,
+      "ORIG_FID": 11,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 13,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.492044746999966, -25.474665797999933]
+    },
+    "properties": {
+      "OBJECTID": 13,
+      "AREA": 238783191.82921001,
+      "PERIMETER": 103359.87635999999,
+      "SUB_AREA": 238.78,
+      "SUBNOME": "RIO VERDE",
+      "SUBBAC_POP": 37527,
+      "SUBBAC_P_1": 2877,
+      "SUBBAC_DEN": 12.050000000000001,
+      "SUBBAC_D_1": 157.16,
+      "ORIG_FID": 12,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 14,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.599953141999947, -25.490573000999973]
+    },
+    "properties": {
+      "OBJECTID": 14,
+      "AREA": 185900822.79405001,
+      "PERIMETER": 94001.416240000006,
+      "SUB_AREA": 185.90000000000001,
+      "SUBNOME": "RIO ITAQUI",
+      "SUBBAC_POP": 32101,
+      "SUBBAC_P_1": 2300,
+      "SUBBAC_DEN": 12.369999999999999,
+      "SUBBAC_D_1": 172.68000000000001,
+      "ORIG_FID": 13,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 15,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.138407238999946, -25.41659728299993]
+    },
+    "properties": {
+      "OBJECTID": 15,
+      "AREA": 11546620.57528,
+      "PERIMETER": 17543.142830000001,
+      "SUB_AREA": 11.550000000000001,
+      "SUBNOME": "RIO DO MEIO",
+      "SUBBAC_POP": 2009,
+      "SUBBAC_P_1": 4306,
+      "SUBBAC_DEN": 372.87,
+      "SUBBAC_D_1": 173.99000000000001,
+      "ORIG_FID": 14,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 16,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.05572338099995, -25.450342886999977]
+    },
+    "properties": {
+      "OBJECTID": 16,
+      "AREA": 52258816.909259997,
+      "PERIMETER": 37112.404790000001,
+      "SUB_AREA": 52.259999999999998,
+      "SUBNOME": "RIO IRAIZINHO",
+      "SUBBAC_POP": 27468,
+      "SUBBAC_P_1": 35280,
+      "SUBBAC_DEN": 675.11000000000001,
+      "SUBBAC_D_1": 525.61000000000001,
+      "ORIG_FID": 15,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 17,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.043379063999964, -25.498880110999949]
+    },
+    "properties": {
+      "OBJECTID": 17,
+      "AREA": 102193656.51071,
+      "PERIMETER": 59961.43806,
+      "SUB_AREA": 102.19,
+      "SUBNOME": "RIO PIRAQUARA",
+      "SUBBAC_POP": 6168,
+      "SUBBAC_P_1": 4209,
+      "SUBBAC_DEN": 41.189999999999998,
+      "SUBBAC_D_1": 60.43,
+      "ORIG_FID": 16,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 18,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.100304785999981, -25.516036778999933]
+    },
+    "properties": {
+      "OBJECTID": 18,
+      "AREA": 45994319.725790001,
+      "PERIMETER": 57795.18,
+      "SUB_AREA": 45.990000000000002,
+      "SUBNOME": "RIO ITAQUI",
+      "SUBBAC_POP": 22546,
+      "SUBBAC_P_1": 29812,
+      "SUBBAC_DEN": 648.16999999999996,
+      "SUBBAC_D_1": 490.19999999999999,
+      "ORIG_FID": 17,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 19,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.078747359999966, -25.556727533999947]
+    },
+    "properties": {
+      "OBJECTID": 19,
+      "AREA": 130446869.38957,
+      "PERIMETER": 86565.266770000002,
+      "SUB_AREA": 130.44999999999999,
+      "SUBNOME": "RIO PEQUENO",
+      "SUBBAC_POP": 37524,
+      "SUBBAC_P_1": 44456,
+      "SUBBAC_DEN": 340.79000000000002,
+      "SUBBAC_D_1": 287.97000000000003,
+      "ORIG_FID": 18,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 20,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.108097851999958, -25.620701690999965]
+    },
+    "properties": {
+      "OBJECTID": 20,
+      "AREA": 161303189.76879999,
+      "PERIMETER": 92226.600609999994,
+      "SUB_AREA": 161.30000000000001,
+      "SUBNOME": "RIO MIRINGUAVA",
+      "SUBBAC_POP": 10086,
+      "SUBBAC_P_1": 13781,
+      "SUBBAC_DEN": 85.430000000000007,
+      "SUBBAC_D_1": 62.530000000000001,
+      "ORIG_FID": 19,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 21,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.131532264999976, -25.676031499999965]
+    },
+    "properties": {
+      "OBJECTID": 21,
+      "AREA": 114604282.87445,
+      "PERIMETER": 61718.703029999997,
+      "SUB_AREA": 114.59999999999999,
+      "SUBNOME": "RIO MIRINGUAVA-MIRIM",
+      "SUBBAC_POP": 5531,
+      "SUBBAC_P_1": 6567,
+      "SUBBAC_DEN": 57.299999999999997,
+      "SUBBAC_D_1": 48.270000000000003,
+      "ORIG_FID": 20,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 22,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.466729206999958, -25.669738269999982]
+    },
+    "properties": {
+      "OBJECTID": 22,
+      "AREA": 72492389.09826,
+      "PERIMETER": 45343.375319999999,
+      "SUB_AREA": 72.489999999999995,
+      "SUBNOME": "RIO GUAJUVIRA",
+      "SUBBAC_POP": 2834,
+      "SUBBAC_P_1": 1535,
+      "SUBBAC_DEN": 21.18,
+      "SUBBAC_D_1": 39.090000000000003,
+      "ORIG_FID": 21,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 23,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.538552092999964, -25.679807009999934]
+    },
+    "properties": {
+      "OBJECTID": 23,
+      "AREA": 58224995.820809998,
+      "PERIMETER": 49602.390890000002,
+      "SUB_AREA": 58.229999999999997,
+      "SUBNOME": "RIO ISABEL ALVES",
+      "SUBBAC_POP": 6395,
+      "SUBBAC_P_1": 6395,
+      "SUBBAC_DEN": 109.81999999999999,
+      "SUBBAC_D_1": 110.56,
+      "ORIG_FID": 22,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 24,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.577064738999979, -25.657786205999969]
+    },
+    "properties": {
+      "OBJECTID": 24,
+      "AREA": 37807075.796960004,
+      "PERIMETER": 35838.964269999997,
+      "SUB_AREA": 37.810000000000002,
+      "SUBNOME": "RIO TURVO",
+      "SUBBAC_POP": 356,
+      "SUBBAC_P_1": 320,
+      "SUBBAC_DEN": 8.4499999999999993,
+      "SUBBAC_D_1": 9.4100000000000001,
+      "ORIG_FID": 23,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 25,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.208656320999978, -25.68135058699994]
+    },
+    "properties": {
+      "OBJECTID": 25,
+      "AREA": 80083600.652909994,
+      "PERIMETER": 55591.109510000002,
+      "SUB_AREA": 80.079999999999998,
+      "SUBNOME": "RIO COTIA",
+      "SUBBAC_POP": 2701,
+      "SUBBAC_P_1": 2312,
+      "SUBBAC_DEN": 28.859999999999999,
+      "SUBBAC_D_1": 33.729999999999997,
+      "ORIG_FID": 24,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 26,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.50604285299994, -25.665087249999942]
+    },
+    "properties": {
+      "OBJECTID": 26,
+      "AREA": 27322748.78999,
+      "PERIMETER": 38155.770600000003,
+      "SUB_AREA": 27.32,
+      "SUBNOME": "RIO PIUNDUVA",
+      "SUBBAC_POP": 990,
+      "SUBBAC_P_1": 786,
+      "SUBBAC_DEN": 28.75,
+      "SUBBAC_D_1": 36.25,
+      "ORIG_FID": 25,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 27,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.250494844999935, -25.708906558999956]
+    },
+    "properties": {
+      "OBJECTID": 27,
+      "AREA": 74167424.614399999,
+      "PERIMETER": 58855.755369999999,
+      "SUB_AREA": 74.170000000000002,
+      "SUBNOME": "RIO DO DESPIQUE",
+      "SUBBAC_POP": 2283,
+      "SUBBAC_P_1": 1517,
+      "SUBBAC_DEN": 20.460000000000001,
+      "SUBBAC_D_1": 30.780000000000001,
+      "ORIG_FID": 26,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 28,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.400096708999968, -25.710376573999952]
+    },
+    "properties": {
+      "OBJECTID": 28,
+      "AREA": 70249078.021349996,
+      "PERIMETER": 47132.108370000002,
+      "SUB_AREA": 70.25,
+      "SUBNOME": "RIO FAXINAL",
+      "SUBBAC_POP": 1853,
+      "SUBBAC_P_1": 1917,
+      "SUBBAC_DEN": 27.289999999999999,
+      "SUBBAC_D_1": 26.379999999999999,
+      "ORIG_FID": 27,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 29,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.320735776999982, -25.74332200799995]
+    },
+    "properties": {
+      "OBJECTID": 29,
+      "AREA": 134778236.07289001,
+      "PERIMETER": 73670.335519999993,
+      "SUB_AREA": 134.78,
+      "SUBNOME": "RIO MAURICIO",
+      "SUBBAC_POP": 8186,
+      "SUBBAC_P_1": 8634,
+      "SUBBAC_DEN": 64.060000000000002,
+      "SUBBAC_D_1": 60.740000000000002,
+      "ORIG_FID": 28,
+      "x": null
+    }
+  }, {
+    "type": "Feature",
+    "id": 30,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [-49.360322067999959, -25.579169522999962]
+    },
+    "properties": {
+      "OBJECTID": 30,
+      "AREA": 285895425.32340997,
+      "PERIMETER": 239372.04715999999,
+      "SUB_AREA": 285.89999999999998,
+      "SUBNOME": "AREA DE CONTRIBUICAO DIRETA DO ALTO RIO IGUACU",
+      "SUBBAC_POP": 182093,
+      "SUBBAC_P_1": 190504,
+      "SUBBAC_DEN": 666.34000000000003,
+      "SUBBAC_D_1": 636.91999999999996,
+      "ORIG_FID": 29,
+      "x": null
+    }
+  }]
+}
