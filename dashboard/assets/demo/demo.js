@@ -1,35 +1,8 @@
-demo = {
-  initDocumentationCharts: function() {
-    if ($('#dailySalesChart').length != 0 && $('#websiteViewsChart').length != 0) {
-      /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
+String.prototype.capitalize = function() {
+  return this.replace(/(^\w|\s\w)/g, m => m.toUpperCase());
+}
 
-      dataDailySalesChart = {
-        labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-        series: [
-          [12, 17, 7, 17, 23, 18, 38]
-        ]
-      };
-
-      optionsDailySalesChart = {
-        lineSmooth: Chartist.Interpolation.cardinal({
-          tension: 0
-        }),
-        low: 0,
-        high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-        chartPadding: {
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: 0
-        },
-      }
-
-      var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
-
-      var animationHeaderChart = new Chartist.Line('#websiteViewsChart', dataDailySalesChart, optionsDailySalesChart);
-    }
-  },
-
+var demo = {
   initDashboardPageCharts: function() {
 
     if ($('#dailySalesChart').length != 0 || $('#completedTasksChart').length != 0 || $('#websiteViewsChart').length != 0) {
@@ -130,108 +103,70 @@ demo = {
     }
   },
 
-  initGoogleMaps: function() {
-    var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
-    var mapOptions = {
-      zoom: 13,
-      center: myLatlng,
-      scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
-      styles: [{
-        "featureType": "water",
-        "stylers": [{
-          "saturation": 43
-        }, {
-          "lightness": -11
-        }, {
-          "hue": "#0088ff"
-        }]
-      }, {
-        "featureType": "road",
-        "elementType": "geometry.fill",
-        "stylers": [{
-          "hue": "#ff0000"
-        }, {
-          "saturation": -100
-        }, {
-          "lightness": 99
-        }]
-      }, {
-        "featureType": "road",
-        "elementType": "geometry.stroke",
-        "stylers": [{
-          "color": "#808080"
-        }, {
-          "lightness": 54
-        }]
-      }, {
-        "featureType": "landscape.man_made",
-        "elementType": "geometry.fill",
-        "stylers": [{
-          "color": "#ece2d9"
-        }]
-      }, {
-        "featureType": "poi.park",
-        "elementType": "geometry.fill",
-        "stylers": [{
-          "color": "#ccdca1"
-        }]
-      }, {
-        "featureType": "road",
-        "elementType": "labels.text.fill",
-        "stylers": [{
-          "color": "#767676"
-        }]
-      }, {
-        "featureType": "road",
-        "elementType": "labels.text.stroke",
-        "stylers": [{
-          "color": "#ffffff"
-        }]
-      }, {
-        "featureType": "poi",
-        "stylers": [{
-          "visibility": "off"
-        }]
-      }, {
-        "featureType": "landscape.natural",
-        "elementType": "geometry.fill",
-        "stylers": [{
-          "visibility": "on"
-        }, {
-          "color": "#b8cb93"
-        }]
-      }, {
-        "featureType": "poi.park",
-        "stylers": [{
-          "visibility": "on"
-        }]
-      }, {
-        "featureType": "poi.sports_complex",
-        "stylers": [{
-          "visibility": "on"
-        }]
-      }, {
-        "featureType": "poi.medical",
-        "stylers": [{
-          "visibility": "on"
-        }]
-      }, {
-        "featureType": "poi.business",
-        "stylers": [{
-          "visibility": "simplified"
-        }]
-      }]
+  initMaps: function() {
+    
+    var map = L.map(
+      "map",
+      {
+          center: [-24.7574861, -51.7596274], 
+          zoom: 7
+      }
+    );
 
-    };
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    var tile_layer = L.tileLayer(
+      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {
+            attribution: "Dados por \u0026copy; \<a href=\"http://openstreetmap.org\"\> OpenStreetMap",
+            detectRetina: true,
+            maxNativeZoom: 18,
+            maxZoom: 21,
+            minZoom: 0,
+            subdomains: "abc"
+        }
+    ).addTo(map);
 
-    var marker = new google.maps.Marker({
-      position: myLatlng,
-      title: "Hello World!"
+    var circle_1 = L.circle(
+      [-25.413852, -49.270339],
+      {
+          color: "#00FF69",
+          radius: 20
+      }
+    ).addTo(map);
+
+    circle_1.bindTooltip(
+      "<div>Nível: 50cm - Chuva: 10mm</div>",
+      { sticky: true }
+    );
+
+    $.ajax({
+      url: "./data/sub_bacias_altoiguacupoligono.json"
+    }).done(function(data) {
+      L.geoJSON(data, {
+          style: {
+              fillOpacity: 0.1,
+              color: "#417fc2",
+              weight: 3,
+              opacity: 0.5
+          },
+          onEachFeature: function (feature, layer) {
+              layer.on('mouseover', function () {
+                  // bacia hidrogrfica
+                  layer.bindPopup(feature.properties.SUBNOME.toLowerCase().capitalize());
+                  this.setStyle({
+                      'fillColor': '#0000ff'
+                  });
+              });
+              layer.on('mouseout', function () {
+                  this.setStyle({
+                      'fillColor': '#417fc2'
+                  });
+              });
+              // layer.on('click', function () {
+              //     // Let's say you've got a property called url in your geojsonfeature:
+              //     window.location = feature.properties.url;
+              // });
+          }
+      }).addTo(map);
     });
-
-    // To add the marker to the map, call setMap();
-    marker.setMap(map);
   }
-
 }
