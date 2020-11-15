@@ -104,10 +104,11 @@ var demo = {
   },
 
   initMaps: function() {
-    
+    // geodesic center of paraná
+    // center: [-24.7574861, -51.7596274],
     var map = L.map('map', {
-      center: [-24.7574861, -51.7596274], 
-      zoom: 7
+      center: [-25.496, -49.286],
+      zoom: 10
     });
 
     var tile_layer = L.tileLayer(
@@ -122,59 +123,71 @@ var demo = {
       }
     ).addTo(map);
 
+    var red_objects_ids = [8, 20, 30];
+    var yellow_objects_ids = [10, 19, 21];
+
+    var stations = [
+      { lat: -25.38699, lng: -49.26674, name: 'Rio Belém - Estação São Lourenço', color: 'green', risk: 'Baixo' },
+      { lat: -25.39875, lng: -49.27065, name: 'Rio Belém - Estação Nelson de Souza', color: 'green', risk: 'Baixo' },
+      { lat: -25.40165, lng: -49.26997, name: 'Rio Belém - Estação OAB', color: 'green', risk: 'Baixo' },
+      { lat: -25.40636, lng: -49.27002, name: 'Rio Belém - Estação Celeste Santi', color: 'green', risk: 'Baixo' },
+      { lat: -25.41862, lng: -49.27064, name: 'Rio Belém - Estação Cândido de Abreu', color: 'green', risk: 'Baixo' },
+
+      { lat: -25.4853, lng: -49.17603, name: 'Rio Pequeno - Estação 1', color: 'yellow', risk: 'Médio' },
+      { lat: -25.49754, lng: -49.15766, name: 'Rio Pequeno - Estação 2', color: 'yellow', risk: 'Médio' },
+      { lat: -25.51982, lng: -49.14433, name: 'Rio Pequeno - Estação 3', color: 'yellow', risk: 'Médio' },
+      { lat: -25.54166, lng: -49.12717, name: 'Rio Pequeno - Estação 4', color: 'green', risk: 'Baixo' },
+
+      { lat: -25.43261, lng: -49.1708, name: 'Rio Palmital - Estação 1', color: 'red', risk: 'Alto' },
+      { lat: -25.39762, lng: -49.17424, name: 'Rio Palmital - Estação 2', color: 'red', risk: 'Alto' },
+      { lat: -25.36878, lng: -49.17189, name: 'Rio Palmital - Estação 3', color: 'red', risk: 'Alto' },
+      { lat: -25.34672, lng: -49.16877, name: 'Rio Palmital - Estação 4', color: 'yellow', risk: 'Médio' }
+    ];
+
     $.ajax({
       url: "./data/sub_bacias_altoiguacupoligono.json"
     }).done(function(data) {
       L.geoJSON(data, {
         style: {
           fillOpacity: 0.1,
-          color: '#417fc2',
-          weight: 3,
+          color: 'green',
+          weight: 1,
           opacity: 0.5
         },
         onEachFeature: function(feature, layer) {
-          // simulate adversarial conditions
-          if (feature.properties.OBJECTID == 19) {
-            layer.setStyle({
-              color: 'yellow',
-              fillColor: 'yellow'
-            });
-          }
 
-          if (feature.properties.OBJECTID == 20) {
+          console.log(red_objects_ids.indexOf(feature.properties.OBJECTID));
+
+          if (red_objects_ids.indexOf(feature.properties.OBJECTID) >= 0) {
             layer.setStyle({
               color: 'red',
               fillColor: 'red'
             });
           }
 
-          if (feature.properties.OBJECTID == 21) {
+          if (yellow_objects_ids.indexOf(feature.properties.OBJECTID) >= 0) {
             layer.setStyle({
               color: 'yellow',
               fillColor: 'yellow'
             });
           }
-
-          if (feature.properties.OBJECTID == 30) {
-            layer.setStyle({
-              color: 'red',
-              fillColor: 'red'
-            });
-          }
-          // --
         
           layer.on('mouseover', function() {
-              // bacia hidrogrfica
-              layer.bindPopup(feature.properties.SUBNOME.toLowerCase().capitalize());
               this.setStyle({
-                fillColor: '#0000ff'
+                weight: 3
               });
           });
+
           layer.on('mouseout', function() {
-              this.setStyle({
-                fillColor: '#417fc2'
-              });
+            this.setStyle({
+              weight: 1
+            });
           });
+
+          layer.bindTooltip('Bacia do ' + feature.properties.SUBNOME.toLowerCase().capitalize(), {
+            sticky: true
+          });
+          
           // layer.on('click', function () {
           //     // Let's say you've got a property called url in your geojsonfeature:
           //     window.location = feature.properties.url;
@@ -183,19 +196,53 @@ var demo = {
       }).addTo(map);
 
       // after xhr loaded
-      var circle_1 = L.circle(
-        [-25.413852, -49.270339],
-        {
-          color: '#00FF69',
-          radius: 20
-        }
-      ).addTo(map);
-  
-      circle_1.bindTooltip(
-        '<div>Nível: 50cm - Chuva: 10mm</div>',
-        { sticky: true }
-      );
+      for (station in stations) {
+        var circle = L.circle(
+          [stations[station].lat, stations[station].lng], {
+            color: '#000',
+            fillColor: stations[station].color,
+            weight: 1,
+            radius: 125,
+            fillOpacity: 1
+          }
+        ).addTo(map);
+    
+        circle.bindTooltip(
+          '<div><b>' + stations[station].name + '</b></div><div>Risco ' + stations[station].risk + '</div><div>Nível: 50cm<div><div>Chuva: 10mm</div>',
+          { sticky: true }
+        );
+      }
+
+      // $.ajax({
+      //   url: "./data/sub_bacias_altoiguacu_ponto.json"
+      // }).done(function(data) {
+      //   console.log(data);
+      //   L.geoJSON(data, {
+      //     pointToLayer: function (feature, latlng) {
+      //       var circle = L.circleMarker(latlng, geojsonMarkerOptions);
+
+      //       if (feature.properties.OBJECTID == 10) {
+      //         circle.setStyle({
+      //           color: '#000',
+      //           fillColor: '#000'
+      //         });
+      //       }
+
+      //       circle.bindTooltip('Bacia do ' + feature.properties.SUBNOME.toLowerCase().capitalize(),
+      //         { sticky: true }
+      //       );
+      //       return circle;
+      //     },
+      //     style: {
+      //       fillOpacity: 0.1,
+      //       color: '#417fc2',
+      //       weight: 3,
+      //       opacity: 0.5
+      //     }
+      //   }).addTo(map);
+      // });
 
     });
+
   }
 }

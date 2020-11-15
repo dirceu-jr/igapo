@@ -11,7 +11,7 @@
     "id": 1,
     "geometry": {
       "type": "Point",
-      "coordinates": [-49.269347810999932, -25.531926898999927]
+      "coordinates": [-25.531926898999927, -49.269347810999932]
     },
     "properties": {
       "OBJECTID": 1,
