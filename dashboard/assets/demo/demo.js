@@ -105,68 +105,97 @@ var demo = {
 
   initMaps: function() {
     
-    var map = L.map(
-      "map",
-      {
-          center: [-24.7574861, -51.7596274], 
-          zoom: 7
-      }
-    );
+    var map = L.map('map', {
+      center: [-24.7574861, -51.7596274], 
+      zoom: 7
+    });
 
     var tile_layer = L.tileLayer(
-      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-        {
-            attribution: "Dados por \u0026copy; \<a href=\"http://openstreetmap.org\"\> OpenStreetMap",
-            detectRetina: true,
-            maxNativeZoom: 18,
-            maxZoom: 21,
-            minZoom: 0,
-            subdomains: "abc"
-        }
-    ).addTo(map);
-
-    var circle_1 = L.circle(
-      [-25.413852, -49.270339],
+      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       {
-          color: "#00FF69",
-          radius: 20
+        attribution: 'Dados por \u0026copy; \<a href=\"http://openstreetmap.org\"\> OpenStreetMap',
+        detectRetina: true,
+        maxNativeZoom: 18,
+        maxZoom: 21,
+        minZoom: 0,
+        subdomains: 'abc'
       }
     ).addTo(map);
-
-    circle_1.bindTooltip(
-      "<div>Nível: 50cm - Chuva: 10mm</div>",
-      { sticky: true }
-    );
 
     $.ajax({
       url: "./data/sub_bacias_altoiguacupoligono.json"
     }).done(function(data) {
       L.geoJSON(data, {
-          style: {
-              fillOpacity: 0.1,
-              color: "#417fc2",
-              weight: 3,
-              opacity: 0.5
-          },
-          onEachFeature: function (feature, layer) {
-              layer.on('mouseover', function () {
-                  // bacia hidrogrfica
-                  layer.bindPopup(feature.properties.SUBNOME.toLowerCase().capitalize());
-                  this.setStyle({
-                      'fillColor': '#0000ff'
-                  });
-              });
-              layer.on('mouseout', function () {
-                  this.setStyle({
-                      'fillColor': '#417fc2'
-                  });
-              });
-              // layer.on('click', function () {
-              //     // Let's say you've got a property called url in your geojsonfeature:
-              //     window.location = feature.properties.url;
-              // });
+        style: {
+          fillOpacity: 0.1,
+          color: '#417fc2',
+          weight: 3,
+          opacity: 0.5
+        },
+        onEachFeature: function(feature, layer) {
+          // simulate adversarial conditions
+          if (feature.properties.OBJECTID == 19) {
+            layer.setStyle({
+              color: 'yellow',
+              fillColor: 'yellow'
+            });
           }
+
+          if (feature.properties.OBJECTID == 20) {
+            layer.setStyle({
+              color: 'red',
+              fillColor: 'red'
+            });
+          }
+
+          if (feature.properties.OBJECTID == 21) {
+            layer.setStyle({
+              color: 'yellow',
+              fillColor: 'yellow'
+            });
+          }
+
+          if (feature.properties.OBJECTID == 30) {
+            layer.setStyle({
+              color: 'red',
+              fillColor: 'red'
+            });
+          }
+          // --
+        
+          layer.on('mouseover', function() {
+              // bacia hidrogrfica
+              layer.bindPopup(feature.properties.SUBNOME.toLowerCase().capitalize());
+              this.setStyle({
+                fillColor: '#0000ff'
+              });
+          });
+          layer.on('mouseout', function() {
+              this.setStyle({
+                fillColor: '#417fc2'
+              });
+          });
+          // layer.on('click', function () {
+          //     // Let's say you've got a property called url in your geojsonfeature:
+          //     window.location = feature.properties.url;
+          // });
+        }
       }).addTo(map);
+
+      // after xhr loaded
+      var circle_1 = L.circle(
+        [-25.413852, -49.270339],
+        {
+          color: '#00FF69',
+          radius: 20
+        }
+      ).addTo(map);
+  
+      circle_1.bindTooltip(
+        '<div>Nível: 50cm - Chuva: 10mm</div>',
+        { sticky: true }
+      );
+
     });
   }
 }
