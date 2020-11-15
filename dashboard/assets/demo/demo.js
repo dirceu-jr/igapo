@@ -174,12 +174,14 @@ var demo = {
         
           layer.on('mouseover', function() {
               this.setStyle({
+                opacity: 0.8,
                 weight: 3
               });
           });
 
           layer.on('mouseout', function() {
             this.setStyle({
+              opacity: 0.5,
               weight: 1
             });
           });
