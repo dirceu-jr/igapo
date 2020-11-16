@@ -5,16 +5,20 @@ Download and install [GSM/GPRS & GPS Shield Library for modules using SIM900](ht
 
 Connect Arduino as in above image:
 
-<img src="https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/Wiring-SIM900-GSM-GPRS-Shield-with-Arduino-UNO.png" />
+<img src="https://dirceup.github.io/remote_hydrometeorological_monitoring_system/Wiring-SIM900-GSM-GPRS-Shield-with-Arduino-UNO.png" />
 
 Set Shield to Software Serial:
 
-<img src="https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/serial.png" />
+<img src="https://dirceup.github.io/remote_hydrometeorological_monitoring_system/serial.png" />
 
-==Actual code
+## Actual code
 
 [Testing SMS without library](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/testing_sms.ino)
 
-[Testing with library](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/GSM_GPRSLibrary_SMS.ino)
+[Testing with GSM library](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/GSM_GPRSLibrary_SMS.ino)
 
 [More options](https://github.com/Seeed-Studio/GPRS_SIM900)
+
+## Dashboard Prototype
+
+[Dashboard Prototype](https://dirceup.github.io/remote_hydrometeorological_monitoring_system/dashboard/)
