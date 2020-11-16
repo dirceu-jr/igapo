@@ -312,25 +312,30 @@ md = {
     if ($('#dailySalesChart').length != 0 || $('#completedTasksChart').length != 0 || $('#websiteViewsChart').length != 0) {
       /* ----------==========     Daily Sales Chart initialization    ==========---------- */
 
-      dataDailySalesChart = {
-        labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+      var dataDailySalesChart = {
+        labels: ['S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
         series: [
-          [12, 17, 7, 17, 23, 18, 38]
+          [1, 2, 1, 2, 2, 2, 4]
         ]
       };
 
-      optionsDailySalesChart = {
+      var optionsDailySalesChart = {
         lineSmooth: Chartist.Interpolation.cardinal({
           tension: 0
         }),
         low: 0,
-        high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
+        high: 5,
         chartPadding: {
           top: 0,
           right: 0,
           bottom: 0,
           left: 0
         },
+        plugins: [
+          Chartist.plugins.tooltip({
+              appendToBody: true
+          })
+        ]
       }
 
       var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
@@ -341,14 +346,14 @@ md = {
 
       /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
 
-      dataCompletedTasksChart = {
-        labels: ['12p', '3p', '6p', '9p', '12p', '3a', '6a', '9a'],
+      var dataCompletedTasksChart = {
+        labels: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
         series: [
           [230, 750, 450, 300, 280, 240, 200, 190]
         ]
       };
 
-      optionsCompletedTasksChart = {
+      var optionsCompletedTasksChart = {
         lineSmooth: Chartist.Interpolation.cardinal({
           tension: 0
         }),
@@ -359,7 +364,12 @@ md = {
           right: 0,
           bottom: 0,
           left: 0
-        }
+        },
+        plugins: [
+          Chartist.plugins.tooltip({
+              appendToBody: true
+          })
+        ]
       }
 
       var completedTasksChart = new Chartist.Line('#completedTasksChart', dataCompletedTasksChart, optionsCompletedTasksChart);
@@ -371,9 +381,9 @@ md = {
       /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
 
       var dataWebsiteViewsChart = {
-        labels: ['J', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'],
+        labels: ['Q', 'Q', 'S', 'S', 'D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
         series: [
-          [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]
+          [10, 0, 0, 5, 0, 20, 30, 0, 0, 40, 5, 40]
 
         ]
       };
@@ -382,13 +392,18 @@ md = {
           showGrid: false
         },
         low: 0,
-        high: 1000,
+        high: 60,
         chartPadding: {
           top: 0,
           right: 5,
           bottom: 0,
           left: 0
-        }
+        },
+        plugins: [
+          Chartist.plugins.tooltip({
+              appendToBody: true
+          })
+        ]
       };
       var responsiveOptions = [
         ['screen and (max-width: 640px)', {
