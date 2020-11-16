@@ -1,4 +1,3 @@
-# remote_hydrometeorological-_monitoring_system
 This repository compiles codes and libraries for automation in reading hydrometeorological data.
 
 Download and install [GSM/GPRS & GPS Shield Library for modules using SIM900](https://github.com/MarcoMartines/GSM-GPRS-GPS-Shield).
