@@ -2,7 +2,7 @@ This repository compiles codes and libraries for automation in reading hydromete
 
 Download and install [GSM/GPRS & GPS Shield Library for modules using SIM900](https://github.com/MarcoMartines/GSM-GPRS-GPS-Shield).
 
-Connect Arduino as in above image:
+Connect GSM Shield with Arduino as in bellow image:
 
 <img src="https://dirceup.github.io/remote_hydrometeorological_monitoring_system/Wiring-SIM900-GSM-GPRS-Shield-with-Arduino-UNO.png" />
 
