@@ -14,7 +14,7 @@ var demo = {
     var tile_layer = L.tileLayer(
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       {
-        attribution: 'Dados por \u0026copy; \<a href=\"http://openstreetmap.org\"\> OpenStreetMap',
+        attribution: 'Mapa por \u0026copy; \<a href=\"http://openstreetmap.org\"\> OpenStreetMap',
         detectRetina: true,
         maxNativeZoom: 18,
         maxZoom: 21,
@@ -135,7 +135,7 @@ var demo = {
     var tile_layer = L.tileLayer(
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       {
-        attribution: 'Dados por \u0026copy; \<a href=\"http://openstreetmap.org\"\> OpenStreetMap',
+        attribution: 'Mapa por \u0026copy; \<a href=\"http://openstreetmap.org\"\> OpenStreetMap',
         detectRetina: true,
         maxNativeZoom: 18,
         maxZoom: 21,
