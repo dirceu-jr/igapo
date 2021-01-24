@@ -69,7 +69,7 @@ const char gprsPass[] = "vivo";
 const char server[] = "things.ubidots.com";
 String id_variable_1 = "600c9c291d84721d35d83171";
 String resource = "/api/v1.6/variables/" + id_variable_1 + "/values";
-const char token[] = "BBFF-KGOwoOzmHto5vDktpBP1ch9luEByig";
+const char token[] = "BBFF-KGOwoOzmHto5vDktpBP1ch9luEByik";
 const int  port = 80;
 
 #include <TinyGsmClient.h>
