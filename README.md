@@ -13,12 +13,22 @@ Set Shield to Software Serial:
 - [Testing SMS without library](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/arduino/testing_sms.ino)
 - [Testing SMS with GSM/GRPS library](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/arduino/GSM_GPRSLibrary_SMS.ino)
 
-## Libraries Options
+## Libraries options
 
 - [TinyGSM](https://github.com/vshymanskyy/TinyGSM)
 - [GSM/GPRS & GPS Shield Library for modules using SIM900](https://github.com/MarcoMartines/GSM-GPRS-GPS-Shield)
 - [Seeed-Studio/GPRS_SIM900](https://github.com/Seeed-Studio/GPRS_SIM900)
 - [ArduinoHttpClient](https://github.com/arduino-libraries/ArduinoHttpClient)
+
+## Base hardware options
+
+- [Arduino Uno](http://arduino.cc/)
+- [ESP8266](https://en.wikipedia.org/wiki/ESP8266)/[ESP32](https://en.wikipedia.org/wiki/ESP32)
+- [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/)
+
+## SaaS options
+
+[Thingspeak](https://thingspeak.com/), [Ubidots](https://ubidots.com/), [Adafruit IO](https://io.adafruit.com/), [Thinger.io](https://thinger.io/), [Thingsboard](https://thingsboard.io/)...
 
 ## Dashboard Prototype
 
