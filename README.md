@@ -1,4 +1,4 @@
-This repository compiles codes and libraries for automation in reading hydrometeorological data.
+This repository compiles codes, libraries and content for automation in reading hydrometeorological data.
 
 Connect GSM Shield with Arduino as in bellow image:
 
@@ -13,7 +13,7 @@ Set Shield to Software Serial:
 - [Testing SMS without library](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/arduino/testing_sms.ino)
 - [Testing SMS with GSM/GRPS library](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/arduino/GSM_GPRSLibrary_SMS.ino)
 
-## Libraries options
+## Arduino libraries options
 
 - [TinyGSM](https://github.com/vshymanskyy/TinyGSM)
 - [GSM/GPRS & GPS Shield Library for modules using SIM900](https://github.com/MarcoMartines/GSM-GPRS-GPS-Shield)
