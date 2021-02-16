@@ -30,7 +30,7 @@
 
 // or Software Serial on Uno, Nano
 #include <SoftwareSerial.h>
-SoftwareSerial SerialAT(7, 8); // RX, TX
+SoftwareSerial SerialAT(22, 23); // RX, TX
 
 // Increase RX buffer to capture the entire response
 // Chips without internal buffering (A6/A7, ESP8266, M590)
@@ -61,19 +61,20 @@ SoftwareSerial SerialAT(7, 8); // RX, TX
 #define GSM_PIN ""
 
 // Your GPRS credentials, if any
-const char apn[]  = "zap.vivo.com.br";
+const char apn[]  = "smart.m2m.vivo.com.br";
 const char gprsUser[] = "vivo";
 const char gprsPass[] = "vivo";
 
 // Server details
+const char token[] = "BBFF-*";
+
 const char server[] = "things.ubidots.com";
 String id_variable_1 = "600c9c291d84721d35d83171";
-String resource = "/api/v1.6/variables/" + id_variable_1 + "/values";
-const char token[] = "BBFF-KGOwoOzmHto5vDktpBP1ch9luEByik";
+String resource = "/api/v1.6/variables/" + id_variable_1 + "/values?token=" + String(token);
 const int  port = 80;
 
 #include <TinyGsmClient.h>
-//#include <ArduinoHttpClient.h>
+#include <ArduinoHttpClient.h>
 
 #ifdef DUMP_AT_COMMANDS
   #include <StreamDebugger.h>
@@ -84,7 +85,15 @@ const int  port = 80;
 #endif
 
 TinyGsmClient client(modem);
-//HttpClient http(client, server, port);
+HttpClient http(client, server, port);
+
+double readLM35() {
+  const int lm35Pin = 34;
+  int raw_value = analogRead(lm35Pin);
+  double voltage = (raw_value/ 2048.0) * 3300; // 5000 to get millivots.
+  double tempC = voltage * 0.1;
+  return tempC;
+}
 
 void setup() {
   // Set console baud rate
@@ -145,54 +154,56 @@ void loop() {
     SerialMon.println("GPRS connected");
   }
 
-  SerialMon.print(F("Performing HTTP GET request... "));
+  SerialMon.print(F("Performing HTTP POST request... "));
   String contentType = "application/json";
-  int value = 1.0;
-  String postData = "{\"value\":"+ String(value) + "}";
+  int value = readLM35();
+  String postData = "{\"value\":" + String(value) + "}";
   
   // int err = http.get(resource);
-//  int err = http.post(resource, contentType, postData);
- 
-//  if (err != 0) {
-//    SerialMon.println(F("failed to connect"));
-//    delay(10000);
-//    return;
-//  }
+  int err = http.post(resource, contentType, postData);
 
-//  int status = http.responseStatusCode();
+//  http.sendHeader("X-Auth-Token", token);
+ 
+  if (err != 0) {
+    SerialMon.println(F("failed to connect"));
+    delay(10000);
+    return;
+  }
+
+  int status = http.responseStatusCode();
   SerialMon.print(F("Response status code: "));
-//  SerialMon.println(status);
-//  if (!status) {
-//    delay(10000);
-//    return;
-//  }
+  SerialMon.println(status);
+  if (!status) {
+    delay(10000);
+    return;
+  }
 
   SerialMon.println(F("Response Headers:"));
-//  while (http.headerAvailable()) {
-//    String headerName = http.readHeaderName();
-//    String headerValue = http.readHeaderValue();
-//    SerialMon.println("    " + headerName + " : " + headerValue);
-//  }
+  while (http.headerAvailable()) {
+    String headerName = http.readHeaderName();
+    String headerValue = http.readHeaderValue();
+    SerialMon.println("    " + headerName + " : " + headerValue);
+  }
 
-//  int length = http.contentLength();
-//  if (length >= 0) {
-//    SerialMon.print(F("Content length is: "));
-//    SerialMon.println(length);
-//  }
-//  if (http.isResponseChunked()) {
-//    SerialMon.println(F("The response is chunked"));
-//  }
+  int length = http.contentLength();
+  if (length >= 0) {
+    SerialMon.print(F("Content length is: "));
+    SerialMon.println(length);
+  }
+  if (http.isResponseChunked()) {
+    SerialMon.println(F("The response is chunked"));
+  }
 
-//  String body = http.responseBody();
-//  SerialMon.println(F("Response:"));
-//  SerialMon.println(body);
-//
-//  SerialMon.print(F("Body length is: "));
-//  SerialMon.println(body.length());
-//
-//  // Shutdown
-//
-//  http.stop();
+  String body = http.responseBody();
+  SerialMon.println(F("Response:"));
+  SerialMon.println(body);
+
+  SerialMon.print(F("Body length is: "));
+  SerialMon.println(body.length());
+
+  // Shutdown
+
+  http.stop();
   SerialMon.println(F("Server disconnected"));
 
   modem.gprsDisconnect();
