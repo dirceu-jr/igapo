@@ -3,6 +3,7 @@ This repository compiles codes, libraries and content for automation in reading 
 ## Actual code
 
 - [Testing HTTP POST To Ubidots with TinyGSM](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/arduino/tinygsm_to_ubidots.ino)
+- [How To](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/howto.md)
 
 ## Libraries used
 
@@ -16,8 +17,8 @@ This repository compiles codes, libraries and content for automation in reading 
 
 ## Pinout
 
-- [DOIT ESP32 DEVKIT V1](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/ESP32-DOIT-DEVKIT-V1-Board-Pinout-30-GPIOs-Copy.png)
-- [SIMCom GSM900](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/Wiring-SIM900-GSM-GPRS-Shield-with-Arduino-UNO.png)
+- [DOIT ESP32 DEVKIT V1](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/pinout/ESP32-DOIT-DEVKIT-V1-Board-Pinout-30-GPIOs-Copy.png)
+- [SIMCom GSM900](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/pinout/Wiring-SIM900-GSM-GPRS-Shield-with-Arduino-UNO.png)
 
 ## Others libraries/options
 
