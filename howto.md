@@ -3,7 +3,7 @@
 
 ### 2 - On the side of the GSM shield you have to use the ports indicated in the image below. On the Arduino or ESP side, you can use other ports. In my case I use ESP32 22 and 23:
 
-<img src='https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/pinout/Wiring-SIM900-GSM-GPRS-Shield-with-Arduino-UNO.png.png' />
+<img src='https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/pinout/Wiring-SIM900-GSM-GPRS-Shield-with-Arduino-UNO.png' />
 
 ### 3 - You have to install some libraries in the Arduino IDE.
 
