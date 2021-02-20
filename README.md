@@ -11,12 +11,12 @@ This repository compiles codes, libraries and content for automation in reading 
 
 ## Current hardware
 
-[DOIT ESP32 DEVKIT V1](https://en.wikipedia.org/wiki/ESP32)
+- [DOIT ESP32 DEVKIT V1](https://en.wikipedia.org/wiki/ESP32)
 
 ## Pinout
 
 - [DOIT ESP32 DEVKIT V1](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/ESP32-DOIT-DEVKIT-V1-Board-Pinout-30-GPIOs-Copy.png)
-- [SimCOM GSM900](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/Wiring-SIM900-GSM-GPRS-Shield-with-Arduino-UNO.png)
+- [SIMCom GSM900](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/Wiring-SIM900-GSM-GPRS-Shield-with-Arduino-UNO.png)
 
 ## Others libraries/options
 
@@ -30,8 +30,13 @@ This repository compiles codes, libraries and content for automation in reading 
 
 ## SaaS options
 
-[Thingspeak](https://thingspeak.com/), [Ubidots](https://ubidots.com/), [Adafruit IO](https://io.adafruit.com/), [Thinger.io](https://thinger.io/), [Thingsboard](https://thingsboard.io/)...
+- [Ubidots](https://ubidots.com/)
+- [Thingspeak](https://thingspeak.com/)
+- [Adafruit IO](https://io.adafruit.com/)
+- [Thinger.io](https://thinger.io/)
+- [Thingsboard](https://thingsboard.io/)
+- ...
 
 ## Dashboard Prototype
 
-[Dashboard Prototype](https://dirceup.github.io/remote_hydrometeorological_monitoring_system/dashboard/)
+- [Dashboard Prototype](https://dirceup.github.io/remote_hydrometeorological_monitoring_system/dashboard/)
