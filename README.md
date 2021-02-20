@@ -12,6 +12,7 @@ This repository compiles codes, libraries and content for automation in reading 
 ## Current hardware
 
 - [DOIT ESP32 DEVKIT V1](https://en.wikipedia.org/wiki/ESP32)
+- SIMCom GSM900 based Arduino Shield
 
 ## Pinout
 
