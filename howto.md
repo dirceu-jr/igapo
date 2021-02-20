@@ -19,3 +19,5 @@ https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/mas
 https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/arduino/tinygsm_to_ubidots.ino#L69
 
 ### 6 - That's it! In line 159 of the code I am trying to send the temperature value of the LM35. You can change to something fixed or try to use a sensor.
+
+https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/arduino/tinygsm_to_ubidots.ino#L159
