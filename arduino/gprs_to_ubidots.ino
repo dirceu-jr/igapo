@@ -58,10 +58,6 @@ SoftwareSerial SerialAT(SIM900RX, SIM900TX); // RX, TX
 #define TINY_GSM_DEBUG SerialMon
 // #define LOGGING  // <- Logging is for the HTTP library
 
-// Range to attempt to autobaud
-//#define GSM_AUTOBAUD_MIN 9600
-//#define GSM_AUTOBAUD_MAX 115200
-
 // Add a reception delay - may be needed for a fast processor at a slow baud rate
 // #define TINY_GSM_YIELD() { delay(2); }
 
