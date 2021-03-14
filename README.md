@@ -28,7 +28,8 @@ This repository compiles codes, libraries and content for automation in reading 
 
 - [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/)
 - [ESP8266](https://en.wikipedia.org/wiki/ESP8266)
-- [Arduino Uno](http://arduino.cc/) - Unable to handle TinyGSM + ArduinoHttpClient libraries in memory
+
+[Arduino Uno](http://arduino.cc/) was unable to handle TinyGSM + ArduinoHttpClient libraries in memory
 
 ## SaaS options
 
