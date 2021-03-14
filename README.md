@@ -20,10 +20,6 @@ This repository compiles codes, libraries and content for automation in reading 
 - [DOIT ESP32 DEVKIT V1](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/pinout/ESP32-DOIT-DEVKIT-V1-Board-Pinout-30-GPIOs-Copy.png)
 - [SIMCom GSM900](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/pinout/Wiring-SIM900-GSM-GPRS-Shield-with-Arduino-UNO.png)
 
-## Others libraries/options
-
-- [Seeed-Studio/GPRS_SIM900](https://github.com/Seeed-Studio/GPRS_SIM900)
-
 ## Other hardware options
 
 - [Raspberry Pi Pico](https://www.raspberrypi.org/products/raspberry-pi-pico/)
