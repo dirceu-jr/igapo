@@ -1,36 +1,47 @@
 /**************************************************************
- *
- * This sketch connects to a website and downloads a page.
- * It can be used to perform HTTP/RESTful API calls.
- *
- * For this example, you need to install ArduinoHttpClient library:
- *   https://github.com/arduino-libraries/ArduinoHttpClient
- *   or from http://librarymanager/all#ArduinoHttpClient
- *
- * TinyGSM Getting Started guide:
- *   https://tiny.cc/tinygsm-readme
- *
- * For more HTTP API examples, see ArduinoHttpClient library
- *
- * NOTE: This example may NOT work with the XBee because the
- * HttpClient library does not empty to serial buffer fast enough
- * and the buffer overflow causes the HttpClient library to stall.
- * Boards with faster processors may work, 8MHz boards will not.
+ Read Sonar, Humidity, Temperature, send to Ubidots API via GPRS
  **************************************************************/
 
-// Select modem:
 #define TINY_GSM_MODEM_SIM900
+
+#include <TinyGsmClient.h>
+#include <ArduinoHttpClient.h>
+
+#include <SoftwareSerial.h>
+
+// NewPing is for Sonar
+#include <NewPing.h>
+
+// DHT for Humidity and Temperature
+#include "DHT.h"
+
+// Real Time Clock (no SIM900 tem RTC?)
+//#include <RTClib.h>
+
+#define TRIGGER_PIN  18
+#define ECHO_PIN     19
+#define MAX_DISTANCE 200
+
+// DHT 22  (AM2302), AM2321
+#define DHTTYPE DHT22
+// Digital pin connected to the DHT sensor
+#define DHTPIN 21
+
+// Configure modem:
+#define SIM900RX 22
+#define SIM900TX 23
+
+// Initialize Sonar
+NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
+
+// Initialize DHT sensor
+DHT dht(DHTPIN, DHTTYPE);
+
+// Initialize Modem on Software Serial on Uno, Nano
+SoftwareSerial SerialAT(SIM900RX, SIM900TX); // RX, TX
 
 // Set serial for debug console (to the Serial Monitor, default speed 115200)
 #define SerialMon Serial
-
-// Set serial for AT commands (to the module)
-// Use Hardware Serial on Mega, Leonardo, Micro
-//#define SerialAT Serial1
-
-// or Software Serial on Uno, Nano
-#include <SoftwareSerial.h>
-SoftwareSerial SerialAT(22, 23); // RX, TX
 
 // Increase RX buffer to capture the entire response
 // Chips without internal buffering (A6/A7, ESP8266, M590)
@@ -48,8 +59,8 @@ SoftwareSerial SerialAT(22, 23); // RX, TX
 // #define LOGGING  // <- Logging is for the HTTP library
 
 // Range to attempt to autobaud
-#define GSM_AUTOBAUD_MIN 9600
-#define GSM_AUTOBAUD_MAX 115200
+//#define GSM_AUTOBAUD_MIN 9600
+//#define GSM_AUTOBAUD_MAX 115200
 
 // Add a reception delay - may be needed for a fast processor at a slow baud rate
 // #define TINY_GSM_YIELD() { delay(2); }
@@ -66,15 +77,11 @@ const char gprsUser[] = "vivo";
 const char gprsPass[] = "vivo";
 
 // Server details
-const char token[] = "BBFF-*";
-
 const char server[] = "things.ubidots.com";
-String id_variable_1 = "600c9c291d84721d35d83171";
-String resource = "/api/v1.6/variables/" + id_variable_1 + "/values?token=" + String(token);
-const int  port = 80;
+const int port = 80;
 
-#include <TinyGsmClient.h>
-#include <ArduinoHttpClient.h>
+// esp32-dpj token
+String token = "BBFF-N5GFm5topPFrHni6ZmV5MbFCjHd4HO";
 
 #ifdef DUMP_AT_COMMANDS
   #include <StreamDebugger.h>
@@ -87,18 +94,20 @@ const int  port = 80;
 TinyGsmClient client(modem);
 HttpClient http(client, server, port);
 
-double readLM35() {
-  const int lm35Pin = 34;
-  int raw_value = analogRead(lm35Pin);
-  double voltage = (raw_value/ 2048.0) * 3300; // 5000 to get millivots.
-  double tempC = voltage * 0.1;
-  return tempC;
+String resourceEndpoint(String variable) {
+  return "/api/v1.6/variables/" + variable + "/values?token=" + token;
 }
+
+String distance_resource = resourceEndpoint("604e887a1d84724ed8571234");
+String humidity_resource = resourceEndpoint("600c9c291d84721d35d83171");
+String temperature_resource = resourceEndpoint("600c85571d84726aeed92746");
 
 void setup() {
   // Set console baud rate
   SerialMon.begin(9600);
   delay(10);
+
+  dht.begin();
 
   // !!!!!!!!!!!
   // Set your reset, enable, power pins here
@@ -154,15 +163,43 @@ void loop() {
     SerialMon.println("GPRS connected");
   }
 
+  // send distance
+  sendToUbidots(distance_resource, "distance", sonar.ping_cm());
+
+  // send humitity
+  sendToUbidots(humidity_resource, "humidity", dht.readHumidity());
+
+  // send temperature
+  sendToUbidots(temperature_resource, "temperature", dht.readTemperature());
+
+  modem.gprsDisconnect();
+  SerialMon.println(F("GPRS disconnected"));
+
+  // Do nothing forevermore
+  //  while (true) {
+  //    delay(1000);
+  //  }
+  delay(60000);
+}
+
+// Use ArduinoHttpClient to send HTTP POST to Ubidots API
+void sendToUbidots(String resource, String type, float value) {
+
+  if (isnan(value)) {
+    SerialMon.println(F("Failed to read from: "));
+    SerialMon.println(type);
+    return;
+  }
+  
   SerialMon.print(F("Performing HTTP POST request... "));
+  
   String contentType = "application/json";
-  int value = readLM35();
   String postData = "{\"value\":" + String(value) + "}";
   
   // int err = http.get(resource);
   int err = http.post(resource, contentType, postData);
 
-//  http.sendHeader("X-Auth-Token", token);
+  //  http.sendHeader("X-Auth-Token", token);
  
   if (err != 0) {
     SerialMon.println(F("failed to connect"));
@@ -202,15 +239,6 @@ void loop() {
   SerialMon.println(body.length());
 
   // Shutdown
-
   http.stop();
   SerialMon.println(F("Server disconnected"));
-
-  modem.gprsDisconnect();
-  SerialMon.println(F("GPRS disconnected"));
-
-  // Do nothing forevermore
-  while (true) {
-    delay(1000);
-  }
 }
