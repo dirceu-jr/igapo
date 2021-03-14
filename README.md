@@ -2,7 +2,7 @@ This repository compiles codes, libraries and content for automation in reading 
 
 ## Actual code
 
-- [Testing HTTP POST To Ubidotsv via GPRS with TinyGSM](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/arduino/gprs_to_ubidots.ino)
+- [HTTP POST To Ubidots via GPRS with TinyGSM](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/arduino/gprs_to_ubidots.ino)
 - [How To](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/howto.md)
 
 ## Libraries used
