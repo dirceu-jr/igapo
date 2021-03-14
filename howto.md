@@ -1,3 +1,5 @@
+### 0 - https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/
+
 ### 1 - Set SimCOM GSM900 Shield to "Software Serial" (through jumpers):
 <img src='https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/pinout/serial.png' />
 
