@@ -1,6 +1,6 @@
 This repository compiles codes, libraries and content for automation in reading hydrometeorological data.
 
-## Actual code
+## Embedded software
 
 - [HTTP POST To Ubidots via GPRS with TinyGSM](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/arduino/gprs_to_ubidots.ino)
 - [How To](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/howto.md)
@@ -27,10 +27,10 @@ This repository compiles codes, libraries and content for automation in reading 
 
 [Arduino Uno](http://arduino.cc/) was unable to handle TinyGSM + ArduinoHttpClient libraries in memory
 
-## SaaS options
+## Software options
 
-- [Ubidots](https://ubidots.com/) (free for Educational or Personal purposes, cloud functions not included in free plan);
-- [Thingspeak](https://thingspeak.com/)
+- [Ubidots](https://ubidots.com/) (SaaS, free for Educational or Personal purposes, cloud functions not included in free plan);
+- [Thingspeak](https://thingspeak.com/) (SaaS and on-premise)
 - [Adafruit IO](https://io.adafruit.com/)
 - [Thinger.io](https://thinger.io/)
 - [Thingsboard](https://thingsboard.io/)
