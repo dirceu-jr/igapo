@@ -29,11 +29,11 @@ This repository compiles codes, libraries and content for automation in reading 
 
 ## Software options
 
-- [Ubidots](https://ubidots.com/) (SaaS, free for Educational or Personal purposes, cloud functions not included in free plan);
-- [Thingspeak](https://thingspeak.com/) (SaaS and on-premise)
-- [Adafruit IO](https://io.adafruit.com/)
-- [Thinger.io](https://thinger.io/)
-- [Thingsboard](https://thingsboard.io/)
+- [Ubidots](https://ubidots.com/) (Cloud only, free for Educational or Personal purposes, cloud functions not included in free plan);
+- [Thingspeak](https://thingspeak.com/) (Cloud and on-premise)
+- [Adafruit IO](https://io.adafruit.com/) (Cloud only)
+- [Thinger.io](https://thinger.io/) (Cloud and on-premise)
+- [Thingsboard](https://thingsboard.io/) (Cloud and on-premise)
 - ...
 
 ## Dashboard Prototype
