@@ -29,7 +29,7 @@ This repository compiles codes, libraries and content for automation in reading 
 
 ## SaaS options
 
-- [Ubidots](https://ubidots.com/)
+- [Ubidots](https://ubidots.com/) (free for Educational or Personal purposes, cloud functions not included in free plan);
 - [Thingspeak](https://thingspeak.com/)
 - [Adafruit IO](https://io.adafruit.com/)
 - [Thinger.io](https://thinger.io/)
