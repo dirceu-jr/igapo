@@ -30,7 +30,7 @@ This repository compiles codes, libraries and content for automation in reading 
 ## Software options
 
 - [Ubidots](https://ubidots.com/) (Cloud only, free for Educational or Personal purposes, cloud functions not included in free plan);
-- [Thingspeak](https://thingspeak.com/) (Cloud and on-premise)
+- [Thingspeak](https://thingspeak.com/) (Cloud)
 - [Adafruit IO](https://io.adafruit.com/) (Cloud only)
 - [Thinger.io](https://thinger.io/) (Cloud and on-premise)
 - [Thingsboard](https://thingsboard.io/) (Cloud and on-premise)
