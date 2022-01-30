@@ -13,7 +13,7 @@ WiFiClient client;                                              //declare that t
 
 //----------------Fill in your Wi-Fi / ThingSpeak Credentials-------
 const String ssid = "DIRCEU 2.4GHz";                                 //The name of the Wi-Fi network you are connecting to
-const String pass = "3015DIRKA";                             //Your WiFi network password
+const String pass = "";                             //Your WiFi network password
 const long myChannelNumber = 1643222;                            //Your Thingspeak channel number
 const char * myWriteAPIKey = "3CDKCUG0Q8H18VG1";                 //Your ThingSpeak Write API Key
 //------------------------------------------------------------------
