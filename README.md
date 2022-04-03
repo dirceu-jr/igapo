@@ -3,8 +3,11 @@ This repository compiles codes, libraries and content for automation in reading 
 ## Current Hardware
 
 - [Atlas Scientific Wi-Fi Pool Kit](https://atlas-scientific.com/kits/wi-fi-pool-kit/) (Legacy, with ESP8266)
+
 <a href="https://atlas-scientific.com/kits/wi-fi-pool-kit/"><img width="260" src="https://github.com/dirceu-jr/ambient-water-quality/blob/master/readme_files/wi-fi-pk01.jpeg"></a>
+
 - [LILYGO® TTGO T-BAT Battery Holder](https://pt.aliexpress.com/item/4001156737871.html)
+
 <a href="https://pt.aliexpress.com/item/4001156737871.html"><img width="260" src="https://github.com/dirceu-jr/ambient-water-quality/blob/master/readme_files/lilygo-ttgo-t-bat.webp"></a>
 
 ## Software
