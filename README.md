@@ -3,7 +3,9 @@ This repository compiles codes, libraries and content for automation in reading 
 ## Current Hardware
 
 - [Atlas Scientific Wi-Fi Pool Kit](https://atlas-scientific.com/kits/wi-fi-pool-kit/) (Legacy, with ESP8266)
+- <img width="300" src="https://github.com/dirceu-jr/ambient-water-quality/blob/master/readme_files/wi-fi-pk01.jpeg">
 - [LILYGO® TTGO T-BAT Battery Holder](https://pt.aliexpress.com/item/4001156737871.html)
+- <img width="300" src="https://github.com/dirceu-jr/ambient-water-quality/blob/master/readme_files/lilygo-ttgo-t-bat.webp">
 
 ## Software
 
@@ -11,14 +13,14 @@ This repository compiles codes, libraries and content for automation in reading 
 
 ## Dashboard Prototype
 
-- [Dashboard Prototype](https://dirceu-jr.github.io/remote_hydrometeorological_monitoring_system/dashboard/)
+- [Dashboard Prototype](https://dirceu-jr.github.io/ambient-water-quality/dashboard/)
 
 ## Other Options
 
 ### Embedded Software
 
-- [HTTP POST To Ubidots via GPRS with TinyGSM](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/arduino/gprs_to_ubidots.ino)
-- [How To](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/howto.md)
+- [HTTP POST To Ubidots via GPRS with TinyGSM](https://github.com/dirceu-jr/ambient-water-quality/blob/master/arduino/gprs_to_ubidots.ino)
+- [How To](https://github.com/dirceu-jr/ambient-water-quality/blob/master/howto.md)
 
 ### Other Hardware Options
 
@@ -33,8 +35,8 @@ This repository compiles codes, libraries and content for automation in reading 
 
 ### Pinout
 
-- [DOIT ESP32 DEVKIT V1](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/pinout/ESP32-DOIT-DEVKIT-V1-Board-Pinout-30-GPIOs-Copy.png)
-- [SIMCom GSM900](https://github.com/dirceup/remote_hydrometeorological_monitoring_system/blob/master/pinout/Wiring-SIM900-GSM-GPRS-Shield-with-Arduino-UNO.png)
+- [DOIT ESP32 DEVKIT V1](https://github.com/dirceu-jr/ambient-water-quality/blob/master/pinout/ESP32-DOIT-DEVKIT-V1-Board-Pinout-30-GPIOs-Copy.png)
+- [SIMCom GSM900](https://github.com/dirceu-jr/ambient-water-quality/blob/master/pinout/Wiring-SIM900-GSM-GPRS-Shield-with-Arduino-UNO.png)
 
 [Arduino Uno](http://arduino.cc/) was unable to handle TinyGSM + ArduinoHttpClient libraries in memory
 
