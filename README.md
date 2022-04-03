@@ -7,7 +7,7 @@ This repository compiles codes, libraries and content for automation in reading 
 
 ## Software
 
-- [Thingspeak](https://thingspeak.com/) (Cloud and on-premise)
+- [Thingspeak](https://thingspeak.com/channels/1643222/) (Cloud and on-premise)
 
 ## Dashboard Prototype
 
