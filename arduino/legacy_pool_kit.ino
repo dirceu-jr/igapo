@@ -3,26 +3,24 @@
 #include <iot_cmd.h>
 #include <ESP8266WiFi.h>                                         //include esp8266 wifi library 
 #include "ThingSpeak.h"                                          //include thingspeak library
-#include <sequencer4.h>                                          //imports a 4 function sequencer 
-#include <sequencer1.h>                                          //imports a 1 function sequencer 
 #include <Ezo_i2c_util.h>                                        //brings in common print statements
-#include <Ezo_i2c.h> //include the EZO I2C library from https://github.com/Atlas-Scientific/Ezo_I2c_lib
-#include <Wire.h>    //include arduinos i2c library
+#include <Ezo_i2c.h>                                             //include the EZO I2C library from https://github.com/Atlas-Scientific/Ezo_I2c_lib
+#include <Wire.h>                                                //include arduinos i2c library
 
-WiFiClient client;                                              //declare that this device connects to a Wi-Fi network,create a connection to a specified internet IP address
+WiFiClient client;                                               //declare that this device connects to a Wi-Fi network, create a connection to a specified internet IP address
 
 //----------------Fill in your Wi-Fi / ThingSpeak Credentials-------
-const String ssid = "DIRCEU 2.4GHz";                                 //The name of the Wi-Fi network you are connecting to
-const String pass = "";                             //Your WiFi network password
+const String ssid = "DIRCEU 2.4GHz";                             //The name of the Wi-Fi network you are connecting to
+const String pass = "3015DIRKA";                                 //Your WiFi network password
 const long myChannelNumber = 1643222;                            //Your Thingspeak channel number
-const char * myWriteAPIKey = "3CDKCUG0Q8H18VG1";                 //Your ThingSpeak Write API Key
+const char * myWriteAPIKey = "3CDKCUG0Q8H18VG1";                 //Your ThingSpeak Write API Key"
 //------------------------------------------------------------------
 
 Ezo_board PH = Ezo_board(99, "PH");           //create a PH circuit object, who's address is 99 and name is "PH"
 Ezo_board ORP = Ezo_board(98, "ORP");         //create an ORP circuit object who's address is 98 and name is "ORP"
 Ezo_board RTD = Ezo_board(102, "RTD");        //create an RTD circuit object who's address is 102 and name is "RTD"
 
-Ezo_board device_list[] = {   //an array of boards used for sending commands to all or specific boards
+Ezo_board device_list[] = { //an array of boards used for sending commands to all or specific boards
   PH,
   ORP,
   RTD
@@ -37,36 +35,51 @@ const uint8_t device_list_len = sizeof(device_list) / sizeof(device_list[0]);
 const int EN_PH = 14;
 const int EN_ORP = 12;
 const int EN_RTD = 15;
-const int EN_AUX = 13;
+// const int EN_AUX = 13;
 
 const unsigned long reading_delay = 1000;                 //how long we wait to receive a response, in milliseconds
-const unsigned long thingspeak_delay = 15000;             //how long we wait to send values to thingspeak, in milliseconds
-
-unsigned int poll_delay = 10000 - (reading_delay * 2) - 300; //how long to wait between polls after accounting for the times it takes to send readings
 
 float k_val = 0;                                          //holds the k value for determining what to print in the help menu
 
-bool polling  = true;                                     //variable to determine whether or not were polling the circuits
+bool polling = true;                                      //variable to determine whether or not were polling the circuits
 bool send_to_thingspeak = true;                           //variable to determine whether or not were sending data to thingspeak
 
-bool wifi_isconnected() {                           //function to check if wifi is connected
+const long SLEEPTIME = 30e6; //30 sec - may be used in deep sleep
+
+//----------
+
+bool wifi_isconnected() {                                 //function to check if wifi is connected
   return (WiFi.status() == WL_CONNECTED);
 }
 
+void disconnect_wifi() {
+  WiFi.disconnect(true);
+  WiFi.mode(WIFI_OFF);
+  WiFi.forceSleepBegin();
+  delay(1);
+}
+
 void reconnect_wifi() {                                   //function to reconnect wifi if its not connected
-  if (!wifi_isconnected()) {
-    WiFi.begin(ssid, pass);
-    Serial.println("connecting to wifi");
-    
-    // Wait the connection    
-    delay(10000);
+  WiFi.forceSleepWake();
+  delay(1);
+
+  WiFi.mode(WIFI_STA);                                    //set ESP8266 mode as a station to be connected to wifi network
+
+  WiFi.begin(ssid, pass);
+  Serial.println("connecting to wifi");
+
+  const int max_tries = 30;
+  int attempts = 0;
+
+  while (!wifi_isconnected() && attempts < max_tries) {   //wait till connect - max 30 secs
+    attempts++;
+    delay(1000);
   }
 }
 
 void thingspeak_send() {
-
   reconnect_wifi();
-  
+
   if (send_to_thingspeak == true) {                                                    //if we're datalogging
     if (wifi_isconnected()) {
       int return_code = ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
@@ -78,42 +91,52 @@ void thingspeak_send() {
     }
   }
 
-  WiFi.disconnect();
-  
+  disconnect_wifi();
 }
 
-void step1();      //forward declarations of functions to use them in the sequencer before defining them
-void step2();
-void step3();
-void step4();
-Sequencer4 Seq(&step1, reading_delay,   //calls the steps in sequence with time in between them
-               &step2, 300,
-               &step3, reading_delay,
-               &step4, poll_delay);
+//Power consumption
+//0.19A with circuits enabled (LOW, LOW, HIGH)
+//0.07A with circuits disabled (HIGH, HIGH, LOW)
 
-// Sequencer1 Wifi_Seq(&reconnect_wifi, 10000);  //calls the wifi reconnect function every 10 seconds
-
-Sequencer1 Thingspeak_seq(&thingspeak_send, thingspeak_delay); //sends data to thingspeak with the time determined by thingspeak delay
-
-void setup() {
-
-  pinMode(EN_PH, OUTPUT);                                                         //set enable pins as outputs
-  pinMode(EN_ORP, OUTPUT);
-  pinMode(EN_RTD, OUTPUT);
-  pinMode(EN_AUX, OUTPUT);
+//enable sensors circuits only at reading time
+void enable_circuits() {
   digitalWrite(EN_PH, LOW);                                                       //set enable pins to enable the circuits
   digitalWrite(EN_ORP, LOW);
   digitalWrite(EN_RTD, HIGH);
-  digitalWrite(EN_AUX, LOW);
+
+  Serial.println("circuits ON");
+
+  //Wait 2 secs, till circuits power on
+  delay(2000);
+}
+
+void disable_circuits() {
+  digitalWrite(EN_PH, HIGH);                                                       //set enable pins to disabled the circuits
+  digitalWrite(EN_ORP, HIGH);
+  digitalWrite(EN_RTD, LOW);
+
+  Serial.println("circuits OFF");
+}
+
+void setup() {
+  WiFi.persistent(false);                 //does not store in flash memory
+   
+  WiFi.mode(WIFI_OFF);                    //start with WIFI off;
+  WiFi.forceSleepBegin();
+  
+  delay(1);
+  
+  pinMode(EN_PH, OUTPUT);                                                         //set enable pins as outputs
+  pinMode(EN_ORP, OUTPUT);
+  pinMode(EN_RTD, OUTPUT);
+
+  //Start disabled
+  disable_circuits();
 
   Wire.begin();                           //start the I2C
   Serial.begin(9600);                     //start the serial communication to the computer
 
-  WiFi.mode(WIFI_STA);                    //set ESP8266 mode as a station to be connected to wifi network
   ThingSpeak.begin(client);               //enable ThingSpeak connection
-  
-  Seq.reset();
-  Thingspeak_seq.reset();
 }
 
 void loop() {
@@ -126,22 +149,50 @@ void loop() {
       process_command(cmd, device_list, device_list_len, default_board);    //then if its not kit specific, pass the cmd to the IOT command processing function
     }
   }
+  
+  if (polling) {                 //if polling is turned on, run the sequencer
+    enable_circuits();
 
-  if (polling == true) {                 //if polling is turned on, run the sequencer
-    Seq.run();
-    Thingspeak_seq.run();
+    //!? Will it work with delay()!?
+    //looks that YES!
+
+    send_read_cmd_to_RTD();
+    delay(reading_delay);
+
+    receive_RTD_and_send_temperature_to_PH();
+    delay(300);
+
+    send_read_cms_to_PH_and_ORP();
+    delay(reading_delay);
+
+    receive_PH_and_ORP();
+    
+    disable_circuits();
+
+    if (send_to_thingspeak) {
+      thingspeak_send();
+    }
   }
 
-  // delay 
+  //Wait 5 minutes (300 secs)
+  delay(5 * 60 * 1000);
+
+  // wait 30 secs
+  // delay(30000);
+
+  //TODO:
+  //-may enter in energy conservation mode;
+  //-may need to modify ESP8266 circuit to wake up;
+  // ESP.deepSleep(SLEEPTIME, WAKE_RF_DISABLED);
 }
 
-void step1() {
+void send_read_cmd_to_RTD() {
   //send a read command. we use this command instead of RTD.send_cmd("R");
   //to let the library know to parse the reading
   RTD.send_read_cmd();
 }
 
-void step2() {
+void receive_RTD_and_send_temperature_to_PH() {
   receive_and_print_reading(RTD);             //get the reading from the RTD circuit
 
   if ((RTD.get_error() == Ezo_board::SUCCESS) && (RTD.get_last_received_reading() > -1000.0)) { //if the temperature reading has been received and it is valid
@@ -155,56 +206,32 @@ void step2() {
   Serial.print(" ");
 }
 
-void step3() {
+void send_read_cms_to_PH_and_ORP() {
   //send a read command. we use this command instead of PH.send_cmd("R");
   //to let the library know to parse the reading
   PH.send_read_cmd();
   ORP.send_read_cmd();
 }
 
-void step4() {
+void receive_PH_and_ORP() {
   receive_and_print_reading(PH);             //get the reading from the PH circuit
   if (PH.get_error() == Ezo_board::SUCCESS) {                                          //if the PH reading was successful (back in step 1)
     ThingSpeak.setField(1, String(PH.get_last_received_reading(), 2));                 //assign PH readings to the first column of thingspeak channel
   }
+  
   Serial.print(" ");
+  
   receive_and_print_reading(ORP);             //get the reading from the ORP circuit
   if (ORP.get_error() == Ezo_board::SUCCESS) {                                          //if the ORP reading was successful (back in step 1)
     ThingSpeak.setField(2, String(ORP.get_last_received_reading(), 0));                 //assign ORP readings to the second column of thingspeak channel
   }
+  
   Serial.println();
-}
-
-void start_datalogging() {
-  polling = true;                                                 //set poll to true to start the polling loop
-  send_to_thingspeak = true;
-  Thingspeak_seq.reset();
 }
 
 bool process_coms(const String &string_buffer) {      //function to process commands that manipulate global variables and are specifc to certain kits
   if (string_buffer == "HELP") {
     print_help();
-    return true;
-  }
-  else if (string_buffer.startsWith("DATALOG")) {
-    start_datalogging();
-    return true;
-  }
-  else if (string_buffer.startsWith("POLL")) {
-    polling = true;
-    Seq.reset();
-
-    int16_t index = string_buffer.indexOf(',');                    //check if were passing a polling delay parameter
-    if (index != -1) {                                              //if there is a polling delay
-      float new_delay = string_buffer.substring(index + 1).toFloat(); //turn it into a float
-
-      float mintime = reading_delay * 2 + 300;
-      if (new_delay >= (mintime / 1000.0)) {                                     //make sure its greater than our minimum time
-        Seq.set_step4_time((new_delay * 1000.0) - mintime);          //convert to milliseconds and remove the reading delay from our wait
-      } else {
-        Serial.println("delay too short");                          //print an error if the polling time isnt valid
-      }
-    }
     return true;
   }
   return false;                         //return false if the command is not in the list, so we can scan the other list or pass it to the circuit
@@ -213,9 +240,6 @@ bool process_coms(const String &string_buffer) {      //function to process comm
 void print_help() {
   Serial.println(F("Atlas Scientific I2C pool kit                                              "));
   Serial.println(F("Commands:                                                                  "));
-  Serial.println(F("datalog      Takes readings of all sensors every 15 sec send to thingspeak "));
-  Serial.println(F("             Entering any commands stops datalog mode.                     "));
-  Serial.println(F("poll         Takes readings continuously of all sensors                    "));
   Serial.println(F("                                                                           "));
   Serial.println(F("ph:cal,mid,7     calibrate to pH 7                                         "));
   Serial.println(F("ph:cal,low,4     calibrate to pH 4                                         "));
