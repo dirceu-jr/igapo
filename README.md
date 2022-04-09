@@ -14,7 +14,7 @@
 - [Dashboard Prototype](https://dirceu-jr.github.io/ambient-water-quality/dashboard/)
 - [Thingspeak Channel](https://thingspeak.com/channels/1643222/)
 
-## Data
+## Real-time Data
 
 <iframe width="450" height="260" src="https://thingspeak.com/channels/1643222/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=pH&type=line"></iframe>
 
