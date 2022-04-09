@@ -13,3 +13,7 @@
 - [Firmware](https://github.com/dirceu-jr/ambient-water-quality/blob/master/firmware/legacy_pool_kit.ino)
 - [Dashboard Prototype](https://dirceu-jr.github.io/ambient-water-quality/dashboard/)
 - [Thingspeak Channel](https://thingspeak.com/channels/1643222/)
+
+## Data
+
+<iframe src="https://thingspeak.com/channels/1643222/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=pH&type=line"></iframe>
