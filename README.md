@@ -1,5 +1,3 @@
-This repository compiles codes, libraries and content for ambient water quality monitoring.
-
 ## Current Hardware
 
 - [Atlas Scientific Wi-Fi Pool Kit](https://atlas-scientific.com/kits/wi-fi-pool-kit/) (Legacy, with ESP8266)
