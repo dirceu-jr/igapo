@@ -2,7 +2,7 @@ String.prototype.capitalize = function() {
   return this.replace(/(^\w|\s\w)/g, m => m.toUpperCase());
 }
 
-var demo = {
+var prototype = {
   initMap: function() {
     // geodesic center of paraná
     // center: [-24.7574861, -51.7596274],
