@@ -3,7 +3,7 @@ String.prototype.capitalize = function() {
 }
 
 var prototype = {
-  initMap: function() {
+  initMapWater: function() {
     // geodesic center of paraná
     // center: [-24.7574861, -51.7596274],
     var map = L.map('map', {
