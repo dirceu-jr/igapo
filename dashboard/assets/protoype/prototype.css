@@ -66,6 +66,20 @@
   text-align: center;
 }
 
+.subtitle i {
+  font-size: 1.2em;
+  color: #00bcd4;
+}
+
+#map1, #map2, #map3 {
+  height: 200px;
+  /* border-radius: 3px; */
+}
+
+.custom-padding {
+  padding: 4px !important;
+}
+
 /* .sidebar {
 
 } */

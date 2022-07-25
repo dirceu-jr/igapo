@@ -3,15 +3,8 @@ String.prototype.capitalize = function() {
 }
 
 var prototype = {
-  initMapWater: function() {
-    // geodesic center of paraná
-    // center: [-24.7574861, -51.7596274],
-    var map = L.map('map', {
-      center: [-25.496, -49.286],
-      zoom: 10
-    });
-
-    var tile_layer = L.tileLayer(
+  defaultTileLayer: function() {
+    return L.tileLayer(
       'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       {
         attribution: 'Mapa por \u0026copy; \<a href=\"http://openstreetmap.org\"\> OpenStreetMap',
@@ -21,7 +14,20 @@ var prototype = {
         minZoom: 0,
         subdomains: 'abc'
       }
-    ).addTo(map);
+    )
+  },
+  initMapWater: function() {
+    // geodesic center of paraná
+    // center: [-24.7574861, -51.7596274],
+    var map = L.map('map', {
+      center: [-25.496, -49.286],
+      zoom: 10,
+      attributionControl: false
+    });
+
+    var tile_layer = this.defaultTileLayer().addTo(map);
+
+    L.control.attribution({ prefix: '<a href="https://leafletjs.com/">Leaflet</a>' }).addTo(map);
 
     var red_objects_ids = [8, 20, 30];
     var yellow_objects_ids = [10, 19, 21];
@@ -129,20 +135,13 @@ var prototype = {
     // center: [-24.7574861, -51.7596274],
     var map = L.map('map', {
       center: [-25.496, -49.286],
-      zoom: 10
+      zoom: 10,
+      attributionControl: false
     });
 
-    var tile_layer = L.tileLayer(
-      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      {
-        attribution: 'Mapa por \u0026copy; \<a href=\"http://openstreetmap.org\"\> OpenStreetMap',
-        detectRetina: true,
-        maxNativeZoom: 18,
-        maxZoom: 21,
-        minZoom: 0,
-        subdomains: 'abc'
-      }
-    ).addTo(map);
+    var tile_layer = this.defaultTileLayer().addTo(map);
+
+    L.control.attribution({ prefix: '<a href="https://leafletjs.com/">Leaflet</a>' }).addTo(map);
 
     var stations = [
       { lat: -25.38699, lng: -49.26674, name: 'Rio Belém - Estação São Lourenço', color: 'yellow', risk: 'Baixo', co2: 0.5 },
@@ -161,7 +160,6 @@ var prototype = {
       { lat: -25.36878, lng: -49.17189, name: 'Rio Palmital - Estação 3', color: 'red', risk: 'Alto', co2: 0.3 },
       { lat: -25.34672, lng: -49.16877, name: 'Rio Palmital - Estação 4', color: 'yellow', risk: 'Médio', co2: 0.1 }
     ];
-
 
     // after xhr loaded
     for (station in stations) {
@@ -185,5 +183,40 @@ var prototype = {
       );
     }
 
+  },
+
+  initMapsLevel: function() {
+    // Centro Cívico
+    var map1_lat_lgn = [-25.414077, -49.270353];
+    var map1 = L.map('map1', {
+      center: map1_lat_lgn,
+      zoom: 17,
+      attributionControl: false
+    });
+
+    var tile_layer1 = this.defaultTileLayer().addTo(map1);
+    var marker1 = L.marker(map1_lat_lgn).addTo(map1);
+
+    // Itupava
+    var map2_lat_lgn = [-25.422449, -49.251960];
+    var map2 = L.map('map2', {
+      center: map2_lat_lgn,
+      zoom: 17,
+      attributionControl: false
+    });
+
+    var tile_layer2 = this.defaultTileLayer().addTo(map2);
+    var marker2 = L.marker(map2_lat_lgn).addTo(map2);
+
+    // PUCPR
+    var map3_lat_lgn = [-25.450110, -49.249865];
+    var map3 = L.map('map3', {
+      center: map3_lat_lgn,
+      zoom: 17,
+      attributionControl: false
+    });
+
+    var tile_layer3 = this.defaultTileLayer().addTo(map3);
+    var marker3 = L.marker(map3_lat_lgn).addTo(map3);
   }
 }

@@ -24,9 +24,8 @@ The above copyright notice and this permission notice shall be included in all c
   <!-- CSS Files -->
   <link href="./assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <link href="./assets/protoype/prototype.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
 
-  <link href="./assets/css/chartist.min.css" rel="stylesheet" />
-  <link href="./assets/css/chartist-plugin-tooltip.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -34,7 +33,7 @@ The above copyright notice and this permission notice shall be included in all c
     <div class="sidebar" data-color="azure" data-background-color="white" data-image="./assets/img/sidebar-1.png">
       <div class="logo">
         <div class="simple-text logo-normal">NAILA</div>
-        <div class="subtitle">Protótipo</div>
+        <div class="subtitle">Protótipo <a target="_blank" href="https://www.nailaiot.com/"> <i class="material-icons">info</i></a></div>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
@@ -70,7 +69,7 @@ The above copyright notice and this permission notice shall be included in all c
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Dashboard</a>
+            <a class="navbar-brand" href="javascript:;">Mapas Nível</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Alternar navegação">
             <span class="sr-only">Alternar navegação</span>
@@ -104,212 +103,57 @@ The above copyright notice and this permission notice shall be included in all c
       <div class="content">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-warning card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">water_damage</i>
-                  </div>
-                  <p class="card-category">Risco em Curitiba</p>
-                  <h3 class="card-title">Médio</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons text-danger">warning</i>
-                    <i class="material-icons">date_range</i> 24 Horas
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-danger card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">info_outline</i>
-                  </div>
-                  <p class="card-category">Previsão</p>
-                  <h3 class="card-title">Chuva</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">update</i> Próxima Hora
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-danger card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">info_outline</i>
-                  </div>
-                  <p class="card-category">Estações com Risco</p>
-                  <h3 class="card-title">7/13</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">update</i> Agora
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-success card-header-icon">
-                  <div class="card-icon">
-                    <i class="material-icons">sensor_window</i>
-                  </div>
-                  <p class="card-category">Qualidade do Ar</p>
-                  <h3 class="card-title">Bom</h3>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">date_range</i> 2 Horas
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
             <div class="col-md-4">
               <div class="card card-chart">
-                <div class="card-header card-header-warning">
-                  <div class="ct-chart" id="dailySalesChart"></div>
+                <div class="card-header card-header-success custom-padding">
+                  <div id="map1"></div>
                 </div>
                 <div class="card-body">
-                  <h4 class="card-title">Risco em Curitiba</h4>
+                  <h4 class="card-title">Centro Cívico</h4>
                   <p class="card-category">
-                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 50% </span> de aumento hoje.</p>
+                    <span class="text-success">Normal (0cm)</span>
+                  </p>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">access_time</i> atualizado 10 minutos atrás
+                    <i class="material-icons">access_time</i> atualizado há 10 minutos
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-md-4">
               <div class="card card-chart">
-                <div class="card-header card-header-success">
-                  <div class="ct-chart" id="websiteViewsChart"></div>
+                <div class="card-header card-header-warning custom-padding">
+                  <div id="map2"></div>
                 </div>
                 <div class="card-body">
-                  <h4 class="card-title">Precipitação</h4>
-                  <p class="card-category">Últimos Dias</p>
+                  <h4 class="card-title">Itupava</h4>
+                  <p class="card-category">
+                    <span class="text-warning">Alerta (10cm)</span>
+                  </p>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">access_time</i> atualizado 1 dia atrás
+                    <i class="material-icons">access_time</i> atualizado há 5 minutos
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-md-4">
               <div class="card card-chart">
-                <div class="card-header card-header-danger">
-                  <div class="ct-chart" id="completedTasksChart"></div>
+                <div class="card-header card-header-danger custom-padding">
+                  <div id="map3"></div>
                 </div>
                 <div class="card-body">
-                  <h4 class="card-title">CO2e ppm</h4>
-                  <p class="card-category">Últimos Dias</p>
+                  <h4 class="card-title">PUCPR</h4>
+                  <p class="card-category">
+                    <span class="text-danger">Emergência (30cm)</span>
+                  </p>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
-                    <i class="material-icons">access_time</i> atualizado há 1 hora
+                    <i class="material-icons">access_time</i> atualizado há 5 minutos
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12 col-md-12">
-              <div class="card">
-                <div class="card-header card-header-success">
-                  <h4 class="card-title">Estações</h4>
-                  <p class="card-category">Download: <a href='#'>1 dia</a> - <a href='#'>1 semana</a> - <a href='#'>1 mês</a></p>
-                </div>
-                <div class="card-body table-responsive">
-                  <table class="table table-hover">
-                    <thead>
-                      <th>Nome</th>
-                      <th>Nível</th>
-                      <th>Precipitação</th>
-                      <th>Risco</th>
-                      <th>CO2e</th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Rio Belém - Estação São Lourenço</td>
-                        <td>1.2m</td>
-                        <td>20mm</td>
-                        <td class='text-success'>Baixo</td>
-                        <td>10 ppm</td>
-                      </tr>
-                      <tr>
-                        <td>Rio Belém - Estação Nelson de Souza</td>
-                        <td>1m</td>
-                        <td>10mm</td>
-                        <td class='text-success'>Baixo</td>
-                        <td>12 ppm</td>
-                      </tr>
-                      <tr>
-                        <td>Rio Belém - Estação OAB</td>
-                        <td>1.1m</td>
-                        <td>5mm</td>
-                        <td class='text-success'>Baixo</td>
-                        <td>16 ppm</td>
-                      </tr>
-                      <tr>
-                        <td>Rio Belém - Estação Celeste Santi</td>
-                        <td>1.3m</td>
-                        <td>5mm</td>
-                        <td class='text-success'>Baixo</td>
-                        <td>11 ppm</td>
-                      </tr>
-                      <tr>
-                        <td>Rio Belém - Estação Cândido de Abreu</td>
-                        <td>1.1m</td>
-                        <td>5mm</td>
-                        <td class='text-success'>Baixo</td>
-                        <td>17 ppm</td>
-                      </tr>
-                      <tr>
-                        <td>Rio Pequeno - Estação 1</td>
-                        <td>50cm</td>
-                        <td>5mm</td>
-                        <td class='text-success'>Baixo</td>
-                        <td>9 ppm</td>
-                      </tr>
-                      <tr>
-                        <td>Rio Pequeno - Estação 2</td>
-                        <td>50cm</td>
-                        <td>5mm</td>
-                        <td class='text-success'>Baixo</td>
-                        <td>6 ppm</td>
-                      </tr>
-                      <tr>
-                        <td>Rio Pequeno - Estação 3</td>
-                        <td>55cm</td>
-                        <td>10mm</td>
-                        <td class='text-warning'>Médio</td>
-                        <td>16 ppm</td>
-                      </tr>
-                      <tr>
-                        <td>Rio Pequeno - Estação 4</td>
-                        <td>55cm</td>
-                        <td>10mm</td>
-                        <td class='text-warning'>Médio</td>
-                        <td>19 ppm</td>
-                      </tr>
-                      <tr>
-                        <td>Rio Palmital - Estação 1</td>
-                        <td>2m</td>
-                        <td>40mm</td>
-                        <td class='text-danger'>Alto</td>
-                        <td>15 ppm</td>
-                      </tr>
-                    </tbody>
-                  </table>
                 </div>
               </div>
             </div>
@@ -320,18 +164,15 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="container-fluid">
           <nav class="float-left">
             <ul>
-              <!-- <li>
-                <a href="#">
-                  Sobre
+              <li>
+                <a href="https://www.nailaiot.com/" target="_blank">
+                  Sobre a NAILA
                 </a>
-              </li> -->
+              </li>
             </ul>
           </nav>
           <div class="copyright float-right">
-            &copy;
-            <script>
-              document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons text-danger">favorite</i> in Curitiba.
+            &copy; 2022
           </div>
         </div>
       </footer>
@@ -347,18 +188,20 @@ The above copyright notice and this permission notice shall be included in all c
   <!-- Plugin for the momentJs  -->
   <script src="./assets/js/plugins/moment.min.js"></script>
   <!-- Library for adding dinamically elements -->
-  <!-- <script src="./assets/js/plugins/arrive.min.js"></script> -->
+  <script src="./assets/js/plugins/arrive.min.js"></script>
   <!-- Chartist JS -->
   <script src="./assets/js/plugins/chartist.min.js"></script>
   <script src="./assets/js/plugins/chartist-plugin-tooltip.min.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="./assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
-  <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-  <script src="./assets/demo/demo.js?x=50"></script>
+  <!-- leaflet -->
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+  <!-- prototype -->
+  <script src="./assets/protoype/prototype.js"></script>
   
   <script>
     $(document).ready(function() {
-      md.initDashboardPageCharts();
+      prototype.initMapsLevel();
     });
   </script>
 </body>
