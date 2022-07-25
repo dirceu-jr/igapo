@@ -10,23 +10,21 @@ Coded by Creative Tim
 =========================================================
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
   <meta charset="utf-8" />
   <link rel="icon" type="image/png" href="./assets/img/favicon.png">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>
-    NAILA
-  </title>
-  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>NAILA - Protótipo</title>
+  <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="./assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
   
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="./assets/demo/demo.css" rel="stylesheet" />
@@ -35,27 +33,33 @@ The above copyright notice and this permission notice shall be included in all c
 <body class="">
   <div class="wrapper ">
     <div class="sidebar" data-color="azure" data-background-color="white" data-image="./assets/img/sidebar-1.png">
-      <div class="logo"><a href="#" class="simple-text logo-normal">
-        NAILA
-        </a></div>
+      <div class="logo">
+        <a href="#" class="simple-text logo-normal">NAILA</a>
+      </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="./index.html">
               <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
+              <p>Painel</p>
             </a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="./map.html">
+          <li class="nav-item">
+            <a class="nav-link" href="./mapa_bacias.html">
               <i class="material-icons">location_ons</i>
               <p>Mapa Bacias</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./map_air.html">
+          <li class="nav-item active">
+            <a class="nav-link" href="./mapa_ar.html">
               <i class="material-icons">location_ons</i>
               <p>Mapa Qualidade do Ar</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./mapas_nivel.html">
+              <i class="material-icons">location_ons</i>
+              <p>Mapas Nível</p>
             </a>
           </li>
         </ul>
@@ -66,10 +70,10 @@ The above copyright notice and this permission notice shall be included in all c
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Mapa Bacias</a>
+            <a class="navbar-brand" href="javascript:;">Mapa Qualidade do Ar</a>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Alternar navegação">
+            <span class="sr-only">Alternar navegação</span>
             <span class="navbar-toggler-icon icon-bar"></span>
             <span class="navbar-toggler-icon icon-bar"></span>
             <span class="navbar-toggler-icon icon-bar"></span>
@@ -77,7 +81,7 @@ The above copyright notice and this permission notice shall be included in all c
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">notifications</i>
                   <span class="notification">5</span>
                   <p class="d-lg-none d-md-block">
@@ -102,7 +106,7 @@ The above copyright notice and this permission notice shall be included in all c
   </div>
   
   <!--   Core JS Files   -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- <script src="./assets/js/core/jquery.min.js"></script> -->
   <script src="./assets/js/core/popper.min.js"></script>
   <script src="./assets/js/core/bootstrap-material-design.min.js"></script>
@@ -121,14 +125,14 @@ The above copyright notice and this permission notice shall be included in all c
   </script>
 
   <!-- <script src="https://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script> -->
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
 
   <script src="./assets/demo/demo.js?c=2020111402"></script>
   
   <script>
     $(document).ready(function() {
       // Javascript method's body can be found in assets/js/demos.js
-      demo.initMap();
+      demo.initMapAir();
     });
   </script>
 </body>
