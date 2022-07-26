@@ -133,7 +133,7 @@ var prototype = {
   initMapAir: function() {
 
     var stations = [
-      { code: 'PR02', name: '', available_data: [] }
+      { code: 'PR02', name: '', available_data: [] },
     ];
 
     var data_to_units = {
@@ -228,5 +228,16 @@ var prototype = {
 
     var tile_layer3 = this.defaultTileLayer().addTo(map3);
     var marker3 = L.marker(map3_lat_lgn).addTo(map3);
+
+    // Parque Náutico
+    var map4_lat_lgn = [-25.5250071,-49.2238426];
+    var map4 = L.map('map4', {
+      center: map4_lat_lgn,
+      zoom: 17,
+      attributionControl: false
+    });
+
+    var tile_layer4 = this.defaultTileLayer().addTo(map4);
+    var marker4 = L.marker(map4_lat_lgn).addTo(map4);
   }
 }
