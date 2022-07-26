@@ -131,11 +131,21 @@ var prototype = {
   },
 
   initMapAir: function() {
+
+    var stations = [
+      { code: 'PR02', name: '', available_data: [] }
+    ];
+
+    var data_to_units = {
+      'PTS': 'µg/m3',
+
+    };
+
     // geodesic center of paraná
     // center: [-24.7574861, -51.7596274],
     var map = L.map('map', {
-      center: [-25.496, -49.286],
-      zoom: 10,
+      center: [-24.7574861, -51.7596274],
+      zoom: 7,
       attributionControl: false
     });
 
