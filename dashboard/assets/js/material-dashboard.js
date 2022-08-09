@@ -16,7 +16,7 @@
  */
 
 (function() {
-  isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
+  var isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 
   if (isWindows) {
     // if we are on windows OS we activate the perfectScrollbar function
@@ -37,27 +37,34 @@ var transparent = true;
 var transparentDemo = true;
 var fixedTop = false;
 
-var mobile_menu_visible = 0,
+var
+  mobile_menu_visible = 0,
   mobile_menu_initialized = false,
   toggle_initialized = false,
-  bootstrap_nav_initialized = false;
+  bootstrap_nav_initialized = false
+;
 
-var seq = 0,
+var
+  seq = 0,
   delays = 80,
-  durations = 500;
-var seq2 = 0,
+  durations = 500
+;
+
+var
+  seq2 = 0,
   delays2 = 80,
-  durations2 = 500;
+  durations2 = 500
+;
 
 $(document).ready(function() {
 
   $('body').bootstrapMaterialDesign();
 
-  $sidebar = $('.sidebar');
+  var $sidebar = $('.sidebar');
 
   md.initSidebarsCheck();
 
-  window_width = $(window).width();
+  var window_width = $(window).width();
 
   // check if there is an image set for the sidebar's background
   md.checkSidebarImage();
@@ -86,7 +93,7 @@ $(document).ready(function() {
 });
 
 $(document).on('click', '.navbar-toggler', function() {
-  $toggle = $(this);
+  var $toggle = $(this);
 
   if (mobile_menu_visible == 1) {
     $('html').removeClass('nav-open');
@@ -106,7 +113,6 @@ $(document).on('click', '.navbar-toggler', function() {
 
     if ($('body').find('.main-panel').length != 0) {
       $layer.appendTo(".main-panel");
-
     } else if (($('body').hasClass('off-canvas-sidebar'))) {
       $layer.appendTo(".wrapper-full-page");
     }
@@ -147,7 +153,7 @@ $(window).resize(function() {
   }, 500);
 });
 
-md = {
+var md = {
   misc: {
     navbar_menu_visible: 0,
     active_collapse: true,
@@ -155,138 +161,13 @@ md = {
   },
 
   checkSidebarImage: function() {
-    $sidebar = $('.sidebar');
+    var $sidebar = $('.sidebar');
     image_src = $sidebar.data('image');
 
     if (image_src !== undefined) {
       sidebar_container = '<div class="sidebar-background" style="background-image: url(' + image_src + ') "/>';
       $sidebar.append(sidebar_container);
     }
-  },
-
-  showNotification: function(from, align) {
-    type = ['', 'info', 'danger', 'success', 'warning', 'rose', 'primary'];
-
-    color = Math.floor((Math.random() * 6) + 1);
-
-    $.notify({
-      icon: "add_alert",
-      message: "Welcome to <b>Material Dashboard Pro</b> - a beautiful admin panel for every web developer."
-
-    }, {
-      type: type[color],
-      timer: 3000,
-      placement: {
-        from: from,
-        align: align
-      }
-    });
-  },
-
-  initDocumentationCharts: function() {
-    if ($('#dailySalesChart').length != 0 && $('#websiteViewsChart').length != 0) {
-      /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
-
-      dataDailySalesChart = {
-        labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-        series: [
-          [12, 17, 7, 17, 23, 18, 38]
-        ]
-      };
-
-      optionsDailySalesChart = {
-        lineSmooth: Chartist.Interpolation.cardinal({
-          tension: 0
-        }),
-        low: 0,
-        high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-        chartPadding: {
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: 0
-        },
-      }
-
-      var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
-
-      var animationHeaderChart = new Chartist.Line('#websiteViewsChart', dataDailySalesChart, optionsDailySalesChart);
-    }
-  },
-
-
-  initFormExtendedDatetimepickers: function() {
-    $('.datetimepicker').datetimepicker({
-      icons: {
-        time: "fa fa-clock-o",
-        date: "fa fa-calendar",
-        up: "fa fa-chevron-up",
-        down: "fa fa-chevron-down",
-        previous: 'fa fa-chevron-left',
-        next: 'fa fa-chevron-right',
-        today: 'fa fa-screenshot',
-        clear: 'fa fa-trash',
-        close: 'fa fa-remove'
-      }
-    });
-
-    $('.datepicker').datetimepicker({
-      format: 'MM/DD/YYYY',
-      icons: {
-        time: "fa fa-clock-o",
-        date: "fa fa-calendar",
-        up: "fa fa-chevron-up",
-        down: "fa fa-chevron-down",
-        previous: 'fa fa-chevron-left',
-        next: 'fa fa-chevron-right',
-        today: 'fa fa-screenshot',
-        clear: 'fa fa-trash',
-        close: 'fa fa-remove'
-      }
-    });
-
-    $('.timepicker').datetimepicker({
-      //          format: 'H:mm',    // use this format if you want the 24hours timepicker
-      format: 'h:mm A', //use this format if you want the 12hours timpiecker with AM/PM toggle
-      icons: {
-        time: "fa fa-clock-o",
-        date: "fa fa-calendar",
-        up: "fa fa-chevron-up",
-        down: "fa fa-chevron-down",
-        previous: 'fa fa-chevron-left',
-        next: 'fa fa-chevron-right',
-        today: 'fa fa-screenshot',
-        clear: 'fa fa-trash',
-        close: 'fa fa-remove'
-
-      }
-    });
-  },
-
-
-  initSliders: function() {
-    // Sliders for demo purpose
-    var slider = document.getElementById('sliderRegular');
-
-    noUiSlider.create(slider, {
-      start: 40,
-      connect: [true, false],
-      range: {
-        min: 0,
-        max: 100
-      }
-    });
-
-    var slider2 = document.getElementById('sliderDouble');
-
-    noUiSlider.create(slider2, {
-      start: [20, 60],
-      connect: true,
-      range: {
-        min: 0,
-        max: 100
-      }
-    });
   },
 
   initSidebarsCheck: function() {
@@ -310,27 +191,19 @@ md = {
   initDashboardPageCharts: function() {
 
     if ($('#dailySalesChart').length != 0 || $('#completedTasksChart').length != 0 || $('#websiteViewsChart').length != 0) {
-      /* ----------==========     Daily Sales Chart initialization    ==========---------- */
 
+      // Risco em Curitiba -------------
       var dataDailySalesChart = {
-        labels: ['S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
+        labels: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
         series: [
           [1, 2, 1, 2, 2, 2, 4]
         ]
       };
 
       var optionsDailySalesChart = {
-        lineSmooth: Chartist.Interpolation.cardinal({
-          tension: 0
-        }),
         low: 0,
         high: 5,
-        chartPadding: {
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: 0
-        },
+        chartPadding: -14,
         plugins: [
           Chartist.plugins.tooltip({
               appendToBody: true
@@ -338,73 +211,39 @@ md = {
         ]
       }
 
-      var dailySalesChart = new Chartist.Line('#dailySalesChart', dataDailySalesChart, optionsDailySalesChart);
+      var dailySalesChart = new Chartist.Line(
+        '#dailySalesChart',
+        dataDailySalesChart,
+        optionsDailySalesChart
+      );
 
       md.startAnimationForLineChart(dailySalesChart);
 
-
-
-      /* ----------==========     Completed Tasks Chart initialization    ==========---------- */
-
-      var dataCompletedTasksChart = {
-        labels: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
+      // Precipitação -------------
+      var dataWebsiteViewsChart = {
+        labels: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
         series: [
-          [230, 750, 450, 300, 280, 240, 200, 190]
-        ]
-      };
-
-      var optionsCompletedTasksChart = {
-        lineSmooth: Chartist.Interpolation.cardinal({
-          tension: 0
-        }),
-        low: 0,
-        high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-        chartPadding: {
-          top: 0,
-          right: 0,
-          bottom: 0,
-          left: 0
-        },
-        plugins: [
-          Chartist.plugins.tooltip({
-              appendToBody: true
-          })
+          [7, 0, 4, 28, 0, 5, 21]
         ]
       }
 
-      var completedTasksChart = new Chartist.Line('#completedTasksChart', dataCompletedTasksChart, optionsCompletedTasksChart);
-
-      // start animation for the Completed Tasks Chart - Line Chart
-      md.startAnimationForLineChart(completedTasksChart);
-
-
-      /* ----------==========     Emails Subscription Chart initialization    ==========---------- */
-
-      var dataWebsiteViewsChart = {
-        labels: ['Q', 'Q', 'S', 'S', 'D', 'S', 'T', 'Q', 'Q', 'S', 'S', 'D'],
-        series: [
-          [10, 0, 0, 5, 0, 20, 30, 0, 0, 40, 5, 40]
-
-        ]
-      };
       var optionsWebsiteViewsChart = {
         axisX: {
           showGrid: false
         },
         low: 0,
         high: 60,
-        chartPadding: {
-          top: 0,
-          right: 5,
-          bottom: 0,
-          left: 0
-        },
+        chartPadding: -14,
         plugins: [
           Chartist.plugins.tooltip({
-              appendToBody: true
+              appendToBody: true,
+              transformTooltipTextFnc: function(value) {
+                return value + ' mm';
+              }
           })
         ]
-      };
+      }
+
       var responsiveOptions = [
         ['screen and (max-width: 640px)', {
           seriesBarDistance: 5,
@@ -414,37 +253,49 @@ md = {
             }
           }
         }]
-      ];
-      var websiteViewsChart = Chartist.Bar('#websiteViewsChart', dataWebsiteViewsChart, optionsWebsiteViewsChart, responsiveOptions);
+      ]
+
+      var websiteViewsChart = Chartist.Bar(
+        '#websiteViewsChart',
+        dataWebsiteViewsChart,
+        optionsWebsiteViewsChart,
+        responsiveOptions
+      );
 
       //start animation for the Emails Subscription Chart
       md.startAnimationForBarChart(websiteViewsChart);
-    }
-  },
 
-  initMinimizeSidebar: function() {
+      // CO -------------
+      var dataCompletedTasksChart = {
+        labels: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
+        series: [
+          [9.15, 9.11, 6.02, 5.74, 5.65, 4.74, 4.72]
+        ]
+      };
 
-    $('#minimizeSidebar').click(function() {
-      var $btn = $(this);
-
-      if (md.misc.sidebar_mini_active == true) {
-        $('body').removeClass('sidebar-mini');
-        md.misc.sidebar_mini_active = false;
-      } else {
-        $('body').addClass('sidebar-mini');
-        md.misc.sidebar_mini_active = true;
+      var optionsCompletedTasksChart = {
+        low: 0,
+        high: 11,
+        chartPadding: -14,
+        plugins: [
+          Chartist.plugins.tooltip({
+              appendToBody: true,
+              transformTooltipTextFnc: function(value) {
+                return value + ' ppm';
+              }
+          })
+        ]
       }
 
-      // we simulate the window Resize so the charts will get updated in realtime.
-      var simulateWindowResize = setInterval(function() {
-        window.dispatchEvent(new Event('resize'));
-      }, 180);
+      var completedTasksChart = new Chartist.Line(
+        '#completedTasksChart',
+        dataCompletedTasksChart,
+        optionsCompletedTasksChart
+      );
 
-      // we stop the simulation of Window Resize after the animations are completed
-      setTimeout(function() {
-        clearInterval(simulateWindowResize);
-      }, 1000);
-    });
+      // start animation for the Completed Tasks Chart - Line Chart
+      md.startAnimationForLineChart(completedTasksChart);
+    }
   },
 
   checkScrollForTransparentNavbar: debounce(function() {
@@ -533,6 +384,7 @@ md = {
 
     seq = 0;
   },
+
   startAnimationForBarChart: function(chart) {
 
     chart.on('draw', function(data) {
@@ -551,181 +403,6 @@ md = {
     });
 
     seq2 = 0;
-  },
-
-
-  initFullCalendar: function() {
-    $calendar = $('#fullCalendar');
-
-    today = new Date();
-    y = today.getFullYear();
-    m = today.getMonth();
-    d = today.getDate();
-
-    $calendar.fullCalendar({
-      viewRender: function(view, element) {
-        // We make sure that we activate the perfect scrollbar when the view isn't on Month
-        if (view.name != 'month') {
-          $(element).find('.fc-scroller').perfectScrollbar();
-        }
-      },
-      header: {
-        left: 'title',
-        center: 'month,agendaWeek,agendaDay',
-        right: 'prev,next,today'
-      },
-      defaultDate: today,
-      selectable: true,
-      selectHelper: true,
-      views: {
-        month: { // name of view
-          titleFormat: 'MMMM YYYY'
-          // other view-specific options here
-        },
-        week: {
-          titleFormat: " MMMM D YYYY"
-        },
-        day: {
-          titleFormat: 'D MMM, YYYY'
-        }
-      },
-
-      select: function(start, end) {
-
-        // on select we show the Sweet Alert modal with an input
-        swal({
-            title: 'Create an Event',
-            html: '<div class="form-group">' +
-              '<input class="form-control" placeholder="Event Title" id="input-field">' +
-              '</div>',
-            showCancelButton: true,
-            confirmButtonClass: 'btn btn-success',
-            cancelButtonClass: 'btn btn-danger',
-            buttonsStyling: false
-          }).then(function(result) {
-
-            var eventData;
-            event_title = $('#input-field').val();
-
-            if (event_title) {
-              eventData = {
-                title: event_title,
-                start: start,
-                end: end
-              };
-              $calendar.fullCalendar('renderEvent', eventData, true); // stick? = true
-            }
-
-            $calendar.fullCalendar('unselect');
-
-          })
-          .catch(swal.noop);
-      },
-      editable: true,
-      eventLimit: true, // allow "more" link when too many events
-
-
-      // color classes: [ event-blue | event-azure | event-green | event-orange | event-red ]
-      events: [{
-          title: 'All Day Event',
-          start: new Date(y, m, 1),
-          className: 'event-default'
-        },
-        {
-          id: 999,
-          title: 'Repeating Event',
-          start: new Date(y, m, d - 4, 6, 0),
-          allDay: false,
-          className: 'event-rose'
-        },
-        {
-          id: 999,
-          title: 'Repeating Event',
-          start: new Date(y, m, d + 3, 6, 0),
-          allDay: false,
-          className: 'event-rose'
-        },
-        {
-          title: 'Meeting',
-          start: new Date(y, m, d - 1, 10, 30),
-          allDay: false,
-          className: 'event-green'
-        },
-        {
-          title: 'Lunch',
-          start: new Date(y, m, d + 7, 12, 0),
-          end: new Date(y, m, d + 7, 14, 0),
-          allDay: false,
-          className: 'event-red'
-        },
-        {
-          title: 'Md-pro Launch',
-          start: new Date(y, m, d - 2, 12, 0),
-          allDay: true,
-          className: 'event-azure'
-        },
-        {
-          title: 'Birthday Party',
-          start: new Date(y, m, d + 1, 19, 0),
-          end: new Date(y, m, d + 1, 22, 30),
-          allDay: false,
-          className: 'event-azure'
-        },
-        {
-          title: 'Click for Creative Tim',
-          start: new Date(y, m, 21),
-          end: new Date(y, m, 22),
-          url: 'http://www.creative-tim.com/',
-          className: 'event-orange'
-        },
-        {
-          title: 'Click for Google',
-          start: new Date(y, m, 21),
-          end: new Date(y, m, 22),
-          url: 'http://www.creative-tim.com/',
-          className: 'event-orange'
-        }
-      ]
-    });
-  },
-
-  initVectorMap: function() {
-    var mapData = {
-      "AU": 760,
-      "BR": 550,
-      "CA": 120,
-      "DE": 1300,
-      "FR": 540,
-      "GB": 690,
-      "GE": 200,
-      "IN": 200,
-      "RO": 600,
-      "RU": 300,
-      "US": 2920,
-    };
-
-    $('#worldMap').vectorMap({
-      map: 'world_mill_en',
-      backgroundColor: "transparent",
-      zoomOnScroll: false,
-      regionStyle: {
-        initial: {
-          fill: '#e4e4e4',
-          "fill-opacity": 0.9,
-          stroke: 'none',
-          "stroke-width": 0,
-          "stroke-opacity": 0
-        }
-      },
-
-      series: {
-        regions: [{
-          values: mapData,
-          scale: ["#AAAAAA", "#444444"],
-          normalizeFunction: 'polynomial'
-        }]
-      },
-    });
   }
 }
 

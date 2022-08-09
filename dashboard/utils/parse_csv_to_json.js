@@ -13,12 +13,14 @@ fs.createReadStream("../data/2020PR.csv")
     }
 
     var to_add = [row[0], row[1], row[5]];
-    
+
     by_codigo_and_poluente[id].push(to_add);
   }).on("end", function () {
 
     for (index in by_codigo_and_poluente) {
 
+      // TODO:
+      // save ordered
       const filename = "../data/" + index + ".json";
       let data = JSON.stringify(by_codigo_and_poluente[index]);
       fs.writeFileSync(filename, data);

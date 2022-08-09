@@ -83,3 +83,37 @@
 /* .sidebar {
 
 } */
+
+.popup_chart {
+  width: 320px;
+  height: 160px;
+}
+
+.sponsorship .card {
+  padding: 5px;
+  /* text-align: center; */
+}
+
+.sponsorship .card img {
+  margin: 0 auto;
+}
+
+.sidebar .nav i.red-color {
+  color: #ec6860;
+}
+
+.sidebar .nav i.blue1-color {
+  color: #55cde5;
+}
+
+.sidebar .nav i.green-color {
+  color: #3aa757;
+}
+
+.sidebar .nav i.blue2-color {
+  color: #699ff3;
+}
+
+.sidebar .nav i.yellow-color {
+  color: #fabb2d;
+}

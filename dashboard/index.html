@@ -42,26 +42,32 @@ The above copyright notice and this permission notice shall be included in all c
         <ul class="nav">
           <li class="nav-item active">
             <a class="nav-link" href="./index.html">
-              <i class="material-icons">dashboard</i>
+              <i class="material-icons red-color">dashboard</i>
               <p>Painel</p>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./mapa_ar.html">
-              <i class="material-icons">location_ons</i>
+              <i class="material-icons blue1-color">location_ons</i>
               <p>Mapa Qualidade do Ar</p>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./mapa_bacias.html">
-              <i class="material-icons">location_ons</i>
+              <i class="material-icons green-color">location_ons</i>
               <p>Mapa Bacias</p>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./mapas_nivel.html">
-              <i class="material-icons">location_ons</i>
+              <i class="material-icons blue2-color">location_ons</i>
               <p>Mapas Nível</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./patrocinio.html">
+              <i class="material-icons yellow-color">auto_awesome</i>
+              <p>Patrocínio ESG</p>
             </a>
           </li>
         </ul>
@@ -145,7 +151,7 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="card-icon">
                     <i class="material-icons">info_outline</i>
                   </div>
-                  <p class="card-category">Estações com Risco</p>
+                  <p class="card-category">Regiões com Risco</p>
                   <h3 class="card-title">7/13</h3>
                 </div>
                 <div class="card-footer">
@@ -175,7 +181,7 @@ The above copyright notice and this permission notice shall be included in all c
           <div class="row">
             <div class="col-md-4">
               <div class="card card-chart">
-                <div class="card-header card-header-warning">
+                <div class="card-header card-header-info">
                   <div class="ct-chart" id="dailySalesChart"></div>
                 </div>
                 <div class="card-body">
@@ -192,12 +198,12 @@ The above copyright notice and this permission notice shall be included in all c
             </div>
             <div class="col-md-4">
               <div class="card card-chart">
-                <div class="card-header card-header-success">
+                <div class="card-header card-header-rose">
                   <div class="ct-chart" id="websiteViewsChart"></div>
                 </div>
                 <div class="card-body">
                   <h4 class="card-title">Precipitação</h4>
-                  <p class="card-category">Últimos Dias</p>
+                  <p class="card-category">Últimos 7 Dias</p>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
@@ -208,12 +214,12 @@ The above copyright notice and this permission notice shall be included in all c
             </div>
             <div class="col-md-4">
               <div class="card card-chart">
-                <div class="card-header card-header-danger">
+                <div class="card-header card-header-primary">
                   <div class="ct-chart" id="completedTasksChart"></div>
                 </div>
                 <div class="card-body">
-                  <h4 class="card-title">CO2e ppm</h4>
-                  <p class="card-category">Últimos Dias</p>
+                  <h4 class="card-title">CO ppm</h4>
+                  <p class="card-category">Últimos 7 Dias</p>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
@@ -227,88 +233,88 @@ The above copyright notice and this permission notice shall be included in all c
             <div class="col-lg-12 col-md-12">
               <div class="card">
                 <div class="card-header card-header-success">
-                  <h4 class="card-title">Estações</h4>
-                  <p class="card-category">Download: <a href='#'>1 dia</a> - <a href='#'>1 semana</a> - <a href='#'>1 mês</a></p>
+                  <h4 class="card-title">Regiões</h4>
+                  <p class="card-category">Download: <a href='./data/download.csv'>1 dia</a> - <a href='./data/download.csv'>1 semana</a> - <a href='./data/download.csv'>1 mês</a></p>
                 </div>
                 <div class="card-body table-responsive">
                   <table class="table table-hover">
                     <thead>
-                      <th>Nome</th>
-                      <th>Nível</th>
+                      <th>Região</th>
                       <th>Precipitação</th>
-                      <th>Risco</th>
-                      <th>CO2e</th>
+                      <th>Nível</th>
+                      <th>IQAr</th>
+                      <th>IQÁgua</th>
                     </thead>
                     <tbody>
                       <tr>
                         <td>Rio Belém - Estação São Lourenço</td>
-                        <td>1.2m</td>
-                        <td>20mm</td>
-                        <td class='text-success'>Baixo</td>
-                        <td>10 ppm</td>
+                        <td>1,2 mm</td>
+                        <td>5 cm</td>
+                        <td class='text-success'>Bom</td>
+                        <td class='text-success'>Bom</td>
                       </tr>
                       <tr>
                         <td>Rio Belém - Estação Nelson de Souza</td>
-                        <td>1m</td>
-                        <td>10mm</td>
-                        <td class='text-success'>Baixo</td>
-                        <td>12 ppm</td>
+                        <td>1 mm</td>
+                        <td>10 cm</td>
+                        <td class='text-warning'>Médio</td>
+                        <td class='text-warning'>Médio</td>
                       </tr>
                       <tr>
                         <td>Rio Belém - Estação OAB</td>
-                        <td>1.1m</td>
-                        <td>5mm</td>
-                        <td class='text-success'>Baixo</td>
-                        <td>16 ppm</td>
+                        <td>1,1 mm</td>
+                        <td>5 cm</td>
+                        <td class='text-danger'>Ruim</td>
+                        <td class='text-danger'>Ruim</td>
                       </tr>
                       <tr>
                         <td>Rio Belém - Estação Celeste Santi</td>
-                        <td>1.3m</td>
-                        <td>5mm</td>
-                        <td class='text-success'>Baixo</td>
-                        <td>11 ppm</td>
+                        <td>1,3 mm</td>
+                        <td>5 cm</td>
+                        <td class='text-success'>Bom</td>
+                        <td class='text-warning'>Médio</td>
                       </tr>
                       <tr>
                         <td>Rio Belém - Estação Cândido de Abreu</td>
-                        <td>1.1m</td>
-                        <td>5mm</td>
-                        <td class='text-success'>Baixo</td>
-                        <td>17 ppm</td>
+                        <td>1,1 mm</td>
+                        <td>5 cm</td>
+                        <td class='text-success'>Bom</td>
+                        <td class='text-warning'>Médio</td>
                       </tr>
                       <tr>
                         <td>Rio Pequeno - Estação 1</td>
-                        <td>50cm</td>
-                        <td>5mm</td>
-                        <td class='text-success'>Baixo</td>
-                        <td>9 ppm</td>
+                        <td>5 mm</td>
+                        <td>6 cm</td>
+                        <td class='text-success'>Bom</td>
+                        <td class='text-warning'>Médio</td>
                       </tr>
                       <tr>
                         <td>Rio Pequeno - Estação 2</td>
-                        <td>50cm</td>
-                        <td>5mm</td>
-                        <td class='text-success'>Baixo</td>
-                        <td>6 ppm</td>
+                        <td>5 mm</td>
+                        <td>8 cm</td>
+                        <td class='text-success'>Bom</td>
+                        <td class='text-warning'>Médio</td>
                       </tr>
                       <tr>
                         <td>Rio Pequeno - Estação 3</td>
-                        <td>55cm</td>
-                        <td>10mm</td>
+                        <td>2 mm</td>
+                        <td>10 cm</td>
                         <td class='text-warning'>Médio</td>
-                        <td>16 ppm</td>
+                        <td class='text-success'>Bom</td>
                       </tr>
                       <tr>
                         <td>Rio Pequeno - Estação 4</td>
-                        <td>55cm</td>
-                        <td>10mm</td>
+                        <td>2 mm</td>
+                        <td>10 cm</td>
+                        <td class='text-danger'>Ruim</td>
                         <td class='text-warning'>Médio</td>
-                        <td>19 ppm</td>
                       </tr>
                       <tr>
                         <td>Rio Palmital - Estação 1</td>
-                        <td>2m</td>
-                        <td>40mm</td>
-                        <td class='text-danger'>Alto</td>
-                        <td>15 ppm</td>
+                        <td>2 mm</td>
+                        <td>40 cm</td>
+                        <td class='text-warning'>Médio</td>
+                        <td class='text-success'>Bom</td>
                       </tr>
                     </tbody>
                   </table>
