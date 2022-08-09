@@ -145,7 +145,6 @@ var prototype = {
 
     // TODO:
     // - cor do marker de acordo com índice de qualidade do conama
-    // - hexagon (laica), 
 
     var data_to_units = {
       'CO': 'ppm',
@@ -182,7 +181,7 @@ var prototype = {
             [1, 3, 4, 5, 6]
           ]
         }, {
-          fullWidth: true
+          chartPadding: -10
         });
 
       });
