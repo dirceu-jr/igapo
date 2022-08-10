@@ -13,7 +13,7 @@ fs.createReadStream("../data/2020PR.csv")
       by_codigo_and_poluente[id] = [];
     }
 
-    var to_add = [row[0], row[1], row[5]];
+    var to_add = [row[0], row[1], parseFloat(row[5])];
 
     by_codigo_and_poluente[id].push(to_add);
   }).on("end", function () {
