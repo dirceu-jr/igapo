@@ -265,6 +265,7 @@ var prototype = {
         parsed_data.push([new Date(data[point][0] + " " + data[point][1]), data[point][2]]);
       }
       
+      // loaded callback
       google.charts.setOnLoadCallback(function() {
 
         var data = new google.visualization.DataTable();

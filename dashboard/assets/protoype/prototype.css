@@ -90,20 +90,20 @@
   display: inline-block;
   padding: 4px;
   border: 1px solid #55cde5;
-  border-left: none;
   margin-bottom: 5px;
-}
-
-.popup_div a:first-child {
-  border-left: 1px solid #55cde5;
+  margin-right: 3px;
+  border-radius: 3px;
+  color: #000;
 }
 
 .popup_div a:hover {
   background: #f1f1f1;
 }
 
-.popup_div .selected {
-  background: #f1f1f1;
+.popup_div .selected,
+.popup_div .selected:hover {
+  background: #55cde5;
+  color: #fff;
 }
 
 .sponsorship .card {
@@ -133,4 +133,15 @@
 
 .sidebar .nav i.yellow-color {
   color: #fabb2d;
+}
+
+.zoomButton {
+  border-radius: 3px;
+  border: 1px solid #55cde5;
+  background: #fff;
+  margin-right: 3px;
+}
+
+.zoomButton:hover {
+  background-color: #f1f1f1;
 }
