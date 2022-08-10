@@ -1,5 +1,6 @@
 const fs = require("fs");
 const { parse } = require("csv-parse");
+const moment = require("moment");
 
 var by_codigo_and_poluente = {};
 
@@ -19,10 +20,13 @@ fs.createReadStream("../data/2020PR.csv")
 
     for (index in by_codigo_and_poluente) {
 
-      // TODO:
-      // save ordered
+      // order by date and time
+      let sorted_array = by_codigo_and_poluente[index].sort(function(a, b) {
+        return moment(a[0] + " " + a[1]) - moment(b[0] + " " + b[1])
+      });
+
       const filename = "../data/" + index + ".json";
-      let data = JSON.stringify(by_codigo_and_poluente[index]);
+      let data = JSON.stringify(sorted_array);
       fs.writeFileSync(filename, data);
 
       console.log(index);
