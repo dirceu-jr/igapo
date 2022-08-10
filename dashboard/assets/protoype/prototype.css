@@ -80,13 +80,30 @@
   padding: 4px !important;
 }
 
-/* .sidebar {
-
-} */
-
 .popup_chart {
   width: 320px;
-  height: 160px;
+  height: 200px;
+  padding: 0;
+}
+
+.popup_div a {
+  display: inline-block;
+  padding: 4px;
+  border: 1px solid #55cde5;
+  border-left: none;
+  margin-bottom: 5px;
+}
+
+.popup_div a:first-child {
+  border-left: 1px solid #55cde5;
+}
+
+.popup_div a:hover {
+  background: #f1f1f1;
+}
+
+.popup_div .selected {
+  background: #f1f1f1;
 }
 
 .sponsorship .card {

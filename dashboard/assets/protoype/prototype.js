@@ -29,8 +29,10 @@ var prototype = {
 
     L.control.attribution({ prefix: '<a href="https://leafletjs.com/">Leaflet</a>' }).addTo(map);
 
-    var red_objects_ids = [8, 20, 30];
-    var yellow_objects_ids = [10, 19, 21];
+    var
+      red_objects_ids = [8, 20, 30],
+      yellow_objects_ids = [10, 19, 21]
+    ;
 
     var stations = [
       { lat: -25.38699, lng: -49.26674, name: 'Rio Belém - Estação São Lourenço', color: 'green', risk: 'Baixo', co2: 0.5 },
@@ -132,6 +134,8 @@ var prototype = {
 
   initMapAir: function() {
 
+    google.charts.load('current', { 'packages': ['annotationchart'], 'language': 'pt-BR' });
+
     var stations = [
       { code: 'PR02', name: 'Cidade Industrial', lat_lgn: [-25.508000, -49.337186], available_data: ['CO', 'NO2'] },
       { code: 'PR03', name: 'CSN', lat_lgn: [-25.5718755, -49.3879971], available_data: ['NO2', 'O3', 'PTS', 'SO2'] },
@@ -163,27 +167,40 @@ var prototype = {
       attributionControl: false
     });
 
-    L.control.scale({ position: 'bottomleft' }).addTo(map);
     var tile_layer = this.defaultTileLayer().addTo(map);
+
+    L.control.scale({ position: 'bottomleft' }).addTo(map);
     L.control.attribution({ prefix: '<a href="https://leafletjs.com/">Leaflet</a>' }).addTo(map);
 
     for (station in stations) {
-      var marker = L.marker(stations[station].lat_lgn).addTo(map);
-      var popup = marker.bindPopup();
+      var
+        marker = L.marker(stations[station].lat_lgn, { index: station }).addTo(map),
+        popup = marker.bindPopup()
+      ;
+
       popup.on('popupopen', function() {
-        this.setPopupContent("<div class='popup_chart'></div>");
+        var
+          index = this.options.index,
+          available_data = stations[index].available_data,
+          code = stations[index].code,
+          available_data_html = []
+        ;
 
-        new Chartist.Line('.popup_chart', {
-          labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-          series: [
-            [12, 9, 7, 8, 5],
-            [2, 1, 3.5, 7, 3],
-            [1, 3, 4, 5, 6]
-          ]
-        }, {
-          chartPadding: -10
-        });
+        for (data in available_data) {
+          available_data_html.push(
+            "<a href=\"#\" onclick=\"return prototype.openChart(this, '", index, "', '", code, "', '", available_data[data], "')\">",
+              available_data[data], "</a>"
+          );
+        }
 
+        this.setPopupContent(
+          "<div class='popup_div'>" +
+            available_data_html.join("") +
+            "<div class='popup_chart' id='chart_" + index + "'></div></div>"
+        );
+        
+        // open first type
+        $('.popup_div a:first-child').click();
       });
     }
 
@@ -233,5 +250,34 @@ var prototype = {
 
     var tile_layer4 = this.defaultTileLayer().addTo(map4);
     var marker4 = L.marker(map4_lat_lgn).addTo(map4);
+  },
+
+  openChart: function(a_element, index, code, data_type) {
+    $(a_element).siblings().removeClass('selected');
+    $(a_element).addClass('selected');
+
+    $.ajax({
+      url: "./data/" + code + "_" + data_type + ".json"
+    }).done(function(data) {
+      // Transform Data ([[parsed datetime, data point],...])
+      var parsed_data = [];
+      for (point in data) {
+        parsed_data.push([new Date(data[point][0] + " " + data[point][1]), data[point][2]]);
+      }
+      
+      google.charts.setOnLoadCallback(function() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('date', 'Date');
+        data.addColumn('number', data_type);
+        data.addRows(parsed_data);
+
+        var chart = new google.visualization.AnnotationChart(document.getElementById('chart_' + index));
+        chart.draw(data, { displayAnnotations: false });
+
+      });
+    });
+
+    return false;
   }
 }
