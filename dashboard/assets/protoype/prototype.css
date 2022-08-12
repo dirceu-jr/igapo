@@ -93,7 +93,7 @@
   margin-bottom: 5px;
   margin-right: 3px;
   border-radius: 3px;
-  color: #000;
+  color: #000 !important;
 }
 
 .popup_div a:hover {
@@ -140,6 +140,7 @@
   border: 1px solid #55cde5;
   background: #fff;
   margin-right: 3px;
+  padding: 3px !important;
 }
 
 .zoomButton:hover {

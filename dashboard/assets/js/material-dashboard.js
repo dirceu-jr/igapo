@@ -162,7 +162,7 @@ var md = {
 
   checkSidebarImage: function() {
     var $sidebar = $('.sidebar');
-    image_src = $sidebar.data('image');
+    var image_src = $sidebar.data('image');
 
     if (image_src !== undefined) {
       sidebar_container = '<div class="sidebar-background" style="background-image: url(' + image_src + ') "/>';
@@ -179,8 +179,8 @@ var md = {
   },
 
   checkFullPageBackgroundImage: function() {
-    $page = $('.full-page');
-    image_src = $page.data('image');
+    var $page = $('.full-page');
+    var image_src = $page.data('image');
 
     if (image_src !== undefined) {
       image_container = '<div class="full-page-background" style="background-image: url(' + image_src + ') "/>'
