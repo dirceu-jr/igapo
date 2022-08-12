@@ -60,7 +60,7 @@ $(document).ready(function() {
 
   $('body').bootstrapMaterialDesign();
 
-  var $sidebar = $('.sidebar');
+  $sidebar = $('.sidebar');
 
   md.initSidebarsCheck();
 
@@ -173,7 +173,7 @@ var md = {
   initSidebarsCheck: function() {
     if ($(window).width() <= 991) {
       if ($sidebar.length != 0) {
-        md.initRightMenu();
+        // md.initRightMenu();
       }
     }
   },
@@ -325,6 +325,7 @@ var md = {
 
       nav_content = '<ul class="nav navbar-nav nav-mobile-menu">' + nav_content + '</ul>';
 
+      console.log($('nav').find('.navbar-form'));
       navbar_form = $('nav').find('.navbar-form').get(0).outerHTML;
 
       $sidebar_nav = $sidebar_wrapper.find(' > .nav');
