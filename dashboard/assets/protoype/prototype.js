@@ -282,7 +282,7 @@ var prototype = {
       var parsed_data = [];
 
       for (var point in data) {
-        parsed_data.push([new Date(data[point][0] + " " + data[point][1]), data[point][2]]);
+        parsed_data.push([new Date(data[point][0]), data[point][1]]);
       }
       
       // loaded callback
