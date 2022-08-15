@@ -16,6 +16,7 @@ var prototype = {
       }
     )
   },
+
   initMapWater: function() {
     // geodesic center of paraná
     // center: [-24.7574861, -51.7596274],
@@ -35,23 +36,37 @@ var prototype = {
     ;
 
     var stations = [
-      { lat: -25.38699, lng: -49.26674, name: 'Rio Belém - Estação São Lourenço', color: 'green', risk: 'Baixo', co2: 0.5 },
-      { lat: -25.39875, lng: -49.27065, name: 'Rio Belém - Estação Nelson de Souza', color: 'green', risk: 'Baixo', co2: 0.2 },
-      { lat: -25.40165, lng: -49.26997, name: 'Rio Belém - Estação OAB', color: 'green', risk: 'Baixo', co2: 0.8 },
-      { lat: -25.40636, lng: -49.27002, name: 'Rio Belém - Estação Celeste Santi', color: 'green', risk: 'Baixo', co2: 0.3 },
-      { lat: -25.41862, lng: -49.27064, name: 'Rio Belém - Estação Cândido de Abreu', color: 'green', risk: 'Baixo', co2: 0.6 },
+      { lat: -25.38699, lng: -49.26674, name: 'Rio Belém - Estação São Lourenço', color: 'green', risk: 'Baixo', level: 10, ph: 7.4, orp: 12.6, temp: 28 },
+      { lat: -25.39875, lng: -49.27065, name: 'Rio Belém - Estação Nelson de Souza', color: 'green', risk: 'Baixo', level: 12, ph: 6.3, orp: 11.7, temp: 26 },
+      { lat: -25.40165, lng: -49.26997, name: 'Rio Belém - Estação OAB', color: 'green', risk: 'Baixo', level: 16, ph: 7.8, orp: 10.3, temp: 29 },
+      { lat: -25.40636, lng: -49.27002, name: 'Rio Belém - Estação Celeste Santi', color: 'green', risk: 'Baixo', level: 15, ph: 5.4, orp: 10.2, temp: 26 },
+      { lat: -25.41862, lng: -49.27064, name: 'Rio Belém - Estação Cândido de Abreu', color: 'green', risk: 'Baixo', level: 13, ph: 6.3, orp: 11.5, temp: 27 },
 
-      { lat: -25.4853, lng: -49.17603, name: 'Rio Pequeno - Estação 1', color: 'yellow', risk: 'Médio', co2: 0.8 },
-      { lat: -25.49754, lng: -49.15766, name: 'Rio Pequeno - Estação 2', color: 'yellow', risk: 'Médio', co2: 0.3 },
-      { lat: -25.51982, lng: -49.14433, name: 'Rio Pequeno - Estação 3', color: 'yellow', risk: 'Médio', co2: 0.1 },
-      { lat: -25.54166, lng: -49.12717, name: 'Rio Pequeno - Estação 4', color: 'green', risk: 'Baixo', co2: 0.8 },
+      { lat: -25.4853, lng: -49.17603, name: 'Rio Pequeno - Estação 1', color: 'yellow', risk: 'Médio', level: 20, ph: 7.3, orp: 11.8, temp: 25 },
+      { lat: -25.49754, lng: -49.15766, name: 'Rio Pequeno - Estação 2', color: 'yellow', risk: 'Médio', level: 17, ph: 8.2, orp: 16.1, temp: 29 },
+      { lat: -25.51982, lng: -49.14433, name: 'Rio Pequeno - Estação 3', color: 'yellow', risk: 'Médio', level: 21, ph: 5.7, orp: 10.2, temp: 26 },
+      { lat: -25.54166, lng: -49.12717, name: 'Rio Pequeno - Estação 4', color: 'green', risk: 'Baixo', level: 8, ph: 6.9, orp: 11.5, temp: 27 },
 
-      { lat: -25.43261, lng: -49.1708, name: 'Rio Palmital - Estação 1', color: 'red', risk: 'Alto', co2: 0.5 },
-      { lat: -25.39762, lng: -49.17424, name: 'Rio Palmital - Estação 2', color: 'red', risk: 'Alto', co2: 0.4 },
-      { lat: -25.36878, lng: -49.17189, name: 'Rio Palmital - Estação 3', color: 'red', risk: 'Alto', co2: 0.3 },
-      { lat: -25.34672, lng: -49.16877, name: 'Rio Palmital - Estação 4', color: 'yellow', risk: 'Médio', co2: 0.1 }
+      { lat: -25.43261, lng: -49.1708, name: 'Rio Palmital - Estação 1', color: 'red', risk: 'Alto', level: 31, ph: 7.1, orp: 18.1, temp: 26 },
+      { lat: -25.39762, lng: -49.17424, name: 'Rio Palmital - Estação 2', color: 'red', risk: 'Alto', level: 34, ph: 6.6, orp: 11.3, temp: 28 },
+      { lat: -25.36878, lng: -49.17189, name: 'Rio Palmital - Estação 3', color: 'red', risk: 'Alto', level: 35, ph: 8.4, orp: 12.1, temp: 29 },
+      { lat: -25.34672, lng: -49.16877, name: 'Rio Palmital - Estação 4', color: 'yellow', risk: 'Médio', level: 21, ph: 6.3, orp: 13.9, temp: 27 }
     ];
 
+    var color_to_class = {
+      'green': 'success',
+      'yellow': 'warning',
+      'red': 'danger'
+    }
+
+    // points
+    // $.ajax({
+    //   url: "./data/sub_bacias_altoiguacu_ponto.json"
+    // }).done(function(data) {
+    //   L.geoJSON(data, {}).addTo(map);
+    // });
+
+    // poligons
     $.ajax({
       url: "./data/sub_bacias_altoiguacupoligono.json"
     }).done(function(data) {
@@ -64,7 +79,7 @@ var prototype = {
         },
         onEachFeature: function(feature, layer) {
 
-          console.log(red_objects_ids.indexOf(feature.properties.OBJECTID));
+          // console.log(red_objects_ids.indexOf(feature.properties.OBJECTID));
 
           if (red_objects_ids.indexOf(feature.properties.OBJECTID) >= 0) {
             layer.setStyle({
@@ -94,9 +109,10 @@ var prototype = {
             });
           });
 
-          layer.bindTooltip('Bacia do ' + feature.properties.SUBNOME.toLowerCase().capitalize(), {
-            sticky: true
-          });
+          layer.bindTooltip(
+            '<div class="water-tooltip"><h4 class="no-margin">Bacia do ' + feature.properties.SUBNOME.toLowerCase().capitalize() + '</h4></div>',
+            { sticky: true }
+          );
           
           // layer.on('click', function () {
           //     // Let's say you've got a property called url in your geojsonfeature:
@@ -106,7 +122,7 @@ var prototype = {
       }).addTo(map);
 
       // after xhr loaded
-      for (station in stations) {
+      for (var station in stations) {
         var circle = L.circleMarker(
           [stations[station].lat, stations[station].lng], {
             color: '#000',
@@ -116,14 +132,17 @@ var prototype = {
             fillOpacity: 1
           }
         ).addTo(map);
-    
+
         circle.bindTooltip(
           [
-            '<div><b>',
-              stations[station].name,
-            '</b></div><div>Risco ',
-              stations[station].risk,
-            '</div><div>Nível: 50cm<div><div>Chuva: 10mm</div><div>CO2e: ', stations[station].co2,' ppm</div>'
+            '<div class="water-tooltip">',
+            '<h4>', stations[station].name, '</h4>',
+            '<div class="text-', color_to_class[stations[station].color], '">Risco ', stations[station].risk, '</div>',
+            '<div>Nível: ', stations[station].level, ' cm<div>',
+            '<div>pH: ', stations[station].ph.toLocaleString('pt-BR'), '</div>',
+            '<div>ORP: ', stations[station].orp.toLocaleString('pt-BR'), '</div>',
+            '<div>Temperatura da água: ', stations[station].temp, '˚</div>',
+            '</div>'
           ].join(''),
           { sticky: true }
         );
@@ -172,7 +191,7 @@ var prototype = {
     L.control.scale({ position: 'bottomleft' }).addTo(map);
     L.control.attribution({ prefix: '<a href="https://leafletjs.com/">Leaflet</a>' }).addTo(map);
 
-    for (station in stations) {
+    for (var station in stations) {
       var
         marker = L.marker(stations[station].lat_lgn, { index: station }).addTo(map),
         popup = marker.bindPopup()
@@ -186,7 +205,7 @@ var prototype = {
           available_data_html = []
         ;
 
-        for (data in available_data) {
+        for (var data in available_data) {
           available_data_html.push(
             "<a href=\"#\" onclick=\"return prototype.openChart(this, '", index, "', '", code, "', '", available_data[data], "')\">",
               available_data[data], "</a>"
@@ -261,7 +280,8 @@ var prototype = {
     }).done(function(data) {
       // Transform Data ([[parsed datetime, data point],...])
       var parsed_data = [];
-      for (point in data) {
+
+      for (var point in data) {
         parsed_data.push([new Date(data[point][0] + " " + data[point][1]), data[point][2]]);
       }
       
@@ -269,6 +289,7 @@ var prototype = {
       google.charts.setOnLoadCallback(function() {
 
         var data = new google.visualization.DataTable();
+
         data.addColumn('date', 'Date');
         data.addColumn('number', data_type);
         data.addRows(parsed_data);

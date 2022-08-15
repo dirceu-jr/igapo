@@ -24,8 +24,6 @@ The above copyright notice and this permission notice shall be included in all c
   <!-- CSS Files -->
   <link href="./assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <link href="./assets/protoype/prototype.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
-
 </head>
 
 <body>
@@ -46,25 +44,25 @@ The above copyright notice and this permission notice shall be included in all c
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./mapa_ar.html">
+            <a class="nav-link" href="./mapa-qar.html">
               <i class="material-icons blue1-color">location_ons</i>
               <p>Mapa Qualidade do Ar</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./mapa_bacias.html">
+            <a class="nav-link" href="./mapa-hidrologico.html">
               <i class="material-icons green-color">location_ons</i>
-              <p>Mapa Bacias</p>
-            </a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="./mapas_nivel.html">
-              <i class="material-icons blue2-color">location_ons</i>
-              <p>Mapas Nível</p>
+              <p>Mapa Hidrológico</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./patrocinio.html">
+            <a class="nav-link" href="./niveis.html">
+              <i class="material-icons blue2-color">water</i>
+              <p>Níveis</p>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./patrocinio-esg.html">
               <i class="material-icons yellow-color">auto_awesome</i>
               <p>Patrocínio ESG</p>
             </a>
@@ -77,7 +75,7 @@ The above copyright notice and this permission notice shall be included in all c
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Mapas Nível</a>
+            <a class="navbar-brand" href="javascript:;">Patrocínio ESG (fictício)</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Alternar navegação">
             <span class="sr-only">Alternar navegação</span>
@@ -110,79 +108,25 @@ The above copyright notice and this permission notice shall be included in all c
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-success custom-padding">
-                  <div id="map1"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Centro Cívico</h4>
-                  <p class="card-category">
-                    <span class="text-success">Normal (0cm)</span>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> atualizado há 10 minutos
-                  </div>
-                </div>
+          <div class="row sponsorship">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <img src="./assets/img/coworking-ih-curitiba-200.png" alt="ImpactHub" width="160">
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-warning custom-padding">
-                  <div id="map2"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Itupava</h4>
-                  <p class="card-category">
-                    <span class="text-warning">Alerta (10cm)</span>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> atualizado há 5 minutos
-                  </div>
-                </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <img src="./assets/img/marca_vale.jpeg" alt="Vale do Pinhão" width="160">
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-danger custom-padding">
-                  <div id="map3"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">PUCPR</h4>
-                  <p class="card-category">
-                    <span class="text-danger">Emergência (30cm)</span>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> atualizado há 5 minutos
-                  </div>
-                </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <img src="./assets/img/boti.png" alt="O Boticário" width="160">
               </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card card-chart">
-                <div class="card-header card-header-success custom-padding">
-                  <div id="map4"></div>
-                </div>
-                <div class="card-body">
-                  <h4 class="card-title">Parque Náutico</h4>
-                  <p class="card-category">
-                    <span class="text-success">Normal (0cm)</span>
-                  </p>
-                </div>
-                <div class="card-footer">
-                  <div class="stats">
-                    <i class="material-icons">access_time</i> atualizado há 5 minutos
-                  </div>
-                </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <img src="./assets/img/Arcos-Dorados_Logo.svg.png" alt="Arcos Dorados" width="160">
               </div>
             </div>
           </div>
@@ -207,25 +151,22 @@ The above copyright notice and this permission notice shall be included in all c
     </div>
   </div>
 
-  <!--   Core JS Files   -->
+  <!-- Core JS Files -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="./assets/js/core/popper.min.js"></script>
   <script src="./assets/js/core/bootstrap-material-design.min.js"></script>
-  <!-- Plugins -->
+  <!-- Plugns -->
   <script src="./assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!-- Plugin for the momentJs  -->
   <script src="./assets/js/plugins/moment.min.js"></script>
   <!-- Library for adding dinamically elements -->
   <script src="./assets/js/plugins/arrive.min.js"></script>
-  <!-- Leaflet -->
-  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
   <!-- Script it -->
-  <script src="./assets/js/material-dashboard.js?v=3" type="text/javascript"></script>
-  <script src="./assets/protoype/prototype.js"></script>
+  <script src="./assets/js/material-dashboard.js?v=3"></script>
   
   <script>
     $(document).ready(function() {
-      prototype.initMapsLevel();
+      md.initDashboardPageCharts();
     });
   </script>
 </body>

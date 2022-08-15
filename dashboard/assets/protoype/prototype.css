@@ -146,3 +146,16 @@
 .zoomButton:hover {
   background-color: #f1f1f1;
 }
+
+.water-tooltip {
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+.water-tooltip h4 {
+  font-weight: 400;
+}
+
+h4.no-margin {
+  margin: 0;
+}

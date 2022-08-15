@@ -173,6 +173,7 @@ var md = {
   initSidebarsCheck: function() {
     if ($(window).width() <= 991) {
       if ($sidebar.length != 0) {
+        // OBS: what initRightMenu does?
         // md.initRightMenu();
       }
     }
@@ -312,7 +313,7 @@ var md = {
     }
   }, 17),
 
-
+  // unused
   initRightMenu: debounce(function() {
     $sidebar_wrapper = $('.sidebar-wrapper');
 
