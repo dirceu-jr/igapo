@@ -194,7 +194,7 @@ var prototype = {
     for (var station in stations) {
       var
         marker = L.marker(stations[station].lat_lgn, { index: station }).addTo(map),
-        popup = marker.bindPopup()
+        popup = marker.bindPopup('', { maxWidth: 320 })
       ;
 
       popup.on('popupopen', function() {
@@ -295,7 +295,12 @@ var prototype = {
         data.addRows(parsed_data);
 
         var chart = new google.visualization.AnnotationChart(document.getElementById('chart_' + index));
-        chart.draw(data, { displayAnnotations: false });
+        
+        chart.draw(data, {
+          displayAnnotations: false,
+          width: 322,
+          height: 197
+        });
 
       });
     });

@@ -1,3 +1,11 @@
+body {
+  font-weight: 400;
+}
+
+.navbar .navbar-brand {
+  font-weight: 400;
+}
+
 .tim-typo {
   padding-left: 25%;
   margin-bottom: 40px;
@@ -158,4 +166,16 @@
 
 h4.no-margin {
   margin: 0;
+}
+
+.leaflet-popup-content {
+  margin: 13px !important;
+}
+
+.annotationsTdContainer {
+  display: none !important;
+}
+
+.popup_chart .border {
+  height: 200px !important;
 }
