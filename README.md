@@ -1,6 +1,6 @@
 # Ambient Water Quality
 
-<img src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/water_FILL0_wght400_GRAD0_opsz48.svg"> Water Pollution Detection and Localization.
+<img src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/water_FILL0_wght400_GRAD0_opsz48.svg" align="middle"> Water Pollution Detection and Localization.
 
 ## Current Hardware
 
