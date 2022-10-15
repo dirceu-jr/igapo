@@ -4,7 +4,7 @@
 
 ## Current Hardware
 
-- [Atlas Scientific Wi-Fi Pool Kit](https://atlas-scientific.com/kits/wi-fi-pool-kit/) (Legacy, with ESP8266). It has pH, ORP and Temperature probes but only Wi-Fi connectivity.
+- [Atlas Scientific Wi-Fi Pool Kit](https://atlas-scientific.com/kits/wi-fi-pool-kit/) (Legacy, with ESP8266). It has pH, ORP and Temperature probes but only provides Wi-Fi connectivity.
 
 <a target="_blank" href="https://atlas-scientific.com/kits/wi-fi-pool-kit/"><img alt="Atlas Scientific Wi-Fi Pool Kit" width="260" src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/wi-fi-pk01.jpeg"></a>
 
