@@ -18,12 +18,20 @@
 
 ## References
 - Danos Socioambientais Urbanos Em Curitiba: Uma Abordagem Geográfica ([PDF](https://github.com/dirceu-jr/ambient-water-quality/blob/master/references/danos-socioambientais-urbanos-em-curitiba-uma-abordagem-geografica.pdf))
+- http://www.lactea.ufpr.br/projetos/cwbreathe
 
 ## Software
 
 - [Dashboard Prototype](https://dirceu-jr.github.io/ambient-water-quality/dashboard/)
 - [Firmware](https://github.com/dirceu-jr/ambient-water-quality/blob/master/firmware/legacy_pool_kit.ino)
 - [Thingspeak Channel](https://thingspeak.com/channels/1643222/)
+
+## Suppliers
+
+- [Atlas Scientific](https://atlas-scientific.com/)
+- [Swarm](https://swarm.space/)
+- [Espressif](https://www.espressif.com/)
+- [LILYGO](https://pt.aliexpress.com/store/2090076)
 
 ## Real-time Data
 
