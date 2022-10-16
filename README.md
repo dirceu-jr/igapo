@@ -1,6 +1,6 @@
 # Ambient Water Quality
 
-<img src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/water_FILL0_wght400_GRAD0_opsz48.svg" align="middle"> Water Pollution Detection and Localization.
+<img src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/water_FILL0_wght400_GRAD0_opsz48.svg" align="middle"> Water Pollution Detection and Location.
 
 ## Current Hardware
 
@@ -18,7 +18,6 @@
 
 ## References
 - Danos Socioambientais Urbanos Em Curitiba: Uma Abordagem Geográfica ([PDF](https://github.com/dirceu-jr/ambient-water-quality/blob/master/references/danos-socioambientais-urbanos-em-curitiba-uma-abordagem-geografica.pdf))
-- http://www.lactea.ufpr.br/projetos/cwbreathe
 
 ## Software
 
