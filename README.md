@@ -4,7 +4,7 @@
 
 [Ler em Português](https://dirceu-jr.github.io/ambient-water-quality/README.pt-BR)
 
-I used to live in front a [beauty but polluted lake](https://pt.wikipedia.org/wiki/Ficheiro:Lago_Igap%C3%B3_Londrina.jpg). Now I live in [Curitiba city](https://en.wikipedia.org/wiki/Curitiba), some say <i>the most ecological Brazilian city</i>.
+I used to live in front a [beauty but polluted lake](https://pt.wikipedia.org/wiki/Ficheiro:Lago_Igap%C3%B3_Londrina.jpg). Now I live in [Curitiba city](https://en.wikipedia.org/wiki/Curitiba), some say _the most ecological Brazilian city_.
 
 I develop this project with the aim of implementing a monitoring network. It has also educational purposes.
 
