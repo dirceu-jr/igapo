@@ -4,7 +4,7 @@
 
 [Read in English](https://dirceu-jr.github.io/ambient-water-quality/)
 
-Eu morava na frente de um [lindo mas poluído lago](https://pt.wikipedia.org/wiki/Ficheiro:Lago_Igap%C3%B3_Londrina.jpg). Agora eu moro na [cidade de Curitiba](https://pt.wikipedia.org/wiki/Curitiba), alguns dizem <i>a cidade mais ecológica do Brasil</i>.
+Eu morava na frente de um [lindo mas poluído lago](https://pt.wikipedia.org/wiki/Ficheiro:Lago_Igap%C3%B3_Londrina.jpg). Agora eu moro na [cidade de Curitiba](https://pt.wikipedia.org/wiki/Curitiba), alguns dizem _a cidade mais ecológica do Brasil_.
 
 Eu desenvolvo esse projeto com o objetivo de implementar uma rede de monitoramento. E também com objetivos educacionais.
 
@@ -12,7 +12,7 @@ O estado atual é o início da prototipagem de hardware e software.
 
 ## Hardware atual
 
-- [Atlas Scientific Wi-Fi Pool Kit](https://atlas-scientific.com/kits/wi-fi-pool-kit/) (<i>Legacy</i>, com <i>ESP8266</i>). Possui sondas de pH, ORP (Potencial de redução) e temperatura, mas fornece apenas conectividade Wi-Fi.
+- [Atlas Scientific Wi-Fi Pool Kit](https://atlas-scientific.com/kits/wi-fi-pool-kit/) (_Legacy_, com _ESP8266_). Possui sondas de pH, ORP (Potencial de redução) e temperatura, mas fornece apenas conectividade Wi-Fi.
 
 <a target="_blank" href="https://atlas-scientific.com/kits/wi-fi-pool-kit/"><img alt="Atlas Scientific Wi-Fi Pool Kit" width="260" src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/wi-fi-pk01.jpeg"></a>
 
@@ -24,7 +24,7 @@ O estado atual é o início da prototipagem de hardware e software.
 
 Alguns locais onde seria bom ter estações de monitoramento não possuem ponto de acesso Wi-Fi. Portanto, conectividade celular ou mesmo via satélite são necessárias.
 
-- [LILYGO® TTGO T-SIM7000G](https://pt.aliexpress.com/item/4000542688096.html). Esta placa de baixo consumo de energia e baixo custo vem com microcontrolador <i>ESP32</i> da Espressif, modem 7000G da SIMCom, suporte de bateria e circuito de energia solar, tudo por volta de 200 Reais. O <i>ESP32</i> é mais capaz que o <i>Arduino</i> e mais barato que o <i>Raspberry Pi</i>. Pode fornecer conectividade celular ao Kit da Atlas Scientific.
+- [LILYGO® TTGO T-SIM7000G](https://pt.aliexpress.com/item/4000542688096.html). Esta placa de baixo consumo de energia e baixo custo vem com microcontrolador _ESP32_ da Espressif, modem 7000G da SIMCom, suporte de bateria e circuito de energia solar, tudo por volta de 200 Reais. O _ESP32_ é mais capaz que o _Arduino_ e mais barato que o _Raspberry Pi_. Pode fornecer conectividade celular ao Kit da Atlas Scientific.
 
 <a target="_blank" href="https://pt.aliexpress.com/item/4000542688096.html"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/lilygo-t-sim7000g.webp"></a>
 

@@ -12,11 +12,11 @@ The current state is the beginning of hardware and software prototyping.
 
 ## Current Hardware
 
-- [Atlas Scientific Wi-Fi Pool Kit](https://atlas-scientific.com/kits/wi-fi-pool-kit/) (Legacy, with <i>ESP8266</i>). It has pH, ORP (Oxidation Reduction Potential) and Temperature probes but only provides Wi-Fi connectivity.
+- [Atlas Scientific Wi-Fi Pool Kit](https://atlas-scientific.com/kits/wi-fi-pool-kit/) (Legacy, with _ESP8266_). It has pH, ORP (Oxidation Reduction Potential) and Temperature probes but only provides Wi-Fi connectivity.
 
 <a target="_blank" href="https://atlas-scientific.com/kits/wi-fi-pool-kit/"><img alt="Atlas Scientific Wi-Fi Pool Kit" width="260" src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/wi-fi-pk01.jpeg"></a>
 
-- [LILYGO® TTGO T-BAT Battery Holder](https://pt.aliexpress.com/item/4001156737871.html). Battery holder and solar panel charging circuit. It can provide power to <i>Wi-Fi Pool Kit</i>.
+- [LILYGO® TTGO T-BAT Battery Holder](https://pt.aliexpress.com/item/4001156737871.html). Battery holder and solar panel charging circuit. It can provide power to _Wi-Fi Pool Kit_.
 
 <a target="_blank" href="https://pt.aliexpress.com/item/4001156737871.html"><img alt="LILYGO® TTGO T-BAT Battery Holder" width="260" src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/lilygo-ttgo-t-bat.webp"></a>
 
@@ -24,7 +24,7 @@ The current state is the beginning of hardware and software prototyping.
 
 Some locations where it would be good to have monitoring stations don't have Wi-Fi access point. So cellular or even satellite connectivity are necessary options.
 
-- [LILYGO® TTGO T-SIM7000G](https://pt.aliexpress.com/item/4000542688096.html). This low-power, low-cost board comes with Espressif's <i>ESP32</i> microcontroller, SIMCom's 7000G cellular modem, battery holder and solar power circuit at around 200 Brazilian reais. <i>ESP32</i> is more capable than <i>Arduino</i> and less expensive than <i>Raspberry Pi</i>. It could provide cellular connectivity to Atlas Scientific probes.
+- [LILYGO® TTGO T-SIM7000G](https://pt.aliexpress.com/item/4000542688096.html). This low-power, low-cost board comes with Espressif's _ESP32_ microcontroller, SIMCom's 7000G cellular modem, battery holder and solar power circuit at around 200 Brazilian reais. _ESP32_ is more capable than _Arduino_ and less expensive than _Raspberry Pi_. It could provide cellular connectivity to Atlas Scientific probes.
 
 <a target="_blank" href="https://pt.aliexpress.com/item/4000542688096.html"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/lilygo-t-sim7000g.webp"></a>
 
