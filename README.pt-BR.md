@@ -6,7 +6,7 @@
 
 Eu morava na frente de um [lindo mas poluído lago](https://pt.wikipedia.org/wiki/Ficheiro:Lago_Igap%C3%B3_Londrina.jpg). Agora eu moro na [cidade de Curitiba](https://pt.wikipedia.org/wiki/Curitiba), alguns dizem _a cidade mais ecológica do Brasil_.
 
-Eu desenvolvo esse projeto com o objetivo de implementar uma rede de monitoramento. E também com objetivos educacionais.
+Desenvolvo esse projeto com o objetivo de implementar uma rede de monitoramento. E também com objetivos educacionais.
 
 O estado atual é o início da prototipagem de hardware e software.
 
@@ -49,8 +49,8 @@ Para fins educacionais...
 
 ## Dados em tempo real
 
-<iframe width="450" height="260" src="https://thingspeak.com/channels/1643222/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=pH&type=line"></iframe>
+<iframe width="450" height="260" src="https://thingspeak.com/channels/1956479/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=pH&type=line"></iframe>
 
-<iframe width="450" height="260" src="https://thingspeak.com/channels/1643222/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=ORP&type=line"></iframe>
+<iframe width="450" height="260" src="https://thingspeak.com/channels/1956479/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=ORP&type=line"></iframe>
 
-<iframe width="450" height="260" src="https://thingspeak.com/channels/1643222/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temp&type=line"></iframe>
+<iframe width="450" height="260" src="https://thingspeak.com/channels/1956479/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temp&type=line"></iframe>
