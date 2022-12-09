@@ -36,6 +36,8 @@ Alguns locais onde seria bom ter estações de monitoramento não possuem ponto 
 
 <a target="_blank" href="https://pt.aliexpress.com/item/4000542688096.html"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/lilygo-t-sim7000g.webp"></a>
 
+Como alguns lugares tem a "água" tão poluída que estragam os sensores, sensores de gases podem ser usados.
+
 ## Referências
 
 - Danos Socioambientais Urbanos Em Curitiba: Uma Abordagem Geográfica ([PDF](https://github.com/dirceu-jr/ambient-water-quality/blob/master/references/danos-socioambientais-urbanos-em-curitiba-uma-abordagem-geografica.pdf))
