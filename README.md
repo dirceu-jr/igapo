@@ -24,10 +24,6 @@ The current state of the project is the beginning of hardware and software proto
 
 <a target="_blank" href="https://pt.aliexpress.com/item/4001156737871.html"><img alt="LILYGO® TTGO T-BAT Battery Holder" width="260" src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/lilygo-ttgo-t-bat.webp"></a>
 
-## Work In Progress
-
-**I'm working on the support structure for the sensors and on the solar panel.**
-
 ## Future Work
 
 Some locations where it would be good to have monitoring stations don't have Wi-Fi access point. So cellular or even satellite connectivity are necessary.
