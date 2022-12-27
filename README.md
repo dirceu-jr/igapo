@@ -6,9 +6,9 @@
 
 I used to live in front of a [beautiful but polluted lake](https://pt.wikipedia.org/wiki/Ficheiro:Lago_Igap%C3%B3_Londrina.jpg) in _Londrina city_. Now I live in [Curitiba city](https://en.wikipedia.org/wiki/Curitiba), some say _the most ecological Brazilian city_.
 
-Urban socio-environmental problems identified in Curitiba include air pollution, water pollution and environmental degradation.
+Urban socio-environmental problems identified in Curitiba includes air pollution, water pollution and environmental degradation ([references](#references)).
 
-I'm developing this project with the aim of creating a low cost water monitoring station, enabling the creation of a dense monitoring network with the capacity to locate occurrences of pollution.
+I'm developing this project with the aim of creating low cost water monitoring stations, enabling the creation of a dense monitoring network with the capacity to locate occurrences of pollution.
 
 With societal and educational purposes I'm being open about suppliers, configuration and software.
 
