@@ -11,9 +11,9 @@ WiFiClient client;                                               //declare that 
 
 //----------------Fill in your Wi-Fi / ThingSpeak Credentials-------
 const String ssid = "DIRCEU 2.4GHz";                             //The name of the Wi-Fi network you are connecting to
-const String pass = "3015DIRKA";                                 //Your WiFi network password
-const long myChannelNumber = 1643222;                            //Your Thingspeak channel number
-const char * myWriteAPIKey = "3CDKCUG0Q8H18VG1";                 //Your ThingSpeak Write API Key"
+const String pass = "PASSWORD";                                 //Your WiFi network password
+const long myChannelNumber = 1956479;                            //Your Thingspeak channel number
+const char * myWriteAPIKey = "FG0D9R78LUMJ2O7G";                 //Your ThingSpeak Write API Key"
 //------------------------------------------------------------------
 
 Ezo_board PH = Ezo_board(99, "PH");           //create a PH circuit object, who's address is 99 and name is "PH"
@@ -140,6 +140,11 @@ void setup() {
 }
 
 void loop() {
+  // Wait 5 minutes (300 secs) with Wi-Fi and circuits off
+  // Do that in the start of the loop() so if battery is low
+  // It does not use up all the battery trying to read sensors, connect to Wi-Fi and send data...
+  delay(5 * 60 * 1000);
+  
   String cmd;                            //variable to hold commands we send to the kit
 
   if (receive_command(cmd)) {            //if we sent the kit a command it gets put into the cmd variable
@@ -173,12 +178,6 @@ void loop() {
       thingspeak_send();
     }
   }
-
-  //Wait 5 minutes (300 secs)
-  delay(5 * 60 * 1000);
-
-  // wait 30 secs
-  // delay(30000);
 
   //TODO:
   //-may enter in energy conservation mode;
