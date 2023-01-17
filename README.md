@@ -8,11 +8,17 @@ I used to live in front of a [beautiful but polluted lake](https://pt.wikipedia.
 
 Urban socio-environmental problems identified in Curitiba includes air pollution, water pollution and environmental degradation ([references](#references)).
 
-I'm developing this project with the aim of creating low cost water monitoring stations, enabling the creation of a dense monitoring network with the capacity to locate occurrences of pollution.
+I'm developing this project with the aim of creating low cost water monitoring stations, enabling the creation of a dense monitoring network with the capacity to locate occurrences of water pollution.
 
-With societal and educational purposes I'm being open about suppliers, configuration and software.
+With community and educational purposes in mind, I am being open about suppliers, configurations, and software.
 
-The current state of the project is the beginning of hardware and software prototyping. I am preparing a station and requesting authorization to start collecting data on the _Atuba River_.
+The current state of the project is hardware and software prototyping. I've tested the prototype on the _Atuba River_, near a place known as [_Ecobarreira do Atuba_](https://www.instagram.com/ecobarreira_diegosaldanha/). It was on for 36 hours, the battery died at the end of the night (6AM) and it didn't turn back on when the sun recharged the battery. I'm working on it. This is the prototype deployed:
+
+![IMG_20221220_165045](https://user-images.githubusercontent.com/20571/212798906-fd5728bf-b791-455d-8456-79cf07689e0c.jpg)
+
+This is the prototype in greater detail:
+
+<img src="https://user-images.githubusercontent.com/20571/212799501-3fa20d3c-de6e-48f0-9699-e0ce9b30915b.jpg" width="340">
 
 ## Current Hardware
 
@@ -23,6 +29,8 @@ The current state of the project is the beginning of hardware and software proto
 - [LILYGO® TTGO T-BAT Battery Holder](https://pt.aliexpress.com/item/4001156737871.html). Battery holder and solar panel charging circuit. It can provide power to _Wi-Fi Pool Kit_.
 
 <a target="_blank" href="https://pt.aliexpress.com/item/4001156737871.html"><img alt="LILYGO® TTGO T-BAT Battery Holder" width="260" src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/lilygo-ttgo-t-bat.webp"></a>
+
+- [iSNK Solar Panel](https://pt.aliexpress.com/store/3877081)
 
 ## Future Work
 
