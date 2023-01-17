@@ -8,11 +8,17 @@ Eu morava na frente de um [lindo mas poluído lago](https://pt.wikipedia.org/wik
 
 Os problemas socioambientais urbanos identificados em Curitiba incluem poluição do ar, poluição da água e degradação ambiental ([referências](#referências)).
 
-Estou desenvolvendo esse projeto com o objetivo de criar estações de monitoramento de baixo custo, possibilitando a criação de uma rede densa com a capacidade de localizar ocorrencias de poluição.
+Estou desenvolvendo esse projeto com o objetivo de criar estações de monitoramento de baixo custo, possibilitando a criação de uma rede densa com a capacidade de localizar ocorrencias de poluição na água.
 
-Com fins sociais e educativos, estou sendo aberto sobre fornecedores, configuração e software.
+Com fins comunitários e educativos, estou sendo aberto sobre fornecedores, configurações e _software_.
 
-O estado atual do projeto é o início da prototipagem de hardware e software. Estou preparando uma estação e requisitando autorização para começar a coletar dados no Rio Atuba.
+O estado atual do projeto é de prototipagem de _hardware_ e _software_. Eu testei o protótipo no Rio Atuba, próximo a um lugar conhecido por [Ecobarreira do Atuba](https://www.instagram.com/ecobarreira_diegosaldanha/). Ele ficou ligado por 36 horas, a bateria acabou no final da noite (6AM) e ele não religou quando o sol recarregou a bateria. Estou trabalhando nisso. Esse é o protótipo instalado:
+
+![IMG_20221220_165045](https://user-images.githubusercontent.com/20571/212798906-fd5728bf-b791-455d-8456-79cf07689e0c.jpg)
+
+Esse é o protótipo em maior detalhe:
+
+<img src="https://user-images.githubusercontent.com/20571/212799501-3fa20d3c-de6e-48f0-9699-e0ce9b30915b.jpg" width="340">
 
 ## Hardware atual
 
@@ -24,6 +30,8 @@ O estado atual do projeto é o início da prototipagem de hardware e software. E
 
 <a target="_blank" href="https://pt.aliexpress.com/item/4001156737871.html"><img alt="LILYGO® TTGO T-BAT Suporte de Bateria" width="260" src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/lilygo-ttgo-t-bat.webp"></a>
 
+- [Painel solar da iSNK](https://pt.aliexpress.com/store/3877081)
+
 ## Trabalho futuro
 
 Alguns locais onde seria bom ter estações de monitoramento não possuem ponto de acesso Wi-Fi. Portanto, conectividade celular ou mesmo via satélite são necessárias.
@@ -32,7 +40,7 @@ Alguns locais onde seria bom ter estações de monitoramento não possuem ponto 
 
 <a target="_blank" href="https://pt.aliexpress.com/item/4000542688096.html"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/lilygo-t-sim7000g.webp"></a>
 
-Como alguns lugares tem a "água" tão poluída que estragam os sensores, sensores de gases podem ser usados.
+Como alguns lugares tem a "água" tão poluída que estraga os sensores, sensores de gases podem ser usados.
 
 ## Referências
 
