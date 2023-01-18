@@ -40,7 +40,10 @@ Some locations where it would be good to have monitoring stations don't have Wi-
 
 <a target="_blank" href="https://pt.aliexpress.com/item/4000542688096.html"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/lilygo-t-sim7000g.webp"></a>
 
-As some locations have "water" so polluted that deteriorate any sensor, gas sensors may be used.
+As some locations have "water" so polluted that deteriorate any sensor, gas sensors may be used:
+
+- [DS-HCHO-20 (formaldehyde)](https://aliexpress.com/item/10000027551761.html)
+- [MQ 135 (toxic gases)](https://aliexpress.com/w/wholesale-MQ-135.html)
 
 ## References
 
