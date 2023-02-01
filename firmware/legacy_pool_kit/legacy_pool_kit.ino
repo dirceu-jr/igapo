@@ -53,6 +53,9 @@ bool wifi_isconnected() {                                 //function to check if
 }
 
 void disconnect_wifi() {
+  // TODO:
+  // - may not need to disconnect/begin
+  // - verify docs for .disconnect
   WiFi.disconnect(true);
   WiFi.mode(WIFI_OFF);
   WiFi.forceSleepBegin();
@@ -78,8 +81,6 @@ void reconnect_wifi() {                                   //function to reconnec
 }
 
 void thingspeak_send() {
-  reconnect_wifi();
-
   if (send_to_thingspeak == true) {                                                    //if we're datalogging
     if (wifi_isconnected()) {
       int return_code = ThingSpeak.writeFields(myChannelNumber, myWriteAPIKey);
@@ -90,8 +91,6 @@ void thingspeak_send() {
       }
     }
   }
-
-  disconnect_wifi();
 }
 
 //Power consumption
@@ -119,13 +118,17 @@ void disable_circuits() {
 }
 
 void setup() {
+  // Obs:
+  // - Starting from version 3 of this core, persistence is disabled by default and WiFi does not start automatically at boot
+  // - So maybe three lines bellow is not necessary and maybe even harmfull
   WiFi.persistent(false);                 //does not store in flash memory
-   
   WiFi.mode(WIFI_OFF);                    //start with WIFI off;
   WiFi.forceSleepBegin();
   
   delay(1);
-  
+
+  // TODO:
+  // - test initialization, may change this to works better with low battery level;
   pinMode(EN_PH, OUTPUT);                                                         //set enable pins as outputs
   pinMode(EN_ORP, OUTPUT);
   pinMode(EN_RTD, OUTPUT);
@@ -140,11 +143,6 @@ void setup() {
 }
 
 void loop() {
-  // Wait 5 minutes (300 secs) with Wi-Fi and circuits off
-  // Do that in the start of the loop() so if battery is low
-  // It does not use up all the battery trying to read sensors, connect to Wi-Fi and send data...
-  delay(5 * 60 * 1000);
-  
   String cmd;                            //variable to hold commands we send to the kit
 
   if (receive_command(cmd)) {            //if we sent the kit a command it gets put into the cmd variable
@@ -175,14 +173,14 @@ void loop() {
     disable_circuits();
 
     if (send_to_thingspeak) {
+      reconnect_wifi();
       thingspeak_send();
+      disconnect_wifi();
     }
   }
 
-  //TODO:
-  //-may enter in energy conservation mode;
-  //-may need to modify ESP8266 circuit to wake up;
-  // ESP.deepSleep(SLEEPTIME, WAKE_RF_DISABLED);
+  // sleep for 360 seconds (6 minutes)
+  ESP.deepSleep(360e6, WAKE_RF_DISABLED);
 }
 
 void send_read_cmd_to_RTD() {
