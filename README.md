@@ -12,7 +12,11 @@ I'm developing this project with the aim of creating low cost water monitoring s
 
 With community and educational purposes in mind, I am being open about suppliers, configurations, and software.
 
-The current state of the project is hardware and software prototyping. I've tested the prototype on the _Atuba River_, near a place known as [_Ecobarreira do Atuba_](https://www.instagram.com/ecobarreira_diegosaldanha/). It was on for 36 hours, the battery died at the end of the night (6AM) and it didn't turn back on when the sun recharged the battery. I'm working on it. This is the prototype deployed:
+The current state of the project is hardware and software prototyping. I've tested the prototype on the _Atuba River_, near a place known as [_Ecobarreira do Atuba_](https://www.instagram.com/ecobarreira_diegosaldanha/). It was on for 36 hours, the battery died at the end of the night (6 AM) and it didn't turned back on when the sun recharged the battery.
+
+I worked on the software to use the microcontroller's "deep sleep" mode and on my desk the battery lasted over 100 hours sending data every 6 minutes. Unfortunately the solar panel protection didn't work well and it has a bad performance in the rain.
+
+This is the prototype deployed:
 
 ![IMG_20221220_165045](https://user-images.githubusercontent.com/20571/212798906-fd5728bf-b791-455d-8456-79cf07689e0c.jpg)
 
