@@ -12,7 +12,11 @@ Estou desenvolvendo esse projeto com o objetivo de criar estações de monitoram
 
 Com fins comunitários e educativos, estou sendo aberto sobre fornecedores, configurações e _software_.
 
-O estado atual do projeto é de prototipagem de _hardware_ e _software_. Eu testei o protótipo no Rio Atuba, próximo a um lugar conhecido por [Ecobarreira do Atuba](https://www.instagram.com/ecobarreira_diegosaldanha/). Ele ficou ligado por 36 horas, a bateria acabou no final da noite (6AM) e ele não religou quando o sol recarregou a bateria. Estou trabalhando nisso. Esse é o protótipo instalado:
+O estado atual do projeto é de prototipagem de _hardware_ e _software_. Eu testei o protótipo no Rio Atuba, próximo a um lugar conhecido por [Ecobarreira do Atuba](https://www.instagram.com/ecobarreira_diegosaldanha/). Ele ficou ligado por 36 horas, a bateria acabou no final da noite (6 AM) e ele não religou quando o sol recarregou a bateria. 
+
+Eu trabalhei no _software_ para usar o modo "suno profundo" do microcontrolador e na minha mesa a bateria durou mais de 100 horas enviando dados a cada 6 minutos. Infelizmente a proteção do painel solar não funcionou e ele tem uma performance ruim na chuva.
+
+Esse é o protótipo instalado:
 
 ![IMG_20221220_165045](https://user-images.githubusercontent.com/20571/212798906-fd5728bf-b791-455d-8456-79cf07689e0c.jpg)
 
