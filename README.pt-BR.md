@@ -16,6 +16,8 @@ O estado atual do projeto é de prototipagem de _hardware_ e _software_. Eu test
 
 Eu trabalhei no _software_ para usar o modo "suno profundo" do microcontrolador e na minha mesa a bateria durou mais de 100 horas enviando dados a cada 6 minutos. Infelizmente a proteção do painel solar não funcionou e ele tem uma performance ruim na chuva.
 
+I worked on the software to use the microcontroller's "deep sleep" mode and on my desk the battery lasted over 100 hours sending data every 6 minutes. Unfortunately the solar panel protection didn't work well and it has a bad performance in the rain. Agora estou comprando painéis solares com design à prova d'água de fábrica.
+
 Esse é o protótipo instalado:
 
 ![IMG_20221220_165045](https://user-images.githubusercontent.com/20571/212798906-fd5728bf-b791-455d-8456-79cf07689e0c.jpg)
