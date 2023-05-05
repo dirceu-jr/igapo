@@ -55,7 +55,7 @@ Como alguns lugares tem a "água" tão poluída que estraga os sensores, sensore
 
 ## Software
 
-- [Software Embarcado](https://github.com/dirceu-jr/ambient-water-quality/blob/master/firmware/legacy_pool_kit.ino)
+- [Software Embarcado](https://github.com/dirceu-jr/ambient-water-quality/blob/main/firmware/legacy_pool_kit/legacy_pool_kit.ino)
 - [Canal no ThingSpeak](https://thingspeak.com/channels/1956479/)
 - [Protótipo de Painel](https://dirceu-jr.github.io/ambient-water-quality/dashboard/)
 
