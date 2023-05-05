@@ -55,7 +55,7 @@ As some locations have "water" so polluted that deteriorate any sensor, gas sens
 
 ## Software
 
-- [Embedded Software](https://github.com/dirceu-jr/ambient-water-quality/blob/master/firmware/legacy_pool_kit.ino)
+- [Embedded Software](https://github.com/dirceu-jr/ambient-water-quality/blob/main/firmware/legacy_pool_kit/legacy_pool_kit.ino)
 - [ThingSpeak Channel](https://thingspeak.com/channels/1956479/)
 - [Dashboard Prototype](https://dirceu-jr.github.io/ambient-water-quality/dashboard/)
 
