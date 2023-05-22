@@ -14,7 +14,7 @@ Com fins comunitários e educativos, estou sendo aberto sobre fornecedores, conf
 
 O estado atual do projeto é de prototipagem de _hardware_ e _software_. Eu testei o protótipo no Rio Atuba, próximo a um lugar conhecido por [Ecobarreira do Atuba](https://www.instagram.com/ecobarreira_diegosaldanha/). Ele ficou ligado por 36 horas, a bateria acabou no final da noite (6 AM) e ele não religou quando o sol recarregou a bateria. 
 
-Eu trabalhei no _software_ para usar o modo "suno profundo" do microcontrolador e na minha mesa a bateria durou mais de 100 horas enviando dados a cada 6 minutos. Infelizmente a proteção do painel solar não funcionou e ele tem uma performance ruim na chuva. Agora estou comprando painéis solares com design à prova d'água de fábrica.
+Eu trabalhei no _software_ para usar o modo "sono profundo" do microcontrolador e na minha mesa a bateria durou mais de 100 horas enviando dados a cada 6 minutos. Infelizmente a proteção do painel solar e os conectores apresentaram baixa performance na chuva. Comprei panéis solares com proteção a prova de água de fábrica e preciso testa-los.
 
 Esse é o protótipo instalado:
 
