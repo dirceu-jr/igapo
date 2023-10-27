@@ -14,7 +14,7 @@ With community and educational purposes in mind, I am being open about suppliers
 
 The current state of the project is hardware and software prototyping. I've tested the prototype on the _Atuba River_, near a place known as [_Ecobarreira do Atuba_](https://www.instagram.com/ecobarreira_diegosaldanha/). It was on for 36 hours, the battery died at the end of the night (6 AM) and it didn't turned back on when the sun recharged the battery.
 
-I worked on the software to use the microcontroller's "deep sleep" mode and on my desk the battery lasted over 100 hours sending data every 6 minutes. Unfortunately the solar panel protection didn't work well and it has a bad performance in the rain. I am now purchasing solar panels with waterproof design.
+I worked on the software to use the microcontroller's "deep sleep" mode and on my desk the battery lasted over 100 hours sending data every 6 minutes. Unfortunately it has a bad performance in the rain. Probably the Micro USB connection do not work well with water. I ordered a new connection option.
 
 This is the prototype deployed:
 
