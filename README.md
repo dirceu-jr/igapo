@@ -12,7 +12,7 @@ This project is developed with the objective of creating low cost water monitori
 
 With community and educational purposes in mind, I am being open about suppliers, configurations, and software.
 
-The current state of the project is hardware and software prototyping. I've tested the prototype on the _Atuba River_, near a place known as [_Ecobarreira do Atuba_](https://www.instagram.com/ecobarreira_diegosaldanha/). It was on for 36 hours, the battery died at the end of the night (6 AM) and it didn't turned back on when the sun recharged the battery.
+The current state of the project is hardware and software prototyping. The prototype was tested on the _Atuba River_, near a place known as [_Ecobarreira do Atuba_](https://www.instagram.com/ecobarreira_diegosaldanha/). It was on for 36 hours, the battery died at the end of the night (6 AM) and it didn't turned back on when the sun recharged the battery.
 
 I worked on the software to use the microcontroller's "deep sleep" mode and on my desk the battery lasted over 100 hours sending data every 6 minutes. Unfortunately it has a bad performance in the rain. Probably the Micro USB connection do not work well with water. I ordered a new connection option.
 
@@ -46,8 +46,10 @@ Some locations where it would be good to have monitoring stations don't have Wi-
 
 As some locations have "water" so polluted that deteriorate any sensor, gas sensors may be used:
 
+- [DFRobot gas sensors](https://www.dfrobot.com/search-gas%20sensor.html)
 - [DS-HCHO-20 (formaldehyde)](https://aliexpress.com/item/10000027551761.html)
 - [MQ 135 (toxic gases)](https://aliexpress.com/w/wholesale-MQ-135.html)
+
 
 ## References
 

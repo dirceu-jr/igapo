@@ -8,7 +8,7 @@ Eu morava na frente de um [lindo mas poluído lago](https://pt.wikipedia.org/wik
 
 Os problemas socioambientais urbanos identificados em Curitiba incluem poluição do ar, poluição da água e degradação ambiental ([referências](#referências)).
 
-Estou desenvolvendo esse projeto com o objetivo de criar estações de monitoramento de baixo custo, possibilitando a criação de uma rede densa com a capacidade de localizar ocorrencias de poluição na água.
+Esse projeto é desenvolvido com o objetivo de criar estações de monitoramento de baixo custo, possibilitando a criação de uma rede densa com a capacidade de localizar ocorrencias de poluição na água.
 
 Com fins comunitários e educativos, estou sendo aberto sobre fornecedores, configurações e _software_.
 
@@ -46,6 +46,7 @@ Alguns locais onde seria bom ter estações de monitoramento não possuem ponto 
 
 Como alguns lugares tem a "água" tão poluída que estraga os sensores, sensores de gases podem ser usados:
 
+- [Sensores de gases no DFRobot](https://www.dfrobot.com/search-gas%20sensor.html)
 - [DS-HCHO-20 (formaldeído)](https://aliexpress.com/item/10000027551761.html)
 - [MQ 135 (gases tóxicos)](https://aliexpress.com/w/wholesale-MQ-135.html)
 
