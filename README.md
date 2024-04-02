@@ -8,7 +8,7 @@ I used to live in front of a [beautiful but polluted lake](https://pt.wikipedia.
 
 Urban socio-environmental problems identified in Curitiba includes air pollution, water pollution and environmental degradation ([references](#references)).
 
-I'm developing this project with the aim of creating low cost water monitoring stations, enabling the creation of a dense monitoring network with the capacity to locate occurrences of water pollution.
+This project is developed with the objective of creating low cost water monitoring stations, enabling the creation of a dense monitoring network with the capacity to locate occurrences of water pollution.
 
 With community and educational purposes in mind, I am being open about suppliers, configurations, and software.
 
