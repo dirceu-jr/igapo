@@ -8,13 +8,13 @@ Eu morava na frente de um [lindo mas poluído lago](https://pt.wikipedia.org/wik
 
 Os problemas socioambientais urbanos identificados em Curitiba incluem poluição do ar, poluição da água e degradação ambiental ([referências](#referências)).
 
-Esse projeto é desenvolvido com o objetivo de criar estações de monitoramento de baixo custo, possibilitando a criação de uma rede densa com a capacidade de localizar ocorrencias de poluição na água.
+Esse projeto é desenvolvido com o objetivo de criar estações de monitoramento de baixo custo, possibilitando a criação de uma rede densa com a capacidade de localizar ocorrencias de poluição e contaminação na água.
 
-Com fins comunitários e educativos, estou sendo aberto sobre fornecedores, configurações e _software_.
+Com fins comunitários e educativos, informações sobre fornecedores, configurações e _software_ são de código aberto.
 
-O estado atual do projeto é de prototipagem de _hardware_ e _software_. Eu testei o protótipo no Rio Atuba, próximo a um lugar conhecido por [Ecobarreira do Atuba](https://www.instagram.com/ecobarreira_diegosaldanha/). Ele ficou ligado por 36 horas, a bateria acabou no final da noite (6 AM) e ele não religou quando o sol recarregou a bateria. 
+O estado atual do projeto é de prototipagem de _hardware_ e _software_. O protótipo foi testado no Rio Atuba, próximo a um lugar conhecido por [Ecobarreira do Atuba](https://www.instagram.com/ecobarreiradiegosaldanha/). Ele ficou ligado por 36 horas, a bateria acabou no final da noite e ele não religou quando o sol recarregou a bateria. 
 
-Eu trabalhei no _software_ para usar o modo "sono profundo" do microcontrolador e na minha mesa a bateria durou mais de 100 horas enviando dados a cada 6 minutos. Infelizmente os conectores apresentaram baixa performance na chuva. Comprei novos conectores e preciso testa-los.
+O _software_ foi alterado para usar o modo "sono profundo" do microcontrolador e na mesa a bateria durou mais de 100 horas enviando dados a cada 6 minutos. Infelizmente os conectores apresentaram baixa performance na chuva. Provavelmente a conexão Micro USB não funciona bem com água.
 
 Esse é o protótipo instalado:
 
@@ -40,11 +40,11 @@ Esse é o protótipo em maior detalhe:
 
 Alguns locais onde seria bom ter estações de monitoramento não possuem ponto de acesso Wi-Fi. Portanto, conectividade celular ou mesmo via satélite são necessárias.
 
-- [LILYGO® TTGO T-SIM7000G](https://pt.aliexpress.com/item/4000542688096.html). Para conectividade celular esta placa de baixo consumo de energia e baixo custo vem com microcontrolador _ESP32_ da Espressif, modem 7000G da SIMCom, suporte de bateria e circuito de energia solar, tudo por volta de 200 Reais. O _ESP32_ é mais capaz que o _Arduino_ e mais barato que o _Raspberry Pi_.
+- [LILYGO® TTGO T-SIM7000G](https://pt.aliexpress.com/item/4000542688096.html). Para conectividade celular esta placa de baixo consumo de energia e baixo custo vem com microcontrolador _ESP32_ da Espressif, modem 7000G da SIMCom, suporte de bateria e circuito de energia solar, tudo por volta de 170 Reais. O _ESP32_ é mais capaz que o _Arduino_ e mais barato que o _Raspberry Pi_.
 
 <a target="_blank" href="https://pt.aliexpress.com/item/4000542688096.html"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/lilygo-t-sim7000g.webp"></a>
 
-Como alguns lugares tem a "água" tão poluída que estraga os sensores, sensores de gases podem ser usados:
+Como a "água" poluída ou contaminada pode deteriorar as sondas, exigindo hardware mais robusto (mais caro) e maior mão-de-obra de manutenção, sensores de gases podem ser usados sobre o curso de água:
 
 - [Sensores de gases no DFRobot](https://www.dfrobot.com/search-gas%20sensor.html)
 - [DS-HCHO-20 (formaldeído)](https://aliexpress.com/item/10000027551761.html)
