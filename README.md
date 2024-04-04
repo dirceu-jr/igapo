@@ -8,13 +8,13 @@ I used to live in front of a [beautiful but polluted lake](https://pt.wikipedia.
 
 Urban socio-environmental problems identified in Curitiba includes air pollution, water pollution and environmental degradation ([references](#references)).
 
-This project is developed with the objective of creating low cost water monitoring stations, enabling the creation of a dense monitoring network with the capacity to locate occurrences of water pollution.
+This project is developed with the objective of creating low-cost water monitoring stations, enabling the creation of a dense monitoring network with the capacity to locate occurrences of water pollution and contamination.
 
-With community and educational purposes in mind, I am being open about suppliers, configurations, and software.
+With community and educational purposes in mind, information about suppliers, configurations, and software are all open-source.
 
-The current state of the project is hardware and software prototyping. The prototype was tested on the _Atuba River_, near a place known as [_Ecobarreira do Atuba_](https://www.instagram.com/ecobarreira_diegosaldanha/). It was on for 36 hours, the battery died at the end of the night (6 AM) and it didn't turned back on when the sun recharged the battery.
+The current state of the project is hardware and software prototyping. A prototype was tested on the _Atuba River_, near a place known as [_Ecobarreira do Atuba_](https://www.instagram.com/ecobarreira_diegosaldanha/). It was "on" for 36 hours, but the battery died at the end of the night and it didn't turned back "on" when the sun recharged the battery.
 
-I worked on the software to use the microcontroller's "deep sleep" mode and on my desk the battery lasted over 100 hours sending data every 6 minutes. Unfortunately it has a bad performance in the rain. Probably the Micro USB connection do not work well with water. I ordered a new connection option.
+The software has been improved to use the microcontroller's "deep sleep" mode and on the desk the battery lasted over 100 hours sending data every 6 minutes. Unfortunately it has a bad performance in the rain. Probably the Micro USB connection do not work well with water.
 
 This is the prototype deployed:
 
@@ -40,16 +40,15 @@ This is the prototype in greater detail:
 
 Some locations where it would be good to have monitoring stations don't have Wi-Fi access point. So cellular or even satellite connectivity are necessary.
 
-- [LILYGO® TTGO T-SIM7000G](https://pt.aliexpress.com/item/4000542688096.html). For cellular connectivity this low-power, low-cost board comes with Espressif's _ESP32_ microcontroller, SIMCom's 7000G cellular modem, battery holder and solar power circuit at around 200 Brazilian Reais. _ESP32_ is more capable than _Arduino_ and less expensive than _Raspberry Pi_.
+- [LILYGO® TTGO T-SIM7000G](https://pt.aliexpress.com/item/4000542688096.html). For cellular connectivity this low-power, low-cost board comes with Espressif's _ESP32_ microcontroller, SIMCom's 7000G cellular modem, battery holder and solar power circuit at around 170 Brazilian Reais. _ESP32_ is more capable than _Arduino_ and less expensive than _Raspberry Pi_.
 
 <a target="_blank" href="https://pt.aliexpress.com/item/4000542688096.html"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/lilygo-t-sim7000g.webp"></a>
 
-As some locations have "water" so polluted that deteriorate any sensor, gas sensors may be used:
+As polluted or contaminated "water" may deteriorate probes requiring more robust (more expensive) hardware or greater maintenance labor, gas sensors may be used over the watercourse:
 
 - [DFRobot gas sensors](https://www.dfrobot.com/search-gas%20sensor.html)
 - [DS-HCHO-20 (formaldehyde)](https://aliexpress.com/item/10000027551761.html)
 - [MQ 135 (toxic gases)](https://aliexpress.com/w/wholesale-MQ-135.html)
-
 
 ## References
 
