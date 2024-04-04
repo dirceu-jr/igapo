@@ -44,7 +44,7 @@ Some locations where it would be good to have monitoring stations don't have Wi-
 
 <a target="_blank" href="https://pt.aliexpress.com/item/4000542688096.html"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/ambient-water-quality/master/readme_files/lilygo-t-sim7000g.webp"></a>
 
-As polluted or contaminated "water" may deteriorate probes requiring more robust (more expensive) hardware or greater maintenance labor, gas sensors may be used over the watercourse:
+As polluted or contaminated "water" can deteriorate the probes, requiring more robust (more expensive) hardware and greater maintenance labor, gas sensors can be used over the water course:
 
 - [DFRobot gas sensors](https://www.dfrobot.com/search-gas%20sensor.html)
 - [DS-HCHO-20 (formaldehyde)](https://aliexpress.com/item/10000027551761.html)
