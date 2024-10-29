@@ -40,15 +40,9 @@ This is the prototype in greater detail:
 
 Some locations where it would be good to have monitoring stations don't have Wi-Fi access point. So cellular or even satellite connectivity are necessary.
 
-- [LILYGO® TTGO T-SIM7000G](https://pt.aliexpress.com/item/4000542688096.html). For cellular connectivity this low-power, low-cost board comes with Espressif's _ESP32_ microcontroller, SIMCom's 7000G cellular modem, battery holder and solar power circuit at around 170 Brazilian Reais. _ESP32_ is more capable than _Arduino_ and less expensive than _Raspberry Pi_.
+- [LILYGO® TTGO T-SIM7000G](https://pt.aliexpress.com/item/4000542688096.html). For cellular connectivity this low-power, low-cost board comes with Espressif's _ESP32_ microcontroller, SIMCom's 7000G cellular modem, battery holder and solar power circuit at around 200 Brazilian Reais. _ESP32_ is more capable than _Arduino_ and less expensive than _Raspberry Pi_.
 
 <a target="_blank" href="https://pt.aliexpress.com/item/4000542688096.html"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/lilygo-t-sim7000g.webp"></a>
-
-As polluted or contaminated "water" can deteriorate the probes, requiring more robust (more expensive) hardware and greater maintenance labor, gas sensors can be used over the water course:
-
-- [DFRobot gas sensors](https://www.dfrobot.com/search-gas%20sensor.html)
-- [DS-HCHO-20 (formaldehyde)](https://aliexpress.com/item/10000027551761.html)
-- [MQ 135 (toxic gases)](https://aliexpress.com/w/wholesale-MQ-135.html)
 
 ## References
 
