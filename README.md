@@ -12,9 +12,13 @@ This project is developed with the objective of creating low-cost water monitori
 
 With community and educational purposes in mind, information about suppliers, configurations, and software are all open-source.
 
+## Status
+
 The current state of the project is hardware and software prototyping. A prototype was tested on the _Atuba River_, near a place known as [_Ecobarreira do Atuba_](https://www.instagram.com/ecobarreiradiegosaldanha/). It was "on" for 36 hours, but the battery died at the end of the night and it didn't turned back "on" when the sun recharged the battery.
 
 The software has been improved to use the microcontroller's "deep sleep" mode and on the desk the battery lasted over 100 hours sending data every 6 minutes. Unfortunately it has a bad performance in the rain. Probably the Micro USB connection do not work well with water.
+
+**The prototype is being prepared for a kayak tour.**
 
 This is the prototype deployed:
 
