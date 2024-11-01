@@ -16,9 +16,9 @@ Com fins comunitários e educativos, informações sobre fornecedores, configura
 
 O estado atual do projeto é de prototipagem de _hardware_ e _software_. O protótipo foi testado no Rio Atuba, próximo a um lugar conhecido por [Ecobarreira do Atuba](https://www.instagram.com/ecobarreiradiegosaldanha/). Ele ficou ligado por 36 horas, a bateria acabou no final da noite e ele não religou quando o sol recarregou a bateria. 
 
-O _software_ foi alterado para usar o modo "sono profundo" do microcontrolador e na mesa a bateria durou mais de 100 horas enviando dados a cada 6 minutos. Infelizmente os conectores apresentaram baixa performance na chuva. Provavelmente a conexão Micro USB não funciona bem com água.
+O _software_ foi melhorado para usar o modo "sono profundo" do microcontrolador e na mesa a bateria durou mais de 100 horas enviando dados a cada 6 minutos. Infelizmente apresentou baixa performance na chuva. Provavelmente a conexão Micro USB não funciona bem com água. Um novo conector foi adquirido e será testado novamente.
 
-**O prototipo está sendo preparado para um passeio de caiaque.**
+**O prototipo também está sendo preparado para um passeio de caiaque.**
 
 Esse é o protótipo instalado:
 
