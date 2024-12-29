@@ -18,8 +18,6 @@ The current state of the project is hardware and software prototyping. A prototy
 
 The software has been improved to use the microcontroller's "deep sleep" mode and on the desk the battery lasted over 100 hours sending data every 6 minutes. Unfortunately it has a bad performance in the rain. Probably the Micro USB connection do not work well with water. A new one was bought and it will be tested again.
 
-**The prototype is also being prepared for a kayak tour.**
-
 This is the prototype deployed:
 
 ![IMG_20221220_165045](https://user-images.githubusercontent.com/20571/212798906-fd5728bf-b791-455d-8456-79cf07689e0c.jpg)

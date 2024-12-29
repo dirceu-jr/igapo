@@ -18,8 +18,6 @@ O estado atual do projeto é de prototipagem de _hardware_ e _software_. O prot�
 
 O _software_ foi melhorado para usar o modo "sono profundo" do microcontrolador e na mesa a bateria durou mais de 100 horas enviando dados a cada 6 minutos. Infelizmente apresentou baixa performance na chuva. Provavelmente a conexão Micro USB não funciona bem com água. Um novo conector foi adquirido e será testado novamente.
 
-**O prototipo também está sendo preparado para um passeio de caiaque.**
-
 Esse é o protótipo instalado:
 
 ![IMG_20221220_165045](https://user-images.githubusercontent.com/20571/212798906-fd5728bf-b791-455d-8456-79cf07689e0c.jpg)
