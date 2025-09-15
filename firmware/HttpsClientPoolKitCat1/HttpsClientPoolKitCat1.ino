@@ -1,10 +1,3 @@
-// TODO:
-// - Check/disable GPS - DONE;
-// - Change pool kit enable pins to available board pins - DONE;
-// - Connect with Pool Kit - DONE;
-// - ESP32 deep sleep;
-// - Modem off while sleep;
-
 #include "utilities.h"
 
 // Set serial for debug console (to the Serial Monitor, default speed 115200)
@@ -29,7 +22,7 @@
 #include <TinyGsmClient.h>
 #include <ArduinoHttpClient.h>
 #include <Ezo_i2c.h>
-#include <Ezo_i2c_util.h>
+// #include <Ezo_i2c_util.h>
 
 // Your GPRS credentials, if any
 const char apn[] = "iot.datatem.com.br";
@@ -73,37 +66,52 @@ HttpClient          http(client, server, port);
 
 // #define LED_PIN     12
 
+void modemPowerOn() {
+  pinMode(BOARD_PWRKEY_PIN, OUTPUT);
+  digitalWrite(BOARD_PWRKEY_PIN, HIGH);
+  delay(100);
+  digitalWrite(BOARD_PWRKEY_PIN, LOW);
+  delay(MODEM_POWERON_PULSE_WIDTH_MS);
+  digitalWrite(BOARD_PWRKEY_PIN, HIGH);
+}
+
+// enable sensors circuits only at reading time
 // Power consumption
 // 0.19A with circuits enabled (LOW, LOW, HIGH)
 // 0.07A with circuits disabled (HIGH, HIGH, LOW)
-
-// enable sensors circuits only at reading time
-void enable_circuits() {
+void enableCircuits() {
   digitalWrite(EN_PH, LOW);
   digitalWrite(EN_ORP, LOW);
   digitalWrite(EN_RTD, HIGH);
 
-  Serial.println("circuits ON");
+  SerialMon.println("Circuits ON");
 
   // wait 2 secs, till circuits power on
   delay(2000);
 }
 
-void disable_circuits() {
+void disableCircuits() {
   digitalWrite(EN_PH, HIGH);
   digitalWrite(EN_ORP, HIGH);
   digitalWrite(EN_RTD, LOW);
 
-  Serial.println("circuits OFF");
+  SerialMon.println("Circuits OFF");
 }
 
-void modemPowerOn() {
-  pinMode(BOARD_PWRKEY_PIN, OUTPUT);
-  digitalWrite(BOARD_PWRKEY_PIN, LOW);
-  delay(100);
-  digitalWrite(BOARD_PWRKEY_PIN, HIGH);
-  delay(MODEM_POWERON_PULSE_WIDTH_MS);
-  digitalWrite(BOARD_PWRKEY_PIN, LOW);
+void holdCircuitsGpio() {
+  SerialMon.println("Holding GPIO states for deep sleep...");
+  gpio_hold_en((gpio_num_t)EN_PH);
+  gpio_hold_en((gpio_num_t)EN_ORP);
+  gpio_hold_en((gpio_num_t)EN_RTD);
+  gpio_deep_sleep_hold_en();
+}
+
+void releaseCircuitsGpio() {
+  SerialMon.println("Releasing GPIO states from deep sleep...");
+  gpio_hold_dis((gpio_num_t)EN_PH);
+  gpio_hold_dis((gpio_num_t)EN_ORP);
+  gpio_hold_dis((gpio_num_t)EN_RTD);
+  gpio_deep_sleep_hold_dis();
 }
 
 bool connectAndSendData(SensorData readings) {
@@ -170,19 +178,15 @@ void disconnectAndPowerModemOff() {
   modem.gprsDisconnect();
   SerialMon.println(F("GPRS disconnected"));
 
-  // Power down the modem using AT command first
+  // Power down the modem using AT command
   SerialMon.println(F("Powering down modem with AT command..."));
   modem.poweroff();
-
-  // Then turn off the modem power
-  // SerialMon.println(F("Powering off modem..."));
-  // modemPowerOff();
-  // SerialMon.println(F("Modem off"));
 }
 
 float receive_RTD_and_send_temperature_to_PH() {
   // get the reading from the RTD circuit
-  receive_and_print_reading(RTD);
+  // receive_and_print_reading(RTD);
+  RTD.receive_read_cmd();
 
   // if the temperature reading has been received and it is valid
   if ((RTD.get_error() == Ezo_board::SUCCESS) && (RTD.get_last_received_reading() > -1000.0)) {
@@ -198,7 +202,8 @@ float receive_RTD_and_send_temperature_to_PH() {
 
 float receive_PH() {
   // get the reading from the PH circuit
-  receive_and_print_reading(PH);
+  // receive_and_print_reading(PH);
+  PH.receive_read_cmd();
 
   if (PH.get_error() == Ezo_board::SUCCESS) {
     return PH.get_last_received_reading();
@@ -207,7 +212,8 @@ float receive_PH() {
 
 float receive_ORP() {
   // get the reading from the ORP circuit
-  receive_and_print_reading(ORP);
+  // receive_and_print_reading(ORP);
+  ORP.receive_read_cmd();
 
   if (ORP.get_error() == Ezo_board::SUCCESS) {
     return ORP.get_last_received_reading();
@@ -217,7 +223,7 @@ float receive_ORP() {
 SensorData getSensorReadings() {
   SensorData data;
 
-  enable_circuits();
+  enableCircuits();
 
   // step1
   RTD.send_read_cmd();
@@ -238,7 +244,7 @@ SensorData getSensorReadings() {
   data.ph = receive_PH();
   data.orp = receive_ORP();
 
-  disable_circuits();
+  disableCircuits();
 
   return data;
 }
@@ -248,12 +254,15 @@ void setup() {
   esp_wifi_stop();
   esp_bt_controller_disable();
 
+  // release GPIOs from deep sleep hold, in case they were held
+  releaseCircuitsGpio();
+
   // set enable pins as outputs
   pinMode(EN_PH, OUTPUT);
   pinMode(EN_ORP, OUTPUT);
   pinMode(EN_RTD, OUTPUT);
 
-  disable_circuits();
+  disableCircuits();
 
   // Set LED OFF
   // pinMode(LED_PIN, OUTPUT);
@@ -267,7 +276,6 @@ void setup() {
   delay(1000);
 
   SerialMon.println("Hello A7670SA!");
-  SerialMon.println(F("Powering modem on..."));
 
   /* Set Power control pin output
   * * @note      Known issues, ESP32 (V1.2) version of T-A7670, T-A7608,
@@ -285,7 +293,9 @@ void setup() {
   digitalWrite(MODEM_DTR_PIN, LOW);
 
   // Turn on modem
+  SerialMon.println(F("Powering modem on..."));
   modemPowerOn();
+  delay(3000);
 
   // Set GSM module baud rate
   SerialAT.begin(MODEM_BAUDRATE, SERIAL_8N1, MODEM_RX_PIN, MODEM_TX_PIN);
@@ -329,15 +339,18 @@ void loop() {
   bool success = connectAndSendData(readings);
   if (!success) {
     SerialMon.println("Connection error...");
-    delay(10000);
+    delay(30000);
     return;
   }
 
-  // disconnectAndPowerModemOff();
+  disconnectAndPowerModemOff();
+  holdCircuitsGpio();
+
+  SerialMon.println("Entering deep sleep...");
 
   // sleep for 5 minutes
   // ESP.deepSleep(300e6);
 
-  // wait for some time
-  delay(30000);
+  // sleep for 30 seconds
+  ESP.deepSleep(30e6);
 }

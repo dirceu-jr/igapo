@@ -15,7 +15,7 @@
 #define MODEM_BAUDRATE                      (115200)
 #define MODEM_DTR_PIN                       (25)
 // OBS:
-// - TX/RX are different (inverted) between A7670SA R2 and not R2!
+// - TX/RX are different (inverted) between A7670SA R1 and R2;
 // #define MODEM_TX_PIN                        (27)
 // #define MODEM_RX_PIN                        (26)
 #define MODEM_TX_PIN                        (26)
@@ -51,5 +51,5 @@
 // #define MODEM_REG_SMS_ONLY
 
 // Used on power on/off sequence
-#define MODEM_POWERON_PULSE_WIDTH_MS      (100)
+#define MODEM_POWERON_PULSE_WIDTH_MS      (1000)
 #define MODEM_POWEROFF_PULSE_WIDTH_MS     (3000)
