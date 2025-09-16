@@ -26,6 +26,10 @@ Esse é o protótipo em maior detalhe:
 
 <img src="https://user-images.githubusercontent.com/20571/212799501-3fa20d3c-de6e-48f0-9699-e0ce9b30915b.jpg" width="340">
 
+Este é o trabalho em andamento para habilitar a conectividade celular:
+
+<img src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/1757982036064.jpg" width="340">
+
 ## Hardware atual
 
 - [Atlas Scientific Wi-Fi Pool Kit](https://atlas-scientific.com/kits/wi-fi-pool-kit/) (_Legacy_, com _ESP8266_). Possui sondas de pH, ORP (Potencial de redução) e temperatura, fornece conectividade Wi-Fi.
@@ -42,9 +46,13 @@ Esse é o protótipo em maior detalhe:
 
 Alguns locais onde seria bom ter estações de monitoramento não possuem ponto de acesso Wi-Fi. Portanto, conectividade celular ou mesmo via satélite são necessárias.
 
-- [LILYGO® TTGO T-SIM7000G](https://pt.aliexpress.com/item/4000542688096.html). Para conectividade celular esta placa de baixo consumo de energia e baixo custo vem com microcontrolador _ESP32_ da Espressif, modem 7000G da SIMCom, suporte de bateria e circuito de energia solar, tudo por volta de 200 Reais. O _ESP32_ é mais capaz que o _Arduino_ e mais barato que o _Raspberry Pi_.
+- [LILYGO® TTGO T-SIM7000G](https://lilygo.cc/products/t-sim7000g). Para conectividade celular esta placa de baixo consumo de energia e baixo custo vem com microcontrolador _ESP32_ da Espressif, modem 7000G da SIMCom, suporte de bateria e circuito de energia solar, tudo por volta de 200 Reais. O _ESP32_ é mais capaz que o _Arduino_ e mais barato que o _Raspberry Pi_.
 
-<a target="_blank" href="https://pt.aliexpress.com/item/4000542688096.html"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/lilygo-t-sim7000g.webp"></a>
+<a target="_blank" href="https://lilygo.cc/products/t-sim7000g"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/lilygo-t-sim7000g.webp"></a>
+
+- [LILYGO® T-A7670SA R2](https://lilygo.cc/products/t-sim-a7670e). Semelhante ao T-SIM7000G, mas este tem suporte ao protocolo Cat 1, permitindo conexão futura ao "Direct to Cell" da Starlink.
+
+<a target="_blank" href="https://lilygo.cc/products/t-sim-a7670e"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/LILYGO-T-SIMA7670E_18.jpg"></a>
 
 ## Referências
 
@@ -52,7 +60,7 @@ Alguns locais onde seria bom ter estações de monitoramento não possuem ponto 
 
 ## Software
 
-- [Software Embarcado](https://github.com/dirceu-jr/igapo/blob/main/firmware/legacy_pool_kit/legacy_pool_kit.ino)
+- [Software Embarcado](https://github.com/dirceu-jr/igapo/blob/main/firmware/)
 - [Canal no ThingSpeak](https://thingspeak.com/channels/1956479/)
 - [Protótipo de Painel](https://dirceu-jr.github.io/igapo/dashboard/)
 
@@ -60,7 +68,7 @@ Alguns locais onde seria bom ter estações de monitoramento não possuem ponto 
 
 - [Atlas Scientific](https://atlas-scientific.com/)
 - [Espressif](https://www.espressif.com/)
-- [LILYGO](https://pt.aliexpress.com/store/2090076)
+- [LILYGO](https://lilygo.cc/)
 
 ## Dados em tempo real
 
