@@ -26,6 +26,10 @@ This is the prototype in greater detail:
 
 <img src="https://user-images.githubusercontent.com/20571/212799501-3fa20d3c-de6e-48f0-9699-e0ce9b30915b.jpg" width="340">
 
+This is the work in progress to enable cellular connectivity:
+
+<img src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/1757982036064.jpg" width="340">
+
 ## Current Hardware
 
 - [Atlas Scientific Wi-Fi Pool Kit](https://atlas-scientific.com/kits/wi-fi-pool-kit/) (Legacy, with _ESP8266_). It has pH, ORP (Oxidation Reduction Potential) and Temperature probes and comes with Wi-Fi connectivity.
@@ -36,15 +40,17 @@ This is the prototype in greater detail:
 
 <a target="_blank" href="https://pt.aliexpress.com/item/4001156737871.html"><img alt="LILYGO® TTGO T-BAT Battery Holder" width="260" src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/lilygo-ttgo-t-bat.webp"></a>
 
-- [iSNK Solar Panel](https://pt.aliexpress.com/store/3877081)
-
 ## Future Work
 
 Some locations where it would be good to have monitoring stations don't have Wi-Fi access point. So cellular or even satellite connectivity are necessary.
 
-- [LILYGO® TTGO T-SIM7000G](https://pt.aliexpress.com/item/4000542688096.html). For cellular connectivity this low-power, low-cost board comes with Espressif's _ESP32_ microcontroller, SIMCom's 7000G cellular modem, battery holder and solar power circuit at around 200 Brazilian Reais. _ESP32_ is more capable than _Arduino_ and less expensive than _Raspberry Pi_.
+- [LILYGO® T-SIM7000G](https://lilygo.cc/products/t-sim7000g). For cellular connectivity (NB-IoT) this low-power, low-cost board comes with Espressif's _ESP32_ microcontroller, SIMCom's 7000G cellular modem, battery holder and solar power circuit at around 200 Brazilian Reais. _ESP32_ is more capable than _Arduino_ and less expensive than _Raspberry Pi_.
 
-<a target="_blank" href="https://pt.aliexpress.com/item/4000542688096.html"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/lilygo-t-sim7000g.webp"></a>
+<a target="_blank" href="https://lilygo.cc/products/t-sim7000g"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/lilygo-t-sim7000g.webp"></a>
+
+- [LILYGO® T-A7670SA R2](https://lilygo.cc/products/t-sim-a7670e). Similar to T-SIM7000G but this one have Cat 1 protocol support, enabling future connection to Starlink's "Direct to Cell".
+
+<a target="_blank" href="https://lilygo.cc/products/t-sim-a7670e"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/LILYGO-T-SIMA7670E_18.jpg"></a>
 
 ## References
 
@@ -52,7 +58,7 @@ Some locations where it would be good to have monitoring stations don't have Wi-
 
 ## Software
 
-- [Embedded Software](https://github.com/dirceu-jr/igapo/blob/main/firmware/legacy_pool_kit/legacy_pool_kit.ino)
+- [Embedded Software](https://github.com/dirceu-jr/igapo/blob/main/firmware/)
 - [ThingSpeak Channel](https://thingspeak.com/channels/1956479/)
 - [Dashboard Prototype](https://dirceu-jr.github.io/igapo/dashboard/)
 
@@ -60,7 +66,7 @@ Some locations where it would be good to have monitoring stations don't have Wi-
 
 - [Atlas Scientific](https://atlas-scientific.com/)
 - [Espressif](https://www.espressif.com/)
-- [LILYGO](https://pt.aliexpress.com/store/2090076)
+- [LILYGO](https://lilygo.cc/)
 
 ## Real-Time Data
 
