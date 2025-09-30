@@ -99,7 +99,7 @@ void disableCircuits() {
 }
 
 void holdCircuitsGpio() {
-  SerialMon.println("Holding GPIO states for deep sleep...");
+  SerialMon.println("Holding GPIO states for deep sleep");
   gpio_hold_en((gpio_num_t)EN_PH);
   gpio_hold_en((gpio_num_t)EN_ORP);
   gpio_hold_en((gpio_num_t)EN_RTD);
@@ -107,7 +107,7 @@ void holdCircuitsGpio() {
 }
 
 void releaseCircuitsGpio() {
-  SerialMon.println("Releasing GPIO states from deep sleep...");
+  SerialMon.println("Releasing GPIO states from deep sleep");
   gpio_hold_dis((gpio_num_t)EN_PH);
   gpio_hold_dis((gpio_num_t)EN_ORP);
   gpio_hold_dis((gpio_num_t)EN_RTD);
@@ -118,7 +118,7 @@ bool connectAndSendData(SensorData readings) {
   SerialMon.print("Signal quality: ");
   SerialMon.println(modem.getSignalQuality());
 
-  SerialMon.print("Waiting for network...");
+  SerialMon.print("Waiting for network");
   if (!modem.waitForNetwork()) {
     SerialMon.println(" fail");
     return false;
@@ -131,7 +131,7 @@ bool connectAndSendData(SensorData readings) {
 
   // GPRS connection parameters are usually set after network registration
   if (modem.isGprsConnected()) {
-    SerialMon.println("GPRS already connected!");
+    SerialMon.println("GPRS already connected");
   } else {
     SerialMon.print(F("Connecting to "));
     SerialMon.print(apn);
@@ -146,9 +146,9 @@ bool connectAndSendData(SensorData readings) {
   http.connectionKeepAlive(); // this may be needed for HTTPS
 
   // Construct the resource URL
-  String resource = String("/update?api_key=") + writeAPIKey + "&field1=" + String(readings.ph) + "&field2=" + String(readings.orp) + "field3=" + String(readings.temperature);
+  String resource = String("/update?api_key=") + writeAPIKey + "&field1=" + String(readings.ph) + "&field2=" + String(readings.orp) + "&field3=" + String(readings.temperature);
 
-  SerialMon.print(F("Performing HTTPS GET request... "));
+  SerialMon.print(F("Performing HTTPS GET request"));
   int err = http.get(resource);
   if (err != 0) {
     SerialMon.print(F("failed to connect, error: "));
@@ -179,7 +179,7 @@ void disconnectAndPowerModemOff() {
   SerialMon.println(F("GPRS disconnected"));
 
   // Power down the modem using AT command
-  SerialMon.println(F("Powering down modem with AT command..."));
+  SerialMon.println(F("Powering down modem"));
   modem.poweroff();
 }
 
@@ -313,6 +313,7 @@ void setup() {
 
   delay(200);
 
+  // print modem info
   String name = modem.getModemName();
   SerialMon.println("Modem Name: " + name);
 
@@ -337,20 +338,17 @@ void loop() {
   SensorData readings = getSensorReadings();
 
   bool success = connectAndSendData(readings);
-  if (!success) {
-    SerialMon.println("Connection error...");
-    delay(30000);
-    return;
-  }
 
   disconnectAndPowerModemOff();
   holdCircuitsGpio();
 
-  SerialMon.println("Entering deep sleep...");
-
-  // sleep for 5 minutes
-  // ESP.deepSleep(300e6);
-
-  // sleep for 30 seconds
-  ESP.deepSleep(30e6);
+  if (success) {
+    SerialMon.println("Entering deep sleep for success...");
+    // sleep for 10 minutes
+    ESP.deepSleep(600e6);
+  } else {
+    SerialMon.println("Entering deep sleep for error...");
+    // sleep for 1 minute
+    ESP.deepSleep(60e6);
+  }
 }
