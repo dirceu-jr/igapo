@@ -22,7 +22,6 @@
 #include <TinyGsmClient.h>
 #include <ArduinoHttpClient.h>
 #include <Ezo_i2c.h>
-// #include <Ezo_i2c_util.h>
 
 // Your GPRS credentials, if any
 const char apn[] = "iot.datatem.com.br";
@@ -148,7 +147,7 @@ bool connectAndSendData(SensorData readings) {
   // Construct the resource URL
   String resource = String("/update?api_key=") + writeAPIKey + "&field1=" + String(readings.ph) + "&field2=" + String(readings.orp) + "&field3=" + String(readings.temperature);
 
-  SerialMon.print(F("Performing HTTPS GET request"));
+  SerialMon.println(F("Performing HTTPS GET request"));
   int err = http.get(resource);
   if (err != 0) {
     SerialMon.print(F("failed to connect, error: "));
@@ -183,9 +182,8 @@ void disconnectAndPowerModemOff() {
   modem.poweroff();
 }
 
+// get the reading from the RTD circuit
 float receive_RTD_and_send_temperature_to_PH() {
-  // get the reading from the RTD circuit
-  // receive_and_print_reading(RTD);
   RTD.receive_read_cmd();
 
   // if the temperature reading has been received and it is valid
@@ -200,13 +198,14 @@ float receive_RTD_and_send_temperature_to_PH() {
   }
 }
 
+// get the reading from the PH circuit
 float receive_PH() {
-  // get the reading from the PH circuit
-  // receive_and_print_reading(PH);
   PH.receive_read_cmd();
 
   if (PH.get_error() == Ezo_board::SUCCESS) {
     return PH.get_last_received_reading();
+  } else {
+    return -1.0;
   }
 }
 
@@ -217,6 +216,8 @@ float receive_ORP() {
 
   if (ORP.get_error() == Ezo_board::SUCCESS) {
     return ORP.get_last_received_reading();
+  } else {
+    return -1.0;
   }
 }
 
@@ -293,7 +294,7 @@ void setup() {
   digitalWrite(MODEM_DTR_PIN, LOW);
 
   // Turn on modem
-  SerialMon.println(F("Powering modem on..."));
+  SerialMon.println(F("Powering modem on"));
   modemPowerOn();
   delay(3000);
 
@@ -303,9 +304,9 @@ void setup() {
 
   // Restart takes quite some time
   // To skip it, call init() instead of restart()
-  // SerialMon.println("Restarting modem...");
+  // SerialMon.println("Restarting modem");
   // modem.restart();
-  SerialMon.println("Initializing modem...");
+  SerialMon.println("Initializing modem");
   modem.init();
 
   // Disable GPS
@@ -343,11 +344,11 @@ void loop() {
   holdCircuitsGpio();
 
   if (success) {
-    SerialMon.println("Entering deep sleep for success...");
+    SerialMon.println("Entering deep sleep for success");
     // sleep for 10 minutes
     ESP.deepSleep(600e6);
   } else {
-    SerialMon.println("Entering deep sleep for error...");
+    SerialMon.println("Entering deep sleep for error");
     // sleep for 1 minute
     ESP.deepSleep(60e6);
   }
