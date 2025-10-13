@@ -31,7 +31,7 @@
 // #define BOARD_MOSI_PIN                      (15)
 // #define BOARD_SCK_PIN                       (14)
 // #define BOARD_SD_CS_PIN                     (13)
-// #define BOARD_BAT_ADC_PIN                   (35)
+#define BOARD_BAT_ADC_PIN                   (35)
 #define MODEM_RESET_LEVEL                   HIGH
 #define SerialAT                            Serial1
 

@@ -50,6 +50,7 @@ struct SensorData {
   float ph;
   float orp;
   float temperature;
+  uint32_t batteryVoltage;
 };
 
 #ifdef DUMP_AT_COMMANDS
@@ -145,7 +146,11 @@ bool connectAndSendData(SensorData readings) {
   http.connectionKeepAlive(); // this may be needed for HTTPS
 
   // Construct the resource URL
-  String resource = String("/update?api_key=") + writeAPIKey + "&field1=" + String(readings.ph) + "&field2=" + String(readings.orp) + "&field3=" + String(readings.temperature);
+  String resource = String("/update?api_key=") + writeAPIKey + 
+                   "&field1=" + String(readings.ph) + 
+                   "&field2=" + String(readings.orp) + 
+                   "&field3=" + String(readings.temperature) +
+                   "&field4=" + String(readings.batteryVoltage);
 
   SerialMon.println(F("Performing HTTPS GET request"));
   int err = http.get(resource);
@@ -221,6 +226,17 @@ float receive_ORP() {
   }
 }
 
+// Read battery voltage in millivolts
+uint32_t getBatteryVoltage() {
+  // Read ADC value directly in millivolts
+  uint32_t battery_voltage = analogReadMilliVolts(BOARD_BAT_ADC_PIN);
+
+  // The hardware voltage divider resistor is half of the actual voltage, multiply it by 2 to get the true voltage
+  battery_voltage *= 2;
+
+  return battery_voltage;
+}
+
 SensorData getSensorReadings() {
   SensorData data;
 
@@ -247,6 +263,9 @@ SensorData getSensorReadings() {
 
   disableCircuits();
 
+  // Read battery voltage
+  data.batteryVoltage = getBatteryVoltage();
+
   return data;
 }
 
@@ -264,6 +283,9 @@ void setup() {
   pinMode(EN_RTD, OUTPUT);
 
   disableCircuits();
+
+  // Set up battery voltage reading pin
+  pinMode(BOARD_BAT_ADC_PIN, INPUT);
 
   // Set LED OFF
   // pinMode(LED_PIN, OUTPUT);
@@ -338,6 +360,7 @@ void setup() {
 void loop() {
   SensorData readings = getSensorReadings();
 
+  // 📡 Transmit readings to the server
   bool success = connectAndSendData(readings);
 
   disconnectAndPowerModemOff();
@@ -345,11 +368,10 @@ void loop() {
 
   if (success) {
     SerialMon.println("Entering deep sleep for success");
-    // sleep for 10 minutes
-    ESP.deepSleep(600e6);
   } else {
     SerialMon.println("Entering deep sleep for error");
-    // sleep for 1 minute
-    ESP.deepSleep(60e6);
   }
+
+  // Sleep for 10 minutes
+  ESP.deepSleep(600e6);
 }
