@@ -14,19 +14,21 @@ Com fins comunitários e educativos, informações sobre fornecedores, configura
 
 ## Status
 
-O estado atual do projeto é de prototipagem de _hardware_ e _software_. O protótipo foi testado no Rio Atuba, próximo a um lugar conhecido por [Ecobarreira do Atuba](https://www.instagram.com/ecobarreiradiegosaldanha/). Ele ficou ligado por 36 horas, a bateria acabou no final da noite e ele não religou quando o sol recarregou a bateria. 
+O estado atual do projeto é de prototipagem de _hardware_ e _software_. O protótipo foi testado no Rio Atuba, próximo a um lugar conhecido por [Ecobarreira do Atuba](https://www.instagram.com/ecobarreiradiegosaldanha/). O protótipo está instalado no Lago Igapó 2.
 
-O _software_ foi melhorado para usar o modo "sono profundo" do microcontrolador e na mesa a bateria durou mais de 100 horas enviando dados a cada 6 minutos. Infelizmente apresentou baixa performance na chuva. Provavelmente a conexão Micro USB não funciona bem com água. Um novo conector foi adquirido e será testado novamente.
+Esse é o protótipo instalado no Lago Igapó 2:
 
-Esse é o protótipo instalado:
+<img src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/igapo-2.jpg" width="340">
+
+Esse é o protótipo instalado na Ecobarreira:
 
 ![IMG_20221220_165045](https://user-images.githubusercontent.com/20571/212798906-fd5728bf-b791-455d-8456-79cf07689e0c.jpg)
 
-Esse é o protótipo em maior detalhe:
+O protótipo em maior detalhe:
 
 <img src="https://user-images.githubusercontent.com/20571/212799501-3fa20d3c-de6e-48f0-9699-e0ce9b30915b.jpg" width="340">
 
-Este é o trabalho em andamento para habilitar a conectividade celular:
+Dentro da caixa:
 
 <img src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/1757982036064.jpg" width="340">
 
@@ -36,16 +38,6 @@ Este é o trabalho em andamento para habilitar a conectividade celular:
 
 <a target="_blank" href="https://atlas-scientific.com/kits/wi-fi-pool-kit/"><img alt="Atlas Scientific Wi-Fi Pool Kit" width="260" src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/wi-fi-pk01.jpeg"></a>
 
-- [LILYGO® TTGO T-BAT Battery Holder](https://pt.aliexpress.com/item/4001156737871.html). Suporte de bateria e circuito de carga de painel solar. Pode fornecer energia para o _Wi-Fi Pool Kit_.
-
-<a target="_blank" href="https://pt.aliexpress.com/item/4001156737871.html"><img alt="LILYGO® TTGO T-BAT Suporte de Bateria" width="260" src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/lilygo-ttgo-t-bat.webp"></a>
-
-- [Painel solar da iSNK](https://pt.aliexpress.com/store/3877081)
-
-## Trabalho futuro
-
-Alguns locais onde seria bom ter estações de monitoramento não possuem ponto de acesso Wi-Fi. Portanto, conectividade celular ou mesmo via satélite são necessárias.
-
 - [LILYGO® TTGO T-SIM7000G](https://lilygo.cc/products/t-sim7000g). Para conectividade celular esta placa de baixo consumo de energia e baixo custo vem com microcontrolador _ESP32_ da Espressif, modem 7000G da SIMCom, suporte de bateria e circuito de energia solar, tudo por volta de 200 Reais. O _ESP32_ é mais capaz que o _Arduino_ e mais barato que o _Raspberry Pi_.
 
 <a target="_blank" href="https://lilygo.cc/products/t-sim7000g"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/lilygo-t-sim7000g.webp"></a>
@@ -53,6 +45,10 @@ Alguns locais onde seria bom ter estações de monitoramento não possuem ponto 
 - [LILYGO® T-A7670SA R2](https://lilygo.cc/products/t-sim-a7670e). Semelhante ao T-SIM7000G, mas este tem suporte ao protocolo Cat 1, permitindo conexão futura ao "Direct to Cell" da Starlink.
 
 <a target="_blank" href="https://lilygo.cc/products/t-sim-a7670e"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/LILYGO-T-SIMA7670E_18.jpg"></a>
+
+## Future Work
+
+A Atlas Scientific possui uma ampla gama de sondas, como Condutividade e Oxigênio Dissolvido. Além disso, diversos outros locais podem ser monitorados.
 
 ## Referências
 
