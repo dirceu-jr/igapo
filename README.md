@@ -26,7 +26,7 @@ This is the prototype deployed at Ecobarreira:
 
 The prototype in greater detail:
 
-<img src="https://user-images.githubusercontent.com/20571/212799501-3fa20d3c-de6e-48f0-9699-e0ce9b30915b.jpg" width="340">
+<img src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/1760993504025.jpg" width="340">
 
 Inside the box:
 
