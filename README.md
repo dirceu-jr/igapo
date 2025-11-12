@@ -67,8 +67,8 @@ Atlas Scientific has a broad range of probes, such as Conductivity and Dissolved
 
 ## Real-Time Data
 
-<iframe width="380" height="260" src="https://thingspeak.com/channels/1956479/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=pH&type=line&width=380"></iframe>
+<iframe width="380" height="260" src="https://thingspeak.com/channels/1956479/charts/1?title=pH&width=1&height=1"></iframe>
 
-<iframe width="380" height="260" src="https://thingspeak.com/channels/1956479/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=ORP+(mV)&type=line&width=380"></iframe>
+<iframe width="380" height="260" src="https://thingspeak.com/channels/1956479/charts/2?title=ORP+(mV)&width=1&height=1"></iframe>
 
-<iframe width="380" height="260" src="https://thingspeak.com/channels/1956479/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature+(C)&type=line&width=380"></iframe>
+<iframe width="380" height="260" src="https://thingspeak.com/channels/1956479/charts/3?title=Temperatura+(C)&width=1&height=1"></iframe>
