@@ -13,7 +13,7 @@ WiFiClient client;                                               //declare that 
 const String ssid = "DIRCEU 2.4GHz";                             //The name of the Wi-Fi network you are connecting to
 const String pass = "PASSWORD";                                 //Your WiFi network password
 const long myChannelNumber = 1956479;                            //Your Thingspeak channel number
-const char * myWriteAPIKey = "FG0D9R78LUMJ2O7G";                 //Your ThingSpeak Write API Key"
+const char * myWriteAPIKey = "API Key";                 //Your ThingSpeak Write API Key"
 //------------------------------------------------------------------
 
 Ezo_board PH = Ezo_board(99, "PH");           //create a PH circuit object, who's address is 99 and name is "PH"

@@ -32,7 +32,7 @@ const char gprsPass[] = "datatem";
 const char server[] = "api.thingspeak.com";
 const int port = 443;
 
-const char* writeAPIKey = "FG0D9R78LUMJ2O7G";
+const char* writeAPIKey = "API Key";
 
 Ezo_board PH = Ezo_board(99, "PH");
 Ezo_board ORP = Ezo_board(98, "ORP");
