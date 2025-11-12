@@ -4,7 +4,7 @@
 
 [Ler em Português](https://dirceu-jr.github.io/igapo/README.pt-BR)
 
-I used to live in front of a [beautiful but polluted lake](https://pt.wikipedia.org/wiki/Ficheiro:Lago_Igap%C3%B3_Londrina.jpg) in _Londrina city_. Now I live in [Curitiba city](https://en.wikipedia.org/wiki/Curitiba), some say _the most ecological Brazilian city_.
+I used to live in front of a [beautiful but polluted lake](https://pt.wikipedia.org/wiki/Ficheiro:Lago_Igap%C3%B3_Londrina.jpg) in _Londrina city_. Now I live in [Curitiba city](https://en.wikipedia.org/wiki/Curitiba), some say, _the most ecological Brazilian city_.
 
 Urban socio-environmental problems identified in Curitiba includes air pollution, water pollution and environmental degradation ([references](#references)).
 
@@ -14,13 +14,13 @@ With community and educational purposes in mind, information about suppliers, co
 
 ## Status
 
-The current state of the project is hardware and software prototyping. The prototype was tested on the _Atuba River_, near a place known as [_Ecobarreira do Atuba_](https://www.instagram.com/ecobarreiradiegosaldanha/). The prototype is current deployed at Igapó Lake 2.
+The current state of the project is hardware and software prototyping and testing. The first prototype (Igapó #1) was initially tested on the _Atuba River_, in a place known as [_Ecobarreira do Atuba_](https://www.instagram.com/ecobarreiradiegosaldanha/) and it is currently deployed at Igapó Lake 2 in Londrina city.
 
 This is the prototype deployed at Igapó Lake 2:
 
 <img src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/igapo-2.jpg" width="340">
 
-This is the prototype deployed at Ecobarreira:
+This is the prototype when deployed at Ecobarreira:
 
 ![IMG_20221220_165045](https://user-images.githubusercontent.com/20571/212798906-fd5728bf-b791-455d-8456-79cf07689e0c.jpg)
 
@@ -38,7 +38,7 @@ Inside the box:
 
 <a target="_blank" href="https://atlas-scientific.com/kits/wi-fi-pool-kit/"><img alt="Atlas Scientific Wi-Fi Pool Kit" width="260" src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/wi-fi-pk01.jpeg"></a>
 
-- [LILYGO® T-SIM7000G](https://lilygo.cc/products/t-sim7000g). For cellular connectivity this low-power, low-cost board comes with Espressif's _ESP32_ microcontroller, SIMCom's 7000G cellular modem, battery holder and solar power circuit at around 300 Brazilian Reais. _ESP32_ is more capable than _Arduino_ and less expensive than _Raspberry Pi_.
+- [LILYGO® T-SIM7000G](https://lilygo.cc/products/t-sim7000g). For cellular connectivity this low-power, low-cost board comes with Espressif's _ESP32_ microcontroller, SIMCom's 7000G cellular modem, battery holder and solar power circuit at around 300 Brazilian Reais.
 
 <a target="_blank" href="https://lilygo.cc/products/t-sim7000g"><img alt="LILYGO® TTGO T-SIM7000G" width="260" src="https://raw.githubusercontent.com/dirceu-jr/igapo/master/readme_files/lilygo-t-sim7000g.webp"></a>
 
@@ -48,7 +48,7 @@ Inside the box:
 
 ## Future Work
 
-Atlas Scientific has a a broad range of probes such as Conducitvity and Dissolved Oxygen. Alsos several other locations can be monitored.
+Atlas Scientific has a broad range of probes, such as Conductivity and Dissolved Oxygen. Also, several other locations need to be monitored.
 
 ## References
 
@@ -56,9 +56,8 @@ Atlas Scientific has a a broad range of probes such as Conducitvity and Dissolve
 
 ## Software
 
-- [Embedded Software](https://github.com/dirceu-jr/igapo/blob/main/firmware/)
+- [Embedded Software](https://github.com/dirceu-jr/igapo/tree/main/firmware)
 - [ThingSpeak Channel](https://thingspeak.com/channels/1956479/)
-- [Dashboard Prototype](https://dirceu-jr.github.io/igapo/dashboard/)
 
 ## Suppliers
 
