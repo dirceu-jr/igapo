@@ -71,4 +71,4 @@ Atlas Scientific has a broad range of probes, such as Conductivity and Dissolved
 
 <iframe width="380" height="260" src="https://thingspeak.com/channels/1956479/charts/2?title=ORP+(mV)&width=1&height=1"></iframe>
 
-<iframe width="380" height="260" src="https://thingspeak.com/channels/1956479/charts/3?title=Temperatura+(C)&width=1&height=1"></iframe>
+<iframe width="380" height="260" src="https://thingspeak.com/channels/1956479/charts/3?title=Temperature+(C)&width=1&height=1"></iframe>
